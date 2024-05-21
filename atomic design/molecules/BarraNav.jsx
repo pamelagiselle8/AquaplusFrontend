@@ -7,7 +7,6 @@ import {
   Link,
   Button,
 } from "@nextui-org/react";
-import { AcmeLogo } from "../atoms/AcmeLogo.jsx";
 import AquaPlusLogo from "../atoms/AquaplusLogo.jsx";
 
 export default function BarraNav() {
