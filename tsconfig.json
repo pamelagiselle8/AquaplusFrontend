@@ -21,6 +21,6 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src"],
+  "include": ["src", "atomic design/templates/Inicio.tsx"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

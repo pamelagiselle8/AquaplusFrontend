@@ -11,5 +11,20 @@ export default {
     extend: {},
   },
   darkMode: "class",
-  plugins: [nextui()],
+  plugins: [
+    nextui({
+      prefix: "ap",
+      themes: {
+        aquaplus: {
+          extend: "light", // <- inherit default values from light theme
+          colors: {
+            background: "#ffffff",
+            foreground: "#072939",
+            primary: "#347cdc", // hsl(var(--ap-primary))
+            secondary: "#57e2c7",
+          },
+        },
+      },
+    }),
+  ],
 };
