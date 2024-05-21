@@ -8,13 +8,13 @@ import {
   Button,
 } from "@nextui-org/react";
 import { AcmeLogo } from "../atoms/AcmeLogo.jsx";
+import AquaPlusLogo from "../atoms/AquaplusLogo.jsx";
 
 export default function BarraNav() {
   return (
     <Navbar className="shadow-small">
       <NavbarBrand>
-        <AcmeLogo />
-        <p className=" font-semibold text-inherit">Aquaplus</p>
+        <AquaPlusLogo />
       </NavbarBrand>
       <NavbarContent className=" sm:flex gap-4" justify="center">
         <NavbarItem>
