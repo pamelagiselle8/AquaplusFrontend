@@ -7,13 +7,12 @@ import {
   Link,
   Button,
 } from "@nextui-org/react";
-import AquaPlusLogo from "../atoms/AquaplusLogo.jsx";
 
 export default function BarraNav() {
   return (
     <Navbar className="shadow-small">
       <NavbarBrand>
-        <AquaPlusLogo />
+        <img id="logo" src="../../assets/LogoTextoHD.png" />
       </NavbarBrand>
       <NavbarContent className=" sm:flex gap-4" justify="center">
         <NavbarItem>
