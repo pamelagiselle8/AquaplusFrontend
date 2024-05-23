@@ -7,11 +7,13 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "compile:sass": "node-sass sass/styles.scss css/styles.css -w"
   },
   "dependencies": {
     "@nextui-org/react": "^2.3.6",
     "framer-motion": "^11.2.4",
+    "node-sass": "^9.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
