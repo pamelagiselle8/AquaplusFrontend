@@ -1,6 +1,4 @@
 import BarraNav from "../molecules/BarraNav";
-import Tabla from "../organisms/Tabla";
-import Boton from "../atoms/Boton";
 
 function Inicio() {
   return (
