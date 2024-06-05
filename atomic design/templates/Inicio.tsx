@@ -1,7 +1,30 @@
 import BarraNav from "../molecules/BarraNav";
 import Card from "../atoms/Card";
+import { useEffect, useState } from "react";
+import axios from "axios";
+
 
 function Inicio() {
+
+  const [mision, setMision] = useState('');
+  const [vision, setVision] = useState('');
+
+  useEffect(() => {
+    axios.get('http://localhost:3002/obtenerMision')
+    .then((res) => {
+      setMision(res.data.contenido);
+    })
+
+    console.log("mision: ",mision);
+
+    axios.get('http://localhost:3002/obtenerVision')
+    .then((res) => {
+      setVision(res.data.contenido);
+    })
+
+    console.log("vision: ",vision);
+  }, []);
+
   return (
     <>
       <BarraNav />
@@ -28,8 +51,8 @@ function Inicio() {
             padding: '20px', borderRadius: '25px', display: 'flex', gap: '20px'
           }}
         >
-          <Card title="Misión" text="Lorem ipsum dolor sit amet, eam natum animal in, eos nominavi lucilius no. Ex case possit audire quo. Rebum movet audiam in ius, ea case nemore praesent per, sea congue saperet ad. At pri discere atomorum philosophia. Has ignota integre ea. Has no commodo omittantur, te tantas partem quaestio vix. Sea id putent appareat senserit." />
-          <Card title="Visión" text="Lorem ipsum dolor sit amet, eam natum animal in, eos nominavi lucilius no. Ex case possit audire quo. Rebum movet audiam in ius, ea case nemore praesent per, sea congue saperet ad. At pri discere atomorum philosophia. Has ignota integre ea. Has no commodo omittantur, te tantas partem quaestio vix. Sea id putent appareat senserit." />
+          <Card title="Misión" text={mision} />
+          <Card title="Visión" text={vision} />
         </div>
       </section>
 
