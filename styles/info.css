@@ -1,3 +1,12 @@
+#hero {
+  padding-top: 25%;
+}
+
+#contacto {
+  padding-top: 10%;
+  height: auto;
+}
+
 .pad-left {
   width: 100%;
   display: flex;
