@@ -47,7 +47,7 @@ function Inicio() {
         <div
           style={{
             position: 'absolute', top: '70%', left: '2%', right: '2%',
-            backgroundColor: 'rgba(255, 255, 255, 0.4)',
+            backgroundColor: 'rgba(255, 255, 255, 0.4)', justifyContent: 'center',
             padding: '20px', borderRadius: '25px', display: 'flex', gap: '20px'
           }}
         >
