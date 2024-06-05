@@ -12,15 +12,11 @@
   "dependencies": {
     "@nextui-org/react": "^2.3.6",
     "@types/react-router-dom": "^5.3.3",
+    "axios": "^1.7.2",
     "framer-motion": "^11.2.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-<<<<<<< HEAD
-    "sass": "^1.77.2",
-    "sass-loader": "^14.2.1"
-=======
     "react-router-dom": "^6.23.1"
->>>>>>> 48f078b049162db614b131838331c88e36969537
   },
   "devDependencies": {
     "@types/react": "^18.2.66",
