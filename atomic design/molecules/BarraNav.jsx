@@ -15,36 +15,35 @@ export default function BarraNav() {
       <NavbarBrand>
         <img id="logo" src="../../assets/LogoTextoHD.png" />
       </NavbarBrand>
+
       <NavbarContent className=" sm:flex gap-4" justify="center">
         <NavbarItem href="hero-section">
           <Link color="foreground" href="#">
             Sobre nosotros
           </Link>
         </NavbarItem>
-        <NavbarItem href="mision">
-          <Link href="#" aria-current="page">
+        <NavbarItem>
+          <Link href="#Mision&Vision" aria-current="page">
             Misión y visión
           </Link>
         </NavbarItem>
-        <NavbarItem href="contactanos"> 
-          <Link color="foreground">
+        <NavbarItem> 
+          <Link href="#Contactanos" color="foreground">
             Contáctanos
           </Link>
         </NavbarItem>
       </NavbarContent>
+
       <NavbarContent justify="end">
         <NavbarItem>
         <RouterLink to="/login">
-            <Button
-              className="rounded-large shadow-small"
-              color="primary"
-              variant="flat"
-            >
+            <Button className="rounded-large shadow-small" color="primary" variant="flat">
               Iniciar sesión
             </Button>
           </RouterLink>
         </NavbarItem>
       </NavbarContent>
+
     </Navbar>
   );
 }
