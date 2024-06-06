@@ -10,14 +10,14 @@ function Inicio() {
   const [vision, setVision] = useState('');
 
   useEffect(() => {
-    axios.get('http://localhost:3002/obtenerMision')
+    axios.get('https://backendaquaplus.onrender.com/obtenerMision')
     .then((res) => {
       setMision(res.data.contenido);
     })
 
     console.log("mision: ",mision);
 
-    axios.get('http://localhost:3002/obtenerVision')
+    axios.get('https://backendaquaplus.onrender.com/obtenerVision')
     .then((res) => {
       setVision(res.data.contenido);
     })
