@@ -16,13 +16,9 @@
     "framer-motion": "^11.2.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-<<<<<<< HEAD
     "react-router-dom": "^6.23.1",
     "sass": "^1.77.2",
     "sass-loader": "^14.2.1"
-=======
-    "react-router-dom": "^6.23.1"
->>>>>>> f7adf6e23298013885e2a32510f9f1c5948982ac
   },
   "devDependencies": {
     "@types/react": "^18.2.66",
