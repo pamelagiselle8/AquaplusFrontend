@@ -1,0 +1,51 @@
+#hero {
+  padding-top: 25%; }
+
+#contacto {
+  padding-top: 10%;
+  height: auto; }
+
+.pad-left {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-left: 30%;
+  margin-left: 15%; }
+
+.grad {
+  position: absolute;
+  width: 75%;
+  z-index: 10; }
+
+.img-front {
+  width: 85%;
+  position: absolute;
+  z-index: 20; }
+
+.width-window {
+  width: 100%; }
+
+.centered {
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+#logo {
+  height: 30px; }
+
+.input {
+  height: 50px;
+  width: auto; }
+
+.mision-vision {
+  position: "absolute";
+  top: "70%";
+  left: "2%";
+  right: "2%";
+  background-color: "rgba(255, 255, 255, 0.4)";
+  justify-content: "center";
+  padding: "20px";
+  border-radius: "25px";
+  display: "flex";
+  gap: "30px"; }

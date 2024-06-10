@@ -9,7 +9,7 @@ import {
 import { Link as RouterLink } from "react-router-dom";
 import LoginModal from "../molecules/LogInModal"; // Adjust the path according to your file structure
 
-export default function BarraNav() {
+export default function BarraNav({ modoEditar = false }) {
   return (
     <Navbar className="shadow-small">
       <NavbarBrand>
@@ -36,7 +36,7 @@ export default function BarraNav() {
 
       <NavbarContent justify="end">
         <NavbarItem>
-          <LoginModal />
+          <LoginModal modoEditar={modoEditar} />
         </NavbarItem>
       </NavbarContent>
     </Navbar>

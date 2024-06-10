@@ -3,7 +3,7 @@ import { Input } from "@nextui-org/react";
 
 export default function TextField({
   label,
-  onValueChange = () => { },
+  onValueChange = () => {},
   defaultValue = "",
   type = "text",
   readOnly = false,
