@@ -4,30 +4,30 @@ import {
   NavbarBrand,
   NavbarContent,
   NavbarItem,
-  Link ,
-  Button,
+  Link,
 } from "@nextui-org/react";
-import {  Link as RouterLink } from "react-router-dom";
+import { Link as RouterLink } from "react-router-dom";
+import LoginModal from "../molecules/LogInModal"; // Adjust the path according to your file structure
 
 export default function BarraNav() {
   return (
     <Navbar className="shadow-small">
       <NavbarBrand>
-        <img id="logo" src="../../assets/LogoTextoHD.png" />
+        <img id="logo" src="../../assets/LogoTextoHD.png" alt="Logo" />
       </NavbarBrand>
 
-      <NavbarContent className=" sm:flex gap-4" justify="center">
-        <NavbarItem href="hero-section">
-          <Link color="foreground" href="#">
-            Sobre nosotros
+      <NavbarContent className="sm:flex gap-4" justify="center">
+        <NavbarItem>
+          <Link color="foreground" href="#hero-section">
+            Sobre Nosotros
           </Link>
         </NavbarItem>
         <NavbarItem>
           <Link href="#Mision&Vision" aria-current="page">
-            Misión y visión
+            Misión y Visión
           </Link>
         </NavbarItem>
-        <NavbarItem> 
+        <NavbarItem>
           <Link href="#Contactanos" color="foreground">
             Contáctanos
           </Link>
@@ -36,14 +36,9 @@ export default function BarraNav() {
 
       <NavbarContent justify="end">
         <NavbarItem>
-        <RouterLink to="/login">
-            <Button className="rounded-large shadow-small" color="primary" variant="flat">
-              Iniciar sesión
-            </Button>
-          </RouterLink>
+          <LoginModal />
         </NavbarItem>
       </NavbarContent>
-
     </Navbar>
   );
 }

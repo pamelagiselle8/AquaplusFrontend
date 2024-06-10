@@ -1,10 +1,10 @@
 import React from 'react';
+import LogInModal from '../molecules/LogInModal';
 
 const Login: React.FC = () => {
   return (
     <div>
-      <h1>Páginjgfhgfhgfhga de Login</h1>
-
+      <LogInModal />
     </div>
   );
 };
