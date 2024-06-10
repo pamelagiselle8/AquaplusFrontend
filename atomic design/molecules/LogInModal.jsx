@@ -42,7 +42,6 @@ export default function LoginModal() {
                                         <MailIcon className="text-2xl text-default-400 pointer-events-none flex-shrink-0" />
                                     }
                                     label="Correo Electrónico"
-                                    placeholder="Ingresa tu Correo Electrónico"
                                     variant="bordered"
                                 />
                                 <Input
@@ -50,7 +49,6 @@ export default function LoginModal() {
                                         <LockIcon className="text-2xl text-default-400 pointer-events-none flex-shrink-0" />
                                     }
                                     label="Contraseña"
-                                    placeholder="Ingresa tu Contraseña"
                                     type="password"
                                     variant="bordered"
                                 />

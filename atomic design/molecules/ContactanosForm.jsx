@@ -15,18 +15,15 @@ function ContactCard() {
                 <div style={{ display: "flex", marginBottom: "20px", gap: "10px" }}>
                     <TextField
                         label="Nombre"
-                        placeholder="Ingresa tu Nombre"
                         onValueChange={handleNameChange}
                     />
                     <TextField
                         label="Correo Electronico"
-                        placeholder="Ingresa tu Correo Electronico"
                         onValueChange={handleNameChange} // Assuming it's the same handler as for the name
                     />
                 </div>
                 <TextArea
                     label="Mensaje"
-                    placeholder="Escribe tu Mensaje Aquí"
                     onValueChange={handleMessageChange}
                 />
                 <br />
