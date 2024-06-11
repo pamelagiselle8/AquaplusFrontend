@@ -1,9 +1,20 @@
 import TextArea from "../atoms/TextArea";
 import TextField from "../atoms/TextField";
+import Card from "../atoms/Card";
+
+import ContactanosSection from "../organisms/ContactanosSection";
 
 import BarraNav from "../molecules/BarraNav";
-import Card from "../atoms/Card";
-import ContactanosSection from "../organisms/ContactanosSection";
+
+import {
+  Navbar,
+  NavbarBrand,
+  NavbarContent,
+  NavbarItem,
+  Link,
+  Button,
+  Spacer,
+} from "@nextui-org/react";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
@@ -31,7 +42,37 @@ function Inicio({ modoEditar = false }) {
 
   return (
     <>
-      <BarraNav modoEditar={modoEditar} />
+      {!modoEditar ? (
+        <BarraNav modoEditar={modoEditar} />
+      ) : (
+        <Navbar
+          position="absolute"
+          shouldHideOnScroll={false}
+          height={"6rem"}
+          isBordered
+        >
+          <NavbarBrand>
+            <div>
+              <p className="font-semibold text-xl">
+                Módulo de edición de contenido
+              </p>
+              <p className="font-light">Vista previa de la página web</p>
+            </div>
+          </NavbarBrand>
+          <NavbarContent className="sm:flex gap-4" justify="center">
+            <NavbarItem>
+              <Button as={Link} color="primary" href="/" variant="solid">
+                Guardar cambios
+              </Button>
+            </NavbarItem>
+            <NavbarItem>
+              <Button as={Link} color="primary" href="/" variant="flat">
+                Descartar cambios
+              </Button>
+            </NavbarItem>
+          </NavbarContent>
+        </Navbar>
+      )}
       <section id="hero-section">
         <div id="hero" className="width-window">
           <div className="pad-left">

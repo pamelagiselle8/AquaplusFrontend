@@ -15,7 +15,7 @@ import Boton from "../atoms/Boton";
 import { MailIcon } from "../icons/MailIcon.jsx";
 import { LockIcon } from "../icons/LockIcon.jsx";
 
-export default function LoginModal({ modoEditar = false }) {
+export default function LoginModal() {
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
   const [backdrop, setBackdrop] = React.useState("blur");
 
@@ -39,15 +39,9 @@ export default function LoginModal({ modoEditar = false }) {
         className="rounded-large shadow-small"
         color="primary"
         variant="flat"
-        onPress={
-          !modoEditar
-            ? () => handleOpen("blur")
-            : () => {
-                window.location.href = "/";
-              }
-        }
+        onPress={() => handleOpen("blur")}
       >
-        {modoEditar ? "Descartar cambios" : "Iniciar Sesión"}
+        Iniciar Sesión
       </Button>
       <Modal
         backdrop={backdrop}
@@ -63,23 +57,35 @@ export default function LoginModal({ modoEditar = false }) {
               </ModalHeader>
               <ModalBody>
                 <Input
+                  color="primary"
+                  className="text-default"
                   autoFocus
                   endContent={
-                    <MailIcon className="text-2xl text-default-400 pointer-events-none flex-shrink-0" />
+                    <MailIcon
+                      color="secondary"
+                      className="text-2xl text-default-400 pointer-events-none flex-shrink-0"
+                    />
                   }
-                  label="Correo electrónico"
+                  label={<p className="text-default">Correo electrónico</p>}
                   variant="bordered"
                 />
                 <Input
+                  color="primary"
                   endContent={
-                    <LockIcon className="text-2xl text-default-400 pointer-events-none flex-shrink-0" />
+                    <LockIcon
+                      color="secondary"
+                      className="text-2xl text-default-400 pointer-events-none flex-shrink-0"
+                    />
                   }
-                  label="Contraseña"
+                  label={<p className="text-default">Contraseña</p>}
                   type="password"
                   variant="bordered"
                 />
                 <div className="flex py-2 px-1 justify-between">
-                  <Checkbox classNames={{ label: "text-small" }}>
+                  <Checkbox
+                    className="text-white"
+                    classNames={{ label: "text-small" }}
+                  >
                     Recuérdame
                   </Checkbox>
                   <Link color="primary" href="#" size="sm">
@@ -96,7 +102,6 @@ export default function LoginModal({ modoEditar = false }) {
                     window.location.href = "/cms";
                   }}
                 >
-                  {/* <a href="/cms">Iniciar Sesión</a> */}
                   Iniciar Sesión
                 </Button>
               </ModalFooter>

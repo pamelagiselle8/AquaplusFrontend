@@ -8,23 +8,14 @@ export default {
     "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {
-      fontFamily: {
-        mistral: ["Mistral", "sans-serif"],
-      },
-    },
+    extend: {},
   },
   darkMode: "class",
   plugins: [
     nextui({
-      prefix: "ap",
       themes: {
-        aquaplus: {
-          extend: "light", // <- inherit default values from light theme
+        light: {
           colors: {
-            background: "#ffffff",
-            foreground: "#072939",
-            primary: "#347cdc", // hsl(var(--ap-primary))
             secondary: "#57e2c7",
           },
         },

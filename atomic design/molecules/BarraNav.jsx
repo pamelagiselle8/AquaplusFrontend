@@ -36,7 +36,7 @@ export default function BarraNav({ modoEditar = false }) {
 
       <NavbarContent justify="end">
         <NavbarItem>
-          <LoginModal modoEditar={modoEditar} />
+          <LoginModal />
         </NavbarItem>
       </NavbarContent>
     </Navbar>
