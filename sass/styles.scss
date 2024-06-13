@@ -62,7 +62,7 @@
 
 // Estilos hero section
 #hero {
-  padding-top: 20%;
+  padding-top: 12vw;
   .text-hero {
     font-size: 2vw;
     width: 60%;
@@ -72,9 +72,16 @@
     line-height: 4.45vw;
     .boton {
       width: 30%;
+      width: fit-content;
+      height: 5vi;
+      height: fit-content;
       margin-top: 3%;
       border-radius: 25px;
-      height: 5vi;
+      padding-top: 1.5%;
+      padding-bottom: 1.5%;
+      padding-left: 5%;
+      padding-right: 5%;
+      // max-width: 5vi;
     }
   }
   .call-to-action {

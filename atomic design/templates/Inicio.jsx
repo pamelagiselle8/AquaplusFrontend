@@ -79,9 +79,14 @@ function Inicio({ modoEditar = false }) {
               La esencia de <br /> la{" "}
               <span className="font-semibold">pureza</span>
             </p>
-            {/* <Button className="boton" variant="solid" color="primary" /> */}
+            <Button
+              className="boton text-white"
+              variant="solid"
+              color="primary"
+            >
+              <p className="font-light text-md">Saber más</p>
+            </Button>
           </div>
-
           <div className="pad-left">
             <img className="grad" src="../assets/gradiente.png" />
           </div>

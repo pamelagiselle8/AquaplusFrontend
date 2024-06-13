@@ -51,7 +51,7 @@
   color: #6d6d6d; }
 
 #hero {
-  padding-top: 20%; }
+  padding-top: 12vw; }
   #hero .text-hero {
     font-size: 2vw;
     width: 60%;
@@ -61,9 +61,15 @@
     line-height: 4.45vw; }
     #hero .text-hero .boton {
       width: 30%;
+      width: fit-content;
+      height: 5vi;
+      height: fit-content;
       margin-top: 3%;
       border-radius: 25px;
-      height: 5vi; }
+      padding-top: 1.5%;
+      padding-bottom: 1.5%;
+      padding-left: 5%;
+      padding-right: 5%; }
   #hero .call-to-action {
     width: 60%; }
 
