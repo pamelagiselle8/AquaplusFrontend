@@ -1,11 +1,3 @@
-import TextArea from "../atoms/TextArea";
-import TextField from "../atoms/TextField";
-import Card from "../atoms/Card";
-
-import ContactanosSection from "../organisms/ContactanosSection";
-
-import BarraNav from "../molecules/BarraNav";
-
 import {
   Navbar,
   NavbarBrand,
@@ -17,6 +9,13 @@ import {
 } from "@nextui-org/react";
 import { useEffect, useState } from "react";
 import axios from "axios";
+
+import ContactanosSection from "../organisms/ContactanosSection";
+
+import TextArea from "../atoms/TextArea";
+import TextField from "../atoms/TextField";
+import Card from "../atoms/Card";
+import BarraNav from "../molecules/BarraNav";
 
 function Inicio({ modoEditar = false }) {
   const [mision, setMision] = useState("");
@@ -73,8 +72,16 @@ function Inicio({ modoEditar = false }) {
           </NavbarContent>
         </Navbar>
       )}
-      <section id="hero-section">
-        <div id="hero" className="width-window">
+      <section id="hero">
+        <div className="width-window">
+          <div className="text-hero">
+            <p className="font-extralight text-primary text-2xl">
+              La esencia de <br /> la{" "}
+              <span className="font-semibold">pureza</span>
+            </p>
+            {/* <Button className="boton" variant="solid" color="primary" /> */}
+          </div>
+
           <div className="pad-left">
             <img className="grad" src="../assets/gradiente.png" />
           </div>
