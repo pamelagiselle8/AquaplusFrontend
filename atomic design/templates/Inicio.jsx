@@ -15,6 +15,8 @@ import ContactanosSection from "../organisms/ContactanosSection";
 import TextArea from "../atoms/TextArea";
 import TextField from "../atoms/TextField";
 import Card from "../atoms/Card";
+import MotionDiv from "../atoms/MotionDiv";
+
 import BarraNav from "../molecules/BarraNav";
 
 import { cargarContenido } from "../../services/contenido";
@@ -72,40 +74,43 @@ function Inicio({ modoEditar = false }) {
           </NavbarContent>
         </Navbar>
       )}
-      <section id="hero">
-        <Waypoint
-          onEnter={() => {
-            setSeccionActual(1);
-          }}
-        />
-        <div className="width-window">
-          <div id="banner">
-            <div className="pad-left">
-              <img className="grad" src="../assets/gradiente.png" />
+      <MotionDiv>
+        <section id="hero">
+          <Waypoint
+            onEnter={() => {
+              setSeccionActual(1);
+            }}
+          />
+          <div className="width-window">
+            <div id="banner">
+              <div className="pad-left">
+                <img className="grad" src="../assets/gradiente.png" />
+              </div>
+              <div className="centered">
+                <img className="img-front" src="../assets/banner.png" />
+              </div>
             </div>
-            <div className="centered">
-              <img className="img-front" src="../assets/banner.png" />
+
+            <div className="text-hero">
+              <p className="font-extralight text-primary text-2xl">
+                La esencia de <br /> la{" "}
+                <span className="font-semibold">pureza</span>
+              </p>
+              <Button
+                as={Link}
+                href="#Sobre-nosotros"
+                className="boton text-white font-light text-md"
+                variant="solid"
+                // color="secondary"
+                color="primary"
+                radius="full"
+              >
+                Saber más
+              </Button>
             </div>
           </div>
-          <div className="text-hero">
-            <p className="font-extralight text-primary text-2xl">
-              La esencia de <br /> la{" "}
-              <span className="font-semibold">pureza</span>
-            </p>
-            <Button
-              as={Link}
-              href="#Sobre-nosotros"
-              className="boton text-white font-light text-md"
-              variant="solid"
-              // color="secondary"
-              color="primary"
-              radius="full"
-            >
-              Saber más
-            </Button>
-          </div>
-        </div>
-      </section>
+        </section>
+      </MotionDiv>
 
       <section id="Sobre-nosotros">
         <Waypoint

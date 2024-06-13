@@ -69,6 +69,12 @@
     height: 100%;
     position: absolute; }
 
+.hidden {
+  opacity: 0; }
+
+.show {
+  opacity: 1; }
+
 .text-lg {
   font-size: 2vw; }
 
