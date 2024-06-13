@@ -2,24 +2,6 @@
   padding-top: 10%;
   height: auto; }
 
-.pad-left {
-  width: 100%;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  padding-left: 30%;
-  margin-left: 15%; }
-
-.grad {
-  position: absolute;
-  width: 75%;
-  z-index: 10; }
-
-.img-front {
-  width: 85%;
-  position: absolute;
-  z-index: 20; }
-
 .width-window {
   width: 100%; }
 
@@ -52,6 +34,13 @@
 
 #hero {
   padding-top: 12vw; }
+  #hero .pad-left {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-left: 30%;
+    margin-left: 15%; }
   #hero .text-hero {
     font-size: 2vw;
     width: 60%;
@@ -61,17 +50,24 @@
     line-height: 4.45vw; }
     #hero .text-hero .boton {
       width: 30%;
-      width: fit-content;
-      height: 5vi;
-      height: fit-content;
+      height: 4.25vi;
       margin-top: 3%;
-      border-radius: 25px;
-      padding-top: 1.5%;
-      padding-bottom: 1.5%;
-      padding-left: 5%;
-      padding-right: 5%; }
+      z-index: 30; }
   #hero .call-to-action {
     width: 60%; }
+  #hero .grad {
+    position: absolute;
+    width: 75%;
+    z-index: 10; }
+  #hero .img-front {
+    width: 85%;
+    position: absolute;
+    z-index: 20; }
+  #hero #banner {
+    padding-top: 12vw;
+    width: 100%;
+    height: 100%;
+    position: absolute; }
 
 .text-lg {
   font-size: 2vw; }

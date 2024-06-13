@@ -19,12 +19,12 @@ export default function BarraNav({ modoEditar = false }) {
       <NavbarContent className="sm:flex gap-4" justify="center">
         <NavbarItem>
           <Link color="foreground" href="#hero-section">
-            Sobre Nosotros
+            Sobre nosotros
           </Link>
         </NavbarItem>
         <NavbarItem>
           <Link href="#Mision&Vision" aria-current="page">
-            Misión y Visión
+            Misión y visión
           </Link>
         </NavbarItem>
         <NavbarItem>

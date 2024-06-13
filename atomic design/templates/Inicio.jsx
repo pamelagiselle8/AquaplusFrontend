@@ -74,74 +74,38 @@ function Inicio({ modoEditar = false }) {
       )}
       <section id="hero">
         <div className="width-window">
+          <div id="banner">
+            <div className="pad-left">
+              <img className="grad" src="../assets/gradiente.png" />
+            </div>
+            <div className="centered">
+              <img className="img-front" src="../assets/banner.png" />
+            </div>
+          </div>
           <div className="text-hero">
             <p className="font-extralight text-primary text-2xl">
               La esencia de <br /> la{" "}
               <span className="font-semibold">pureza</span>
             </p>
             <Button
-              className="boton text-white"
+              as={Link}
+              href="#Sobre-nosotros"
+              className="boton text-white font-light text-md"
               variant="solid"
               color="primary"
+              radius="full"
             >
-              <p className="font-light text-md">Saber más</p>
+              Saber más
             </Button>
           </div>
-          <div className="pad-left">
-            <img className="grad" src="../assets/gradiente.png" />
-          </div>
-          <div className="centered">
-            <img className="img-front" src="../assets/banner.png" />
-          </div>
         </div>
       </section>
 
-      <section
-        id="Mision&Vision"
-        style={{ position: "relative", textAlign: "center" }}
-      >
-        <img src="https://images.unsplash.com/photo-1615529328331-f8917597711f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
-        <div
-          className="centered"
-          style={{
-            position: "absolute",
-            top: "70%",
-            left: "2%",
-            right: "2%",
-            backgroundColor: "rgba(255, 255, 255, 0.4)",
-            justifycontent: "center",
-            padding: "20px",
-            borderradius: "25px",
-            display: "flex",
-            gap: "30px",
-          }}
-        >
-          <Card
-            title={"Misión"}
-            text={
-              modoEditar ? (
-                <TextArea description="Editar misión" defaultValue={mision} />
-              ) : (
-                "Misión"
-              )
-            }
-          />
-          <Card
-            title="Visión"
-            text={
-              modoEditar ? (
-                <TextArea description="Editar visión" defaultValue={vision} />
-              ) : (
-                "Visión"
-              )
-            }
-          />
-        </div>
-      </section>
+      <section id="Sobre-nosotros"></section>
 
       <section id="Contactanos">
-        <img src="https://images.unsplash.com/photo-1615529328331-f8917597711f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
-        <ContactanosSection />
+        {/* <ContactanosSection /> */}
+        {/* <img src="https://images.unsplash.com/photo-1615529328331-f8917597711f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" /> */}
       </section>
     </>
   );
