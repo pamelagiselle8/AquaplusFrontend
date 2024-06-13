@@ -8,7 +8,7 @@ import {
   Spacer,
 } from "@nextui-org/react";
 import { useEffect, useState } from "react";
-import axios from "axios";
+import { Waypoint } from "react-waypoint";
 
 import ContactanosSection from "../organisms/ContactanosSection";
 
@@ -17,32 +17,32 @@ import TextField from "../atoms/TextField";
 import Card from "../atoms/Card";
 import BarraNav from "../molecules/BarraNav";
 
+import { cargarContenido } from "../../services/contenido";
+
 function Inicio({ modoEditar = false }) {
   const [mision, setMision] = useState("");
   const [vision, setVision] = useState("");
 
   useEffect(() => {
-    axios
-      .get("https://backendaquaplus.onrender.com/obtenerMision")
-      .then((res) => {
-        setMision(res.data.contenido);
-      });
-
+    cargarContenido({ setMision, setVision });
     console.log("mision: ", mision);
-
-    axios
-      .get("https://backendaquaplus.onrender.com/obtenerVision")
-      .then((res) => {
-        setVision(res.data.contenido);
-      });
-
     console.log("vision: ", vision);
   }, [vision, mision]);
+
+  const [seccionActual, setSeccionActual] = useState(1);
+  useEffect(() => {
+    console.log(
+      "current section is updated and this is its order ",
+      seccionActual
+    );
+    // now you have the number indicates of the current section
+    // you can manage how to make your nav bar react to that
+  }, [seccionActual]);
 
   return (
     <>
       {!modoEditar ? (
-        <BarraNav modoEditar={modoEditar} />
+        <BarraNav seccionActual={seccionActual} modoEditar={modoEditar} />
       ) : (
         <Navbar
           position="absolute"
@@ -73,6 +73,11 @@ function Inicio({ modoEditar = false }) {
         </Navbar>
       )}
       <section id="hero">
+        <Waypoint
+          onEnter={() => {
+            setSeccionActual(1);
+          }}
+        />
         <div className="width-window">
           <div id="banner">
             <div className="pad-left">
@@ -92,6 +97,7 @@ function Inicio({ modoEditar = false }) {
               href="#Sobre-nosotros"
               className="boton text-white font-light text-md"
               variant="solid"
+              // color="secondary"
               color="primary"
               radius="full"
             >
@@ -101,9 +107,28 @@ function Inicio({ modoEditar = false }) {
         </div>
       </section>
 
-      <section id="Sobre-nosotros"></section>
+      <section id="Sobre-nosotros">
+        <Waypoint
+          onEnter={() => {
+            setSeccionActual(1);
+          }}
+        />
+      </section>
+
+      <section id="Mision&Vision">
+        <Waypoint
+          onEnter={() => {
+            setSeccionActual(2);
+          }}
+        />
+      </section>
 
       <section id="Contactanos">
+        <Waypoint
+          onEnter={() => {
+            setSeccionActual(3);
+          }}
+        />
         {/* <ContactanosSection /> */}
         {/* <img src="https://images.unsplash.com/photo-1615529328331-f8917597711f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" /> */}
       </section>
