@@ -74,7 +74,7 @@ function Inicio({ modoEditar = false }) {
           </NavbarContent>
         </Navbar>
       )}
-      <MotionDiv>
+      <MotionDiv duracion={1.5} delay={0.25}>
         <section id="hero">
           <Waypoint
             onEnter={() => {
@@ -92,21 +92,25 @@ function Inicio({ modoEditar = false }) {
             </div>
 
             <div className="text-hero">
-              <p className="font-extralight text-primary text-2xl">
-                La esencia de <br /> la{" "}
-                <span className="font-semibold">pureza</span>
-              </p>
-              <Button
-                as={Link}
-                href="#Sobre-nosotros"
-                className="boton text-white font-light text-md"
-                variant="solid"
-                // color="secondary"
-                color="primary"
-                radius="full"
-              >
-                Saber más
-              </Button>
+              <MotionDiv duracion={3} delay={1.5}>
+                <p className="font-extralight text-primary text-2xl">
+                  La esencia de <br /> la{" "}
+                  <span className="font-semibold">pureza</span>
+                </p>
+              </MotionDiv>
+              <MotionDiv duracion={2.75} delay={3}>
+                <Button
+                  as={Link}
+                  href="#Sobre-nosotros"
+                  className="boton text-white font-light text-md"
+                  variant="solid"
+                  // color="secondary"
+                  color="primary"
+                  radius="full"
+                >
+                  Saber más
+                </Button>
+              </MotionDiv>
             </div>
           </div>
         </section>

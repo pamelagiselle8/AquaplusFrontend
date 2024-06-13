@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 
-export default function MotionDiv({ children, duracion = 2 }) {
+export default function MotionDiv({ children, duracion = 2, delay = 0 }) {
   return (
     <motion.div
       variants={{
@@ -9,7 +9,7 @@ export default function MotionDiv({ children, duracion = 2 }) {
       }}
       initial="hidden"
       animate="visible"
-      transition={{ duration: duracion }}
+      transition={{ duration: duracion, delay: delay }}
     >
       {children}
     </motion.div>
