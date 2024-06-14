@@ -7,6 +7,10 @@
   width: 100%;
 }
 
+.outer {
+  display: inline-block;
+}
+
 .centered {
   display: flex;
   justify-content: center;
@@ -15,6 +19,7 @@
 
 #logo {
   height: 30px;
+  min-width: 142px;
 }
 
 .input {
@@ -22,26 +27,25 @@
   width: auto;
 }
 
-.mision-vision {
-  position: "absolute";
-  top: "70%";
-  left: "2%";
-  right: "2%";
-  background-color: "rgba(255, 255, 255, 0.4)";
-  justify-content: "center";
-  padding: "20px";
-  border-radius: "25px";
-  display: "flex";
-  gap: "30px";
-}
-
-.text-default {
-  color: #6d6d6d;
-}
+// .mision-vision {
+//   position: "absolute";
+//   top: "70%";
+//   left: "2%";
+//   right: "2%";
+//   background-color: "rgba(255, 255, 255, 0.4)";
+//   justify-content: "center";
+//   padding: "20px";
+//   border-radius: "25px";
+//   display: "flex";
+//   gap: "30px";
+// }
 
 // Estilos hero section
 #hero {
   padding-top: 12vw;
+  padding-bottom: 25vw;
+  display: block;
+  position: relative;
   .pad-left {
     width: 100%;
     display: flex;
@@ -85,37 +89,60 @@
   }
 }
 
-// Estilos para animaciones
-.hidden {
-  opacity: 0;
-  // filter: blur(5px);
-  // transition: all 2s;
-}
-.show {
-  opacity: 1;
-  // filter: blur(0);
+// Estilos seccion mision y vision
+#Mision-y-vision {
+  #titulo-seccion {
+    padding-top: 10%;
+    padding-bottom: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .iconos {
+    width: 20%;
+    height: 20%;
+  }
+  .padding-horizontal {
+    // background-color: red;
+    padding-left: 10%;
+    padding-right: 5%;
+  }
+  .margin-horizontal {
+    background-color: red;
+    display: flex;
+    margin-right: 5%;
+    margin-left: 5%;
+  }
 }
 
-.text-lg {
-  font-size: 2vw;
-}
-
-.text-md {
-  font-size: 1.5vw;
-}
-
-.text-sm {
-  font-size: 1vw;
+// Estilos texto
+.text-default {
+  color: #505050;
 }
 
 .text-xs {
   font-size: 0.5vw;
 }
 
+.text-sm {
+  font-size: 1vw;
+}
+
+.text-md {
+  font-size: 1.5vw;
+}
+
+.text-lg {
+  font-size: 2vw;
+}
 .text-xl {
-  font-size: 3vw;
+  font-size: 2.75vw;
 }
 
 .text-2xl {
+  font-size: 3.5vw;
+}
+
+.text-4xl {
   font-size: 4vw;
 }

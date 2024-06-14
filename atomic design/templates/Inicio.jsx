@@ -18,6 +18,7 @@ import Card from "../atoms/Card";
 import MotionDiv from "../atoms/MotionDiv";
 
 import BarraNav from "../molecules/BarraNav";
+import VisionMision from "../molecules/VisionMision";
 
 import { cargarContenido } from "../../services/contenido";
 
@@ -81,6 +82,7 @@ function Inicio({ modoEditar = false }) {
               setSeccionActual(1);
             }}
           />
+
           <div className="width-window">
             <div id="banner">
               <div className="pad-left">
@@ -92,13 +94,13 @@ function Inicio({ modoEditar = false }) {
             </div>
 
             <div className="text-hero">
-              <MotionDiv duracion={3} delay={1.5}>
-                <p className="font-extralight text-primary text-2xl">
+              <MotionDiv duracion={3} delay={1.5} y={35}>
+                <p className="font-extralight text-primary text-4xl">
                   La esencia de <br /> la{" "}
                   <span className="font-semibold">pureza</span>
                 </p>
               </MotionDiv>
-              <MotionDiv duracion={2.75} delay={3}>
+              <MotionDiv duracion={2.5} delay={2.5} y={25}>
                 <Button
                   as={Link}
                   href="#Sobre-nosotros"
@@ -116,21 +118,32 @@ function Inicio({ modoEditar = false }) {
         </section>
       </MotionDiv>
 
-      <section id="Sobre-nosotros">
+      {/* <section id="Sobre-nosotros">
         <Waypoint
           onEnter={() => {
             setSeccionActual(1);
           }}
         />
-      </section>
+      </section> */}
 
-      <section id="Mision&Vision">
-        <Waypoint
-          onEnter={() => {
-            setSeccionActual(2);
-          }}
-        />
-      </section>
+      <MotionDiv duracion={1} x={-10}>
+        <section id="Mision-y-vision">
+          <Waypoint
+            onEnter={() => {
+              setSeccionActual(2);
+            }}
+          />
+          <div>
+            <h1
+              id="titulo-seccion"
+              className="text-2xl font-medium text-primary"
+            >
+              Misión y visión
+            </h1>
+            <VisionMision titulo={"Mision"} contenido={mision} />
+          </div>
+        </section>
+      </MotionDiv>
 
       <section id="Contactanos">
         <Waypoint
