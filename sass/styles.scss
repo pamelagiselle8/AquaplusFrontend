@@ -105,11 +105,11 @@
     margin-left: 5%;
   }
   .icono-texto {
-    background-color: red;
+    // background-color: red;
     width: 50%;
     display: flex;
-    // flex-direction: row;
-    // justify-content: center;
+    align-items: center;
+    padding-bottom: 8vw;
   }
   .titulo {
     margin-bottom: 1vw;
@@ -117,10 +117,10 @@
   .icono {
     min-width: 70px;
     max-height: 80px;
-    width: 10vw;
+    width: 9.75vw;
     height: auto;
     margin-right: 2vw;
-    margin-top: 2vw;
+    margin-top: 5vw;
   }
   .texto {
     display: flex;
@@ -129,7 +129,9 @@
     padding-right: 5%;
   }
   .imagen {
-    background-color: blue;
+    // background-color: blue;
+    display: flex;
+    justify-content: flex-end;
     width: 40%;
     height: auto;
   }

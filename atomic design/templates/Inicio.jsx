@@ -151,6 +151,7 @@ function Inicio({ modoEditar = false }) {
               titulo={"Nuestra Visión"}
               contenido={vision}
               icono="../assets/iconoVision.png"
+              imagen="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdHpTBFTQCvLaFmxss_ZgItKwDSIhTgogpi94HsTClowmyCLP0CGiU7TZ5XUsTAo8UgpM&usqp=CAU"
             />
           </div>
         </section>

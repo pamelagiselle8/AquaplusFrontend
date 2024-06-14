@@ -75,9 +75,10 @@
   margin-left: 5%; }
 
 #Mision-y-vision .icono-texto {
-  background-color: red;
   width: 50%;
-  display: flex; }
+  display: flex;
+  align-items: center;
+  padding-bottom: 8vw; }
 
 #Mision-y-vision .titulo {
   margin-bottom: 1vw; }
@@ -85,10 +86,10 @@
 #Mision-y-vision .icono {
   min-width: 70px;
   max-height: 80px;
-  width: 10vw;
+  width: 9.75vw;
   height: auto;
   margin-right: 2vw;
-  margin-top: 2vw; }
+  margin-top: 5vw; }
 
 #Mision-y-vision .texto {
   display: flex;
@@ -97,7 +98,8 @@
   padding-right: 5%; }
 
 #Mision-y-vision .imagen {
-  background-color: blue;
+  display: flex;
+  justify-content: flex-end;
   width: 40%;
   height: auto; }
 
