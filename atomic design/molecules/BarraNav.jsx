@@ -9,7 +9,7 @@ import {
 import { Link as RouterLink } from "react-router-dom";
 import LoginModal from "../molecules/LogInModal"; // Adjust the path according to your file structure
 
-export default function BarraNav({ seccionActual, modoEditar = false }) {
+export default function BarraNav({ seccionActual }) {
   return (
     <Navbar className="shadow-small">
       <NavbarBrand>
@@ -19,6 +19,11 @@ export default function BarraNav({ seccionActual, modoEditar = false }) {
       </NavbarBrand>
 
       <NavbarContent className="sm:flex gap-4" justify="center">
+        <NavbarItem>
+          <Link href="#" color={seccionActual === 0 ? "primary" : "foreground"}>
+            Inicio
+          </Link>
+        </NavbarItem>
         <NavbarItem>
           <Link
             href="#Sobre-nosotros"

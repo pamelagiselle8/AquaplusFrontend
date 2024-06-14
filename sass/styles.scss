@@ -27,23 +27,30 @@
   width: auto;
 }
 
-// .mision-vision {
-//   position: "absolute";
-//   top: "70%";
-//   left: "2%";
-//   right: "2%";
-//   background-color: "rgba(255, 255, 255, 0.4)";
-//   justify-content: "center";
-//   padding: "20px";
-//   border-radius: "25px";
-//   display: "flex";
-//   gap: "30px";
-// }
+.mision-vision {
+  position: "absolute";
+  top: "70%";
+  left: "2%";
+  right: "2%";
+  background-color: "rgba(255, 255, 255, 0.4)";
+  justify-content: "center";
+  padding: "20px";
+  border-radius: "25px";
+  display: "flex";
+  gap: "30px";
+}
+
+.barra-edicion {
+  h1 {
+    // margin-bottom: auto;
+  }
+}
 
 // Estilos hero section
-#hero {
-  padding-top: 12vw;
-  padding-bottom: 25vw;
+#Inicio {
+  // background-color: red;
+  padding-top: 15vw;
+  padding-bottom: 30vw;
   display: block;
   position: relative;
   .pad-left {
@@ -91,8 +98,10 @@
 
 // Estilos seccion mision y vision
 #Mision-y-vision {
+  // background-color: red;
+  padding-top: 5%;
+  padding-bottom: 2%;
   #titulo-seccion {
-    padding-top: 10%;
     padding-bottom: 5vw;
     display: flex;
     justify-content: center;

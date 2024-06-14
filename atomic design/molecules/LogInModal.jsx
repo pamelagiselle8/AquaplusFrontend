@@ -52,30 +52,24 @@ export default function LoginModal() {
         <ModalContent>
           {(onClose) => (
             <>
-              <ModalHeader className="text-xl flex flex-col gap-1">
+              <ModalHeader className="text-xl text-primary">
                 Iniciar sesión
               </ModalHeader>
               <ModalBody>
                 <Input
-                  color="primary"
+                  color="secondary"
                   className="text-default"
                   autoFocus
                   endContent={
-                    <MailIcon
-                      color="secondary"
-                      className="text-2xl text-default-400 pointer-events-none flex-shrink-0"
-                    />
+                    <MailIcon className="text-2xl text-default-400 pointer-events-none flex-shrink-0" />
                   }
                   label={<p className="text-default">Correo electrónico</p>}
                   variant="bordered"
                 />
                 <Input
-                  color="primary"
+                  color="secondary"
                   endContent={
-                    <LockIcon
-                      color="secondary"
-                      className="text-2xl text-default-400 pointer-events-none flex-shrink-0"
-                    />
+                    <LockIcon className="text-2xl text-default-400 pointer-events-none flex-shrink-0" />
                   }
                   label={<p className="text-default">Contraseña</p>}
                   type="password"
@@ -83,6 +77,7 @@ export default function LoginModal() {
                 />
                 <div className="flex py-2 px-1 justify-between">
                   <Checkbox
+                    color="secondary"
                     className="text-white"
                     classNames={{ label: "text-small" }}
                   >
@@ -97,6 +92,7 @@ export default function LoginModal() {
                 <Boton buttonText="Cerrar" onPress={onClose} />
                 <Button
                   color="primary"
+                  className="text-white"
                   onPress={() => {
                     onClose;
                     window.location.href = "/cms";

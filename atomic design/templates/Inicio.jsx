@@ -32,7 +32,7 @@ function Inicio({ modoEditar = false }) {
     console.log("vision: ", vision);
   }, [vision, mision]);
 
-  const [seccionActual, setSeccionActual] = useState(1);
+  const [seccionActual, setSeccionActual] = useState(0);
   useEffect(() => {
     console.log(
       "current section is updated and this is its order ",
@@ -45,7 +45,7 @@ function Inicio({ modoEditar = false }) {
   return (
     <>
       {!modoEditar ? (
-        <BarraNav seccionActual={seccionActual} modoEditar={modoEditar} />
+        <BarraNav seccionActual={seccionActual} />
       ) : (
         <Navbar
           position="absolute"
@@ -54,16 +54,24 @@ function Inicio({ modoEditar = false }) {
           isBordered
         >
           <NavbarBrand>
-            <div>
-              <p className="font-semibold text-xl">
+            <div className="barra-edicion">
+              <h1 className="font-semibold text-lg">
                 Módulo de edición de contenido
+              </h1>
+              <p className="font-light text-md">
+                Vista previa de la página web
               </p>
-              <p className="font-light">Vista previa de la página web</p>
             </div>
           </NavbarBrand>
           <NavbarContent className="sm:flex gap-4" justify="center">
             <NavbarItem>
-              <Button as={Link} color="primary" href="/" variant="solid">
+              <Button
+                as={Link}
+                color="primary"
+                className="text-white"
+                href="/"
+                variant="solid"
+              >
                 Guardar cambios
               </Button>
             </NavbarItem>
@@ -75,14 +83,13 @@ function Inicio({ modoEditar = false }) {
           </NavbarContent>
         </Navbar>
       )}
-      <MotionDiv duracion={1.5} delay={0.25}>
-        <section id="hero">
+      <MotionDiv duracion={1.5} delay={0.25} y={10}>
+        <section id="Inicio">
           <Waypoint
             onEnter={() => {
-              setSeccionActual(1);
+              setSeccionActual(0);
             }}
           />
-
           <div className="width-window">
             <div id="banner">
               <div className="pad-left">
@@ -92,22 +99,21 @@ function Inicio({ modoEditar = false }) {
                 <img className="img-front" src="../assets/banner.png" />
               </div>
             </div>
-
             <div className="text-hero">
-              <MotionDiv duracion={3} delay={1.5} y={35}>
+              <MotionDiv duracion={3} delay={1.25} y={50}>
                 <p className="font-extralight text-primary text-4xl">
                   La esencia de <br /> la{" "}
                   <span className="font-semibold">pureza</span>
                 </p>
               </MotionDiv>
-              <MotionDiv duracion={2.5} delay={2.5} y={25}>
+              <MotionDiv duracion={3} delay={3} y={25}>
                 <Button
                   as={Link}
                   href="#Sobre-nosotros"
                   className="boton text-white font-light text-md"
                   variant="solid"
-                  // color="secondary"
-                  color="primary"
+                  color="secondary"
+                  // color="primary"
                   radius="full"
                 >
                   Saber más
@@ -125,47 +131,53 @@ function Inicio({ modoEditar = false }) {
           }}
         />
       </section> */}
-
-      <MotionDiv duracion={1} x={-10}>
-        <section id="Mision-y-vision">
-          <Waypoint
-            onEnter={() => {
-              setSeccionActual(2);
-            }}
-          />
-          <div>
+      <section id="Mision-y-vision">
+        <Waypoint
+          onEnter={() => {
+            setSeccionActual(2);
+          }}
+        />
+        <div>
+          <MotionDiv duracion={1} x={-15}>
             <h1
               id="titulo-seccion"
               className="text-2xl font-medium text-primary"
             >
               Misión y visión
             </h1>
+          </MotionDiv>
+          <MotionDiv duracion={1} x={-30} delay={1}>
             <VisionMision
               titulo={"Nuestra Misión"}
               contenido={mision}
               icono="../assets/iconoMision.png"
               imagen="https://img77.uenicdn.com/image/upload/v1581406264/category/shutterstock_256848448.jpg"
+              modoEditar={modoEditar}
             />
-            <Spacer y={2} />
+          </MotionDiv>
+
+          <Spacer y={2} />
+          <MotionDiv duracion={1} x={30} delay={2}>
             <VisionMision
               titulo={"Nuestra Visión"}
               contenido={vision}
               icono="../assets/iconoVision.png"
               imagen="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdHpTBFTQCvLaFmxss_ZgItKwDSIhTgogpi94HsTClowmyCLP0CGiU7TZ5XUsTAo8UgpM&usqp=CAU"
+              modoEditar={modoEditar}
             />
-          </div>
-        </section>
-      </MotionDiv>
+          </MotionDiv>
+        </div>
+      </section>
 
-      <section id="Contactanos">
+      {/* <section id="Contactanos">
         <Waypoint
           onEnter={() => {
             setSeccionActual(3);
           }}
         />
-        {/* <ContactanosSection /> */}
-        {/* <img src="https://images.unsplash.com/photo-1615529328331-f8917597711f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" /> */}
-      </section>
+        <ContactanosSection />
+        <img src="https://images.unsplash.com/photo-1615529328331-f8917597711f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
+      </section> */}
     </>
   );
 }
