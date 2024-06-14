@@ -68,19 +68,38 @@
   justify-content: center;
   align-items: center; }
 
-#Mision-y-vision .iconos {
-  width: 20%;
-  height: 20%; }
-
-#Mision-y-vision .padding-horizontal {
-  padding-left: 10%;
-  padding-right: 5%; }
-
-#Mision-y-vision .margin-horizontal {
-  background-color: red;
+#Mision-y-vision .width-window {
+  width: 100%;
   display: flex;
   margin-right: 5%;
   margin-left: 5%; }
+
+#Mision-y-vision .icono-texto {
+  background-color: red;
+  width: 50%;
+  display: flex; }
+
+#Mision-y-vision .titulo {
+  margin-bottom: 1vw; }
+
+#Mision-y-vision .icono {
+  min-width: 70px;
+  max-height: 80px;
+  width: 10vw;
+  height: auto;
+  margin-right: 2vw;
+  margin-top: 2vw; }
+
+#Mision-y-vision .texto {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-right: 5%; }
+
+#Mision-y-vision .imagen {
+  background-color: blue;
+  width: 40%;
+  height: auto; }
 
 .text-default {
   color: #505050; }

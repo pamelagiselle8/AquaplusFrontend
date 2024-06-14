@@ -140,7 +140,18 @@ function Inicio({ modoEditar = false }) {
             >
               Misión y visión
             </h1>
-            <VisionMision titulo={"Mision"} contenido={mision} />
+            <VisionMision
+              titulo={"Nuestra Misión"}
+              contenido={mision}
+              icono="../assets/iconoMision.png"
+              imagen="https://img77.uenicdn.com/image/upload/v1581406264/category/shutterstock_256848448.jpg"
+            />
+            <Spacer y={2} />
+            <VisionMision
+              titulo={"Nuestra Visión"}
+              contenido={vision}
+              icono="../assets/iconoVision.png"
+            />
           </div>
         </section>
       </MotionDiv>
