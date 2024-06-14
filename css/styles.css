@@ -76,30 +76,30 @@
   margin-left: 5%;
   margin-bottom: 5%; }
 
-#Mision-y-vision .icono-texto {
+#Mision-y-vision .div-icono-texto {
   width: 50%;
   display: flex;
   align-items: center;
   padding-bottom: 8vw; }
 
 #Mision-y-vision .titulo {
-  margin-bottom: 1vw; }
+  padding-bottom: 3px; }
 
 #Mision-y-vision .icono {
-  min-width: 70px;
   max-width: 15%;
   max-height: 80px;
+  width: 9.5vw;
   height: auto;
   margin-right: 2vw;
-  margin-top: 5vw; }
+  margin-top: 2vw; }
 
-#Mision-y-vision .texto {
+#Mision-y-vision .div-texto {
   display: flex;
   flex-direction: column;
   justify-content: center;
   padding-right: 5%; }
 
-#Mision-y-vision .imagen {
+#Mision-y-vision .div-imagen {
   display: flex;
   justify-content: flex-end;
   width: 40%;

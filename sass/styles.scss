@@ -99,6 +99,7 @@
     align-items: center;
   }
   .width-window {
+    // arreglar wrap
     width: 100%;
     display: flex;
     overflow-wrap: normal;
@@ -106,7 +107,7 @@
     margin-left: 5%;
     margin-bottom: 5%;
   }
-  .icono-texto {
+  .div-icono-texto {
     // background-color: red;
     width: 50%;
     display: flex;
@@ -114,24 +115,24 @@
     padding-bottom: 8vw;
   }
   .titulo {
-    margin-bottom: 1vw;
+    padding-bottom: 3px; // arreglar este padding
   }
   .icono {
-    min-width: 70px;
+    // min-width: 70px;
     max-width: 15%;
     max-height: 80px;
-    // width: 9.75vw;
+    width: 9.5vw;
     height: auto;
     margin-right: 2vw;
-    margin-top: 5vw;
+    margin-top: 2vw; // arreglar este margen
   }
-  .texto {
+  .div-texto {
     display: flex;
     flex-direction: column;
     justify-content: center;
     padding-right: 5%;
   }
-  .imagen {
+  .div-imagen {
     // background-color: blue;
     display: flex;
     justify-content: flex-end;
