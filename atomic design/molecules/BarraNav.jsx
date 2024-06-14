@@ -13,7 +13,9 @@ export default function BarraNav({ seccionActual, modoEditar = false }) {
   return (
     <Navbar className="shadow-small">
       <NavbarBrand>
-        <img id="logo" src="../../assets/LogoTextoHD.png" alt="Logo" />
+        <Link href="#">
+          <img id="logo" src="../../assets/LogoTextoHD.png" alt="Logo" />
+        </Link>
       </NavbarBrand>
 
       <NavbarContent className="sm:flex gap-4" justify="center">
@@ -27,7 +29,7 @@ export default function BarraNav({ seccionActual, modoEditar = false }) {
         </NavbarItem>
         <NavbarItem>
           <Link
-            href="#Mision&Vision"
+            href="#Mision-y-vision"
             color={seccionActual === 2 ? "primary" : "foreground"}
           >
             Misión y visión

@@ -93,7 +93,7 @@
 #Mision-y-vision {
   #titulo-seccion {
     padding-top: 10%;
-    padding-bottom: 5%;
+    padding-bottom: 5vw;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -101,8 +101,10 @@
   .width-window {
     width: 100%;
     display: flex;
+    overflow-wrap: normal;
     margin-right: 5%;
     margin-left: 5%;
+    margin-bottom: 5%;
   }
   .icono-texto {
     // background-color: red;
@@ -116,8 +118,9 @@
   }
   .icono {
     min-width: 70px;
+    max-width: 15%;
     max-height: 80px;
-    width: 9.75vw;
+    // width: 9.75vw;
     height: auto;
     margin-right: 2vw;
     margin-top: 5vw;
