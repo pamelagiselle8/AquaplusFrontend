@@ -5,6 +5,21 @@
 
 .width-window {
   width: 100%;
+  // Responsiveness
+  @media only screen and (max-width: 900px) {
+    // .text-lg {
+    //   font-size: large;
+    // }
+    // .text-md {
+    //   font-size: medium;
+    // }
+    // .text-2xl {
+    //   font-size: x-large;
+    // }
+    // .text-4xl {
+    //   font-size: xx-large;
+    // }
+  }
 }
 
 .outer {
@@ -41,13 +56,23 @@
 }
 
 .barra-edicion {
+  // overflow-x: hidden;
+  // overflow-y: hidden;
   h1 {
     // margin-bottom: auto;
   }
 }
 
+.navbar {
+  overflow-x: hidden;
+  overflow-y: hidden;
+  width: 100%;
+}
+
 // Estilos hero section
 #Inicio {
+  overflow-x: hidden;
+  overflow-y: hidden;
   // background-color: red;
   padding-top: 14vw;
   padding-bottom: 30vw;
@@ -94,6 +119,35 @@
     height: 100%;
     position: absolute;
   }
+  @media only screen and (max-width: 900px) {
+    padding-top: 8vw;
+    padding-bottom: 35vw;
+    #banner {
+      padding-top: 20vw;
+      padding-right: 14%;
+      width: 110%;
+      height: auto;
+      position: relative;
+    }
+    .grad {
+      position: absolute;
+      width: 50%;
+      margin-right: 5%;
+      z-index: 10;
+    }
+    .text-hero {
+      font-size: 5vw;
+      width: 50%;
+      margin-left: 3%;
+      margin-top: -10%;
+    }
+    .text-4xl {
+      font-size: 6vw;
+    }
+    .boton {
+      display: none;
+    }
+  }
 }
 
 // Estilos seccion mision y vision
@@ -113,13 +167,13 @@
     grid-template-columns: 1fr 1fr;
     grid-template-areas: "div-icono-texto div-imagen";
     grid-gap: 3%;
-    // Margen entre mision y vision
-    margin-top: 5%;
+  }
+  .titulo {
+    padding-bottom: 3%;
   }
   .div-icono-texto {
     grid-area: div-icono-texto;
     // background-color: pink;
-    // width: 50%;
     display: flex;
     align-items: flex-start;
     padding-top: 2.5vw;
@@ -131,12 +185,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    // width: 40%;
     height: auto;
     margin-right: 6%;
-  }
-  .titulo {
-    padding-bottom: 3px; // arreglar este padding
   }
   .div-texto {
     display: flex;
@@ -154,6 +204,55 @@
   .imagen {
     width: 100%;
     height: auto;
+  }
+  // Responsiveness
+  @media only screen and (max-width: 900px) {
+    // background-color: red;
+
+    .width-window {
+      display: grid;
+      grid-template-columns: 100%;
+      grid-template-rows: max-content 1fr;
+      grid-template-areas: "div-icono-texto" "div-imagen";
+      margin-top: 0%;
+      margin-top: 4%;
+    }
+    .titulo {
+      padding-bottom: 4%;
+    }
+    .div-icono-texto {
+      // background-color: pink;
+      margin-right: 5%;
+    }
+    .div-texto {
+      padding-bottom: 3%;
+      // overflow-y: auto;
+      // background-color: aquamarine;
+    }
+    .div-imagen {
+      // background-color: lavender;
+      display: flex;
+      justify-content: center;
+      margin-left: 6%;
+    }
+    .imagen {
+      width: 90%;
+    }
+    .text-fw {
+      width: 100%;
+    }
+    .text-lg {
+      font-size: large;
+    }
+    .text-md {
+      font-size: medium;
+    }
+    .text-2xl {
+      font-size: x-large;
+    }
+    .text-default {
+      margin-left: -30px;
+    }
   }
 }
 
@@ -177,6 +276,7 @@
 .text-lg {
   font-size: 2vw;
 }
+
 .text-xl {
   font-size: 2.75vw;
 }

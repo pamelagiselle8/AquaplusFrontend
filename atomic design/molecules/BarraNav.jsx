@@ -7,11 +7,13 @@ import {
   Link,
 } from "@nextui-org/react";
 import { Link as RouterLink } from "react-router-dom";
-import LoginModal from "../molecules/LogInModal"; // Adjust the path according to your file structure
+import LoginModal from "../molecules/LogInModal";
 
 export default function BarraNav({ seccionActual }) {
+  if (window.screen.width <= 600) {
+  }
   return (
-    <Navbar className="shadow-small">
+    <Navbar variant="sticky" className="shadow-small navbar">
       <NavbarBrand>
         <Link href="#">
           <img id="logo" src="../../assets/LogoTextoHD.png" alt="Logo" />

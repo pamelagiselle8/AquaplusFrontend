@@ -33,20 +33,13 @@ function Inicio({ modoEditar = false }) {
   }, [vision, mision]);
 
   const [seccionActual, setSeccionActual] = useState(0);
-  useEffect(() => {
-    console.log(
-      "current section is updated and this is its order ",
-      seccionActual
-    );
-    // now you have the number indicates of the current section
-    // you can manage how to make your nav bar react to that
-  }, [seccionActual]);
 
   return (
     <>
       {!modoEditar ? (
         <BarraNav seccionActual={seccionActual} />
       ) : (
+        // <div></div>
         <Navbar
           position="absolute"
           shouldHideOnScroll={false}
@@ -140,7 +133,7 @@ function Inicio({ modoEditar = false }) {
           }}
         />
         <div>
-          <MotionDiv duracion={1} x={-15}>
+          <MotionDiv duracion={2}>
             <h1
               id="titulo-seccion"
               className="text-2xl font-medium text-primary"

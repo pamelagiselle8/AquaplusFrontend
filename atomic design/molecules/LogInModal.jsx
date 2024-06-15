@@ -41,6 +41,7 @@ export default function LoginModal() {
         color="primary"
         variant="flat"
         onPress={() => handleOpen("blur")}
+        size="sm"
       >
         Iniciar Sesión
       </Button>
@@ -64,7 +65,7 @@ export default function LoginModal() {
                   className="text-default"
                   autoFocus
                   endContent={
-                    <MailIcon className="text-xl text-secondary text-default-400 pointer-events-none flex-shrink-0" />
+                    <MailIcon className="text-lg text-secondary text-default-400 pointer-events-none flex-shrink-0" />
                   }
                   label={<p className="text-default">Correo electrónico</p>}
                   variant="bordered"
@@ -72,7 +73,7 @@ export default function LoginModal() {
                 <Input
                   color="primary"
                   endContent={
-                    <LockIcon className="text-xl text-secondary text-default-400 pointer-events-none flex-shrink-0" />
+                    <LockIcon className="text-lg text-secondary text-default-400 pointer-events-none flex-shrink-0" />
                   }
                   label={<p className="text-default">Contraseña</p>}
                   type="password"
