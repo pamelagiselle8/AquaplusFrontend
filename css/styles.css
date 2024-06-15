@@ -20,7 +20,7 @@
 .navbar {
   background-color: rgba(255, 255, 255, 0.3);
   backdrop-filter: blur(50px);
-  position: fixed;
+  position: sticky;
   z-index: 40;
   width: 100%;
   box-shadow: #004472 0px -10px 20px 0px;
@@ -29,7 +29,10 @@
   padding-top: 2%;
   padding-bottom: 2%;
   padding-left: 4%;
-  padding-right: 4%; }
+  padding-right: 4%;
+  min-height: 80px;
+  height: 8vw;
+  max-height: 90px; }
   .navbar a {
     width: 25%; }
   .navbar ul {
@@ -38,19 +41,16 @@
     width: 100%;
     display: flex;
     justify-content: space-evenly; }
-  .navbar .boton-login {
-    width: 110%;
-    height: 3.5vw; }
   .navbar .boton-colapsable {
     display: none; }
   .navbar .marca {
-    width: fit-content;
-    width: 25%;
+    width: min-content;
     display: flex;
     justify-content: flex-start; }
   .navbar #logo {
     width: 100%;
     min-width: 16vw;
+    min-width: 150px;
     padding-left: 5%; }
   @media only screen and (max-width: 900px) {
     .navbar {
@@ -63,7 +63,6 @@
         min-width: 140px; }
       .navbar .boton-login {
         min-height: 30px;
-        width: 100%;
         font-size: small; }
       .navbar .boton-colapsable {
         display: inline-flex; } }
@@ -71,7 +70,7 @@
 #Inicio {
   overflow-x: hidden;
   overflow-y: hidden;
-  padding-top: 22vw;
+  padding-top: 15%;
   padding-bottom: 30vw;
   display: block;
   position: relative; }

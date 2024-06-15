@@ -37,11 +37,12 @@ export default function LoginModal() {
   return (
     <>
       <Button
-        className="rounded-full shadow-small text-md boton-login"
+        className="rounded-full shadow-small boton-login"
         color="primary"
         variant="flat"
         onPress={() => handleOpen("blur")}
         fullWidth
+        size="md"
       >
         Iniciar Sesión
       </Button>

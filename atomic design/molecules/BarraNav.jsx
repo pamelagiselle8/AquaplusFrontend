@@ -78,13 +78,13 @@ export default function BarraNav({ seccionActual }) {
       </div>
       <ul>
         <li>
-          <a className={"text-md " + colorSeleccion(seccionActual, 0)} href="#">
+          <a className={colorSeleccion(seccionActual, 0)} href="#">
             Inicio
           </a>
         </li>
         <li>
           <a
-            className={"text-md " + colorSeleccion(seccionActual, 1)}
+            className={colorSeleccion(seccionActual, 1)}
             href="#Sobre-nosotros"
           >
             Sobre nosotros
@@ -92,22 +92,19 @@ export default function BarraNav({ seccionActual }) {
         </li>
         <li>
           <a
-            className={"text-md " + colorSeleccion(seccionActual, 2)}
+            className={colorSeleccion(seccionActual, 2)}
             href="#Mision-y-vision"
           >
             Misión y visión
           </a>
         </li>
         <li>
-          <a
-            className={"text-md " + colorSeleccion(seccionActual, 3)}
-            href="#Contactanos"
-          >
+          <a className={colorSeleccion(seccionActual, 3)} href="#Contactanos">
             Contáctanos
           </a>
         </li>
       </ul>
-      <div>
+      <div className="boton-login">
         <LoginModal />
       </div>
     </nav>
