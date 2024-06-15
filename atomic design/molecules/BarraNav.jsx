@@ -15,6 +15,9 @@ import {
 import { Link as RouterLink } from "react-router-dom";
 import LoginModal from "../molecules/LogInModal";
 
+import Logo from "../../assets/LogoTextoHD.png";
+import IconoMenu from "../../assets/open-menu.png";
+
 function colorSeleccion(seccionActual, seccion) {
   return seccionActual === seccion
     ? "text-secondary font-medium"
@@ -33,7 +36,7 @@ export default function BarraNav({ seccionActual }) {
               variant="flat"
               color="white"
               size="sm"
-              startContent={<img src="../../assets/open-menu.png" />}
+              startContent={<img src={IconoMenu} />}
             />
           </DropdownTrigger>
           <DropdownMenu
@@ -73,7 +76,7 @@ export default function BarraNav({ seccionActual }) {
           </DropdownMenu>
         </Dropdown>
         <Link href="#">
-          <img id="logo" src="../../assets/LogoTextoHD.png" alt="Logo" />
+          <img id="logo" src={Logo} alt="Logo" />
         </Link>
       </div>
       <ul>

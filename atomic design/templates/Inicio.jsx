@@ -22,6 +22,11 @@ import VisionMision from "../molecules/VisionMision";
 
 import { cargarContenido } from "../../services/contenido";
 
+import BannerPrincipal from "../../assets/banner.png";
+import Gradiente from "../../assets/gradiente.png";
+import IconoVision from "../../assets/iconoVision.png";
+import IconoMision from "../../assets/iconoMision.png";
+
 function Inicio({ modoEditar = false }) {
   const [mision, setMision] = useState("");
   const [vision, setVision] = useState("");
@@ -86,10 +91,10 @@ function Inicio({ modoEditar = false }) {
           <div className="width-window">
             <div id="banner">
               <div className="pad-left">
-                <img className="grad" src="../assets/gradiente.png" />
+                <img className="grad" src={Gradiente} />
               </div>
               <div className="centered">
-                <img className="img-front" src="../assets/banner.png" />
+                <img className="img-front" src={BannerPrincipal} />
               </div>
             </div>
             <div className="text-hero">
@@ -145,18 +150,18 @@ function Inicio({ modoEditar = false }) {
             <VisionMision
               titulo={"Nuestra Misión"}
               contenido={mision}
-              icono="../assets/iconoMision.png"
+              icono={IconoMision}
               imagen="https://img77.uenicdn.com/image/upload/v1581406264/category/shutterstock_256848448.jpg"
               modoEditar={modoEditar}
             />
           </MotionDiv>
 
           <Spacer y={2} />
-          <MotionDiv duracion={1} x={30} delay={2}>
+          <MotionDiv duracion={1} x={30} delay={1.5}>
             <VisionMision
               titulo={"Nuestra Visión"}
               contenido={vision}
-              icono="../assets/iconoVision.png"
+              icono={IconoVision}
               imagen="https://admin.municipiospuebla.mx/sites/default/files/profeco-_estos_son_los_mejores_filtros_purificadores_de_agua.jpg"
               modoEditar={modoEditar}
             />
