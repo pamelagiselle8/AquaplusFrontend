@@ -13,10 +13,6 @@
   justify-content: center;
   align-items: center; }
 
-#logo {
-  height: 30px;
-  min-width: 142px; }
-
 .input {
   height: 50px;
   width: auto; }
@@ -34,14 +30,46 @@
   gap: "30px"; }
 
 .navbar {
-  overflow-x: hidden;
-  overflow-y: hidden;
-  width: 100%; }
+  background-color: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(50px);
+  position: fixed;
+  z-index: 40;
+  width: 100%;
+  box-shadow: #004472 0px -10px 20px 0px;
+  display: flex;
+  align-items: center;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  padding-left: 4%;
+  padding-right: 4%; }
+  .navbar a {
+    width: 25%; }
+  .navbar ul {
+    padding-left: 5%;
+    padding-right: 5%;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly; }
+  .navbar .login {
+    width: 20%; }
+  .navbar .boton-login {
+    width: 110%;
+    height: 3.5vw; }
+  @media only screen and (max-width: 900px) {
+    .navbar {
+      justify-content: space-between;
+      padding-top: 3%;
+      padding-bottom: 3%; }
+      .navbar ul {
+        display: none; }
+      .navbar #logo {
+        height: 35px;
+        min-width: 165px; } }
 
 #Inicio {
   overflow-x: hidden;
   overflow-y: hidden;
-  padding-top: 14vw;
+  padding-top: 20vw;
   padding-bottom: 30vw;
   display: block;
   position: relative; }
@@ -81,7 +109,7 @@
     position: absolute; }
   @media only screen and (max-width: 900px) {
     #Inicio {
-      padding-top: 8vw;
+      padding-top: 20vw;
       padding-bottom: 35vw; }
       #Inicio #banner {
         padding-top: 20vw;
