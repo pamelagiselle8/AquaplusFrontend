@@ -116,7 +116,8 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-areas: "div-icono-texto div-imagen";
-    grid-gap: 3%; }
+    grid-gap: 3%;
+    padding-top: 5%; }
   #Mision-y-vision .titulo {
     padding-bottom: 3%; }
   #Mision-y-vision .div-icono-texto {
@@ -143,7 +144,7 @@
     height: auto;
     margin-right: 2vw; }
   #Mision-y-vision .imagen {
-    width: 100%;
+    width: 80%;
     height: auto; }
   @media only screen and (max-width: 900px) {
     #Mision-y-vision .width-window {
@@ -163,8 +164,6 @@
       display: flex;
       justify-content: center;
       margin-left: 6%; }
-    #Mision-y-vision .imagen {
-      width: 90%; }
     #Mision-y-vision .text-fw {
       width: 100%; }
     #Mision-y-vision .text-lg {

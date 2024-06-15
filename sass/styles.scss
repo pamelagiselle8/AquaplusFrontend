@@ -167,6 +167,7 @@
     grid-template-columns: 1fr 1fr;
     grid-template-areas: "div-icono-texto div-imagen";
     grid-gap: 3%;
+    padding-top: 5%;
   }
   .titulo {
     padding-bottom: 3%;
@@ -202,13 +203,11 @@
     margin-right: 2vw;
   }
   .imagen {
-    width: 100%;
+    width: 80%;
     height: auto;
   }
   // Responsiveness
   @media only screen and (max-width: 900px) {
-    // background-color: red;
-
     .width-window {
       display: grid;
       grid-template-columns: 100%;
@@ -221,22 +220,15 @@
       padding-bottom: 4%;
     }
     .div-icono-texto {
-      // background-color: pink;
       margin-right: 5%;
     }
     .div-texto {
       padding-bottom: 3%;
-      // overflow-y: auto;
-      // background-color: aquamarine;
     }
     .div-imagen {
-      // background-color: lavender;
       display: flex;
       justify-content: center;
       margin-left: 6%;
-    }
-    .imagen {
-      width: 90%;
     }
     .text-fw {
       width: 100%;
