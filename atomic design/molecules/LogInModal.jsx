@@ -55,9 +55,7 @@ export default function LoginModal() {
           {(onClose) => (
             <>
               <Spacer y={2} />
-              <ModalHeader className="text-lg text-primary">
-                Iniciar sesión
-              </ModalHeader>
+              <ModalHeader className="text-primary">Iniciar sesión</ModalHeader>
               <Spacer y={1} />
               <ModalBody>
                 <Input

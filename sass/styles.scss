@@ -37,19 +37,6 @@
   width: auto;
 }
 
-.mision-vision {
-  position: "absolute";
-  top: "70%";
-  left: "2%";
-  right: "2%";
-  background-color: "rgba(255, 255, 255, 0.4)";
-  justify-content: "center";
-  padding: "20px";
-  border-radius: "25px";
-  display: "flex";
-  gap: "30px";
-}
-
 .barra-edicion {
   // overflow-x: hidden;
   // overflow-y: hidden;
@@ -59,15 +46,12 @@
 }
 
 .navbar {
-  // overflow-x: hidden;
-  // overflow-y: hidden;
   background-color: rgba(255, 255, 255, 0.3);
   backdrop-filter: blur(50px);
   position: fixed;
   z-index: 40;
   width: 100%;
   box-shadow: #004472 0px -10px 20px 0px;
-  // background-color: pink;
   display: flex;
   align-items: center;
   padding-top: 2%;
@@ -84,25 +68,41 @@
     display: flex;
     justify-content: space-evenly;
   }
-  .login {
-    // background-color: pink;
-    // width: 100%;
-    width: 20%;
-  }
   .boton-login {
     width: 110%;
     height: 3.5vw;
   }
+  .boton-colapsable {
+    display: none;
+  }
+  .marca {
+    width: fit-content;
+    width: 25%;
+    display: flex;
+    justify-content: flex-start;
+  }
+  #logo {
+    width: 100%;
+    min-width: 16vw;
+    padding-left: 5%;
+  }
   @media only screen and (max-width: 900px) {
     justify-content: space-between;
-    padding-top: 3%;
-    padding-bottom: 3%;
+    padding-top: 20px;
+    padding-bottom: 20px;
     ul {
       display: none;
     }
     #logo {
-      height: 35px;
-      min-width: 165px;
+      min-width: 140px;
+    }
+    .boton-login {
+      min-height: 30px;
+      width: 100%;
+      font-size: small;
+    }
+    .boton-colapsable {
+      display: inline-flex;
     }
   }
 }
@@ -112,7 +112,7 @@
   overflow-x: hidden;
   overflow-y: hidden;
   // background-color: red;
-  padding-top: 20vw;
+  padding-top: 22vw;
   padding-bottom: 30vw;
   display: block;
   position: relative;
@@ -158,10 +158,9 @@
     position: absolute;
   }
   @media only screen and (max-width: 900px) {
-    padding-top: 20vw;
-    padding-bottom: 35vw;
+    padding-bottom: 30vw;
     #banner {
-      padding-top: 20vw;
+      padding-top: 90px;
       padding-right: 14%;
       width: 110%;
       height: auto;
@@ -178,6 +177,7 @@
       width: 50%;
       margin-left: 3%;
       margin-top: -10%;
+      line-height: 5.5vw;
     }
     .text-4xl {
       font-size: 6vw;
@@ -267,6 +267,9 @@
       display: flex;
       justify-content: center;
       margin-left: 6%;
+    }
+    .imagen {
+      max-width: 400px;
     }
     .text-fw {
       width: 100%;

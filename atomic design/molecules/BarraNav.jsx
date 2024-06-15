@@ -5,120 +5,111 @@ import {
   NavbarContent,
   NavbarItem,
   Link,
+  Button,
+  Spacer,
+  Dropdown,
+  DropdownTrigger,
+  DropdownMenu,
+  DropdownItem,
 } from "@nextui-org/react";
 import { Link as RouterLink } from "react-router-dom";
 import LoginModal from "../molecules/LogInModal";
 
+function colorSeleccion(seccionActual, seccion) {
+  return seccionActual === seccion
+    ? "text-secondary font-medium"
+    : "text-foreground font-regular";
+}
+
 export default function BarraNav({ seccionActual }) {
-  if (window.screen.width <= 600) {
-  }
   return (
     <nav class="navbar">
-      <Link href="#">
-        <img id="logo" src="../../assets/LogoTextoHD.png" alt="Logo" />
-      </Link>
+      <div className="marca">
+        <Dropdown>
+          <DropdownTrigger>
+            <Button
+              className="boton-colapsable"
+              isIconOnly
+              variant="flat"
+              color="white"
+              size="sm"
+              startContent={<img src="../../assets/open-menu.png" />}
+            />
+          </DropdownTrigger>
+          <DropdownMenu
+            variant="light"
+            color="primary"
+            className="text-default"
+            aria-label="Link Actions"
+          >
+            <DropdownItem
+              className={colorSeleccion(seccionActual, 0)}
+              key="Inicio"
+              href="#"
+            >
+              Inicio
+            </DropdownItem>
+            <DropdownItem
+              className={colorSeleccion(seccionActual, 1)}
+              key="Sobre-nosotros"
+              href="#Sobre-nosotros"
+            >
+              Sobre nosotros
+            </DropdownItem>
+            <DropdownItem
+              className={colorSeleccion(seccionActual, 2)}
+              key="Mision-y-vision"
+              href="#Mision-y-vision"
+            >
+              Misión y visión
+            </DropdownItem>
+            <DropdownItem
+              className={colorSeleccion(seccionActual, 3)}
+              key="Contactanos"
+              href="#Contactanos"
+            >
+              Contáctanos
+            </DropdownItem>
+          </DropdownMenu>
+        </Dropdown>
+        <Link href="#">
+          <img id="logo" src="../../assets/LogoTextoHD.png" alt="Logo" />
+        </Link>
+      </div>
       <ul>
         <li>
-          <a
-            className={
-              "text-md " +
-              (seccionActual === 0
-                ? "text-primary font-medium"
-                : "text-foreground")
-            }
-            href="#"
-          >
+          <a className={"text-md " + colorSeleccion(seccionActual, 0)} href="#">
             Inicio
           </a>
         </li>
         <li>
           <a
-            className={
-              "text-md " +
-              (seccionActual === 1
-                ? "text-primary font-medium"
-                : "text-foreground")
-            }
-            href="#"
+            className={"text-md " + colorSeleccion(seccionActual, 1)}
+            href="#Sobre-nosotros"
           >
             Sobre nosotros
           </a>
         </li>
         <li>
           <a
-            className={
-              "text-md " +
-              (seccionActual === 2
-                ? "text-primary font-medium"
-                : "text-foreground")
-            }
-            href="#"
+            className={"text-md " + colorSeleccion(seccionActual, 2)}
+            href="#Mision-y-vision"
           >
             Misión y visión
           </a>
         </li>
         <li>
           <a
-            className={
-              "text-md " +
-              (seccionActual === 3
-                ? "text-primary font-medium"
-                : "text-foreground")
-            }
-            href="#"
+            className={"text-md " + colorSeleccion(seccionActual, 3)}
+            href="#Contactanos"
           >
             Contáctanos
           </a>
         </li>
       </ul>
-      <div className="login">
+      <div>
         <LoginModal />
       </div>
     </nav>
-    // <Navbar variant="sticky" className="shadow-small navbar">
-    //   <NavbarBrand>
-    //     <Link href="#">
-    //       <img id="logo" src="../../assets/LogoTextoHD.png" alt="Logo" />
-    //     </Link>
-    //   </NavbarBrand>
-
-    //   <NavbarContent className="sm:flex gap-4" justify="center">
-    //     <NavbarItem>
-    //       <Link href="#" color={seccionActual === 0 ? "primary" : "foreground"}>
-    //         Inicio
-    //       </Link>
-    //     </NavbarItem>
-    //     <NavbarItem>
-    //       <Link
-    //         href="#Sobre-nosotros"
-    //         color={seccionActual === 1 ? "primary" : "foreground"}
-    //       >
-    //         Sobre nosotros
-    //       </Link>
-    //     </NavbarItem>
-    //     <NavbarItem>
-    //       <Link
-    //         href="#Mision-y-vision"
-    //         color={seccionActual === 2 ? "primary" : "foreground"}
-    //       >
-    //         Misión y visión
-    //       </Link>
-    //     </NavbarItem>
-    //     <NavbarItem>
-    //       <Link
-    //         href="#Contactanos"
-    //         color={seccionActual === 3 ? "primary" : "foreground"}
-    //       >
-    //         Contáctanos
-    //       </Link>
-    //     </NavbarItem>
-    //   </NavbarContent>
-
-    //   <NavbarContent justify="end">
-    //     <NavbarItem>
-    //       <LoginModal />
-    //     </NavbarItem>
-    //   </NavbarContent>
-    // </Navbar>
   );
 }

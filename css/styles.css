@@ -17,18 +17,6 @@
   height: 50px;
   width: auto; }
 
-.mision-vision {
-  position: "absolute";
-  top: "70%";
-  left: "2%";
-  right: "2%";
-  background-color: "rgba(255, 255, 255, 0.4)";
-  justify-content: "center";
-  padding: "20px";
-  border-radius: "25px";
-  display: "flex";
-  gap: "30px"; }
-
 .navbar {
   background-color: rgba(255, 255, 255, 0.3);
   backdrop-filter: blur(50px);
@@ -50,26 +38,40 @@
     width: 100%;
     display: flex;
     justify-content: space-evenly; }
-  .navbar .login {
-    width: 20%; }
   .navbar .boton-login {
     width: 110%;
     height: 3.5vw; }
+  .navbar .boton-colapsable {
+    display: none; }
+  .navbar .marca {
+    width: fit-content;
+    width: 25%;
+    display: flex;
+    justify-content: flex-start; }
+  .navbar #logo {
+    width: 100%;
+    min-width: 16vw;
+    padding-left: 5%; }
   @media only screen and (max-width: 900px) {
     .navbar {
       justify-content: space-between;
-      padding-top: 3%;
-      padding-bottom: 3%; }
+      padding-top: 20px;
+      padding-bottom: 20px; }
       .navbar ul {
         display: none; }
       .navbar #logo {
-        height: 35px;
-        min-width: 165px; } }
+        min-width: 140px; }
+      .navbar .boton-login {
+        min-height: 30px;
+        width: 100%;
+        font-size: small; }
+      .navbar .boton-colapsable {
+        display: inline-flex; } }
 
 #Inicio {
   overflow-x: hidden;
   overflow-y: hidden;
-  padding-top: 20vw;
+  padding-top: 22vw;
   padding-bottom: 30vw;
   display: block;
   position: relative; }
@@ -109,10 +111,9 @@
     position: absolute; }
   @media only screen and (max-width: 900px) {
     #Inicio {
-      padding-top: 20vw;
-      padding-bottom: 35vw; }
+      padding-bottom: 30vw; }
       #Inicio #banner {
-        padding-top: 20vw;
+        padding-top: 90px;
         padding-right: 14%;
         width: 110%;
         height: auto;
@@ -126,7 +127,8 @@
         font-size: 5vw;
         width: 50%;
         margin-left: 3%;
-        margin-top: -10%; }
+        margin-top: -10%;
+        line-height: 5.5vw; }
       #Inicio .text-4xl {
         font-size: 6vw; }
       #Inicio .boton {
@@ -192,6 +194,8 @@
       display: flex;
       justify-content: center;
       margin-left: 6%; }
+    #Mision-y-vision .imagen {
+      max-width: 400px; }
     #Mision-y-vision .text-fw {
       width: 100%; }
     #Mision-y-vision .text-lg {

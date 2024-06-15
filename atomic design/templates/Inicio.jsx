@@ -126,7 +126,7 @@ function Inicio({ modoEditar = false }) {
       </section> */}
       <section id="Mision-y-vision">
         <Waypoint
-          bottomOffset={"80%"}
+          // bottomOffset={"80%"}
           // topOffset={"80%"}
           onEnter={() => {
             setSeccionActual(2);
