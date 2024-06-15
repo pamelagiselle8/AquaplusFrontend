@@ -45,7 +45,7 @@ function Inicio({ modoEditar = false }) {
       {!modoEditar ? (
         <BarraNav seccionActual={seccionActual} />
       ) : (
-        <BarraEdicion />
+        <BarraEdicion setSeccionActual={setSeccionActual} />
       )}
       <MotionDiv duracion={1.5} delay={0.25} y={10}>
         <section id="Inicio">

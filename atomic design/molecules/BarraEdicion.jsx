@@ -13,7 +13,7 @@ import {
   DropdownItem,
 } from "@nextui-org/react";
 
-export default function BarraEdicion() {
+export default function BarraEdicion({ setSeccionActual }) {
   return (
     <nav class="navbar-edicion">
       <ul>
@@ -30,6 +30,7 @@ export default function BarraEdicion() {
             color="primary"
             href="/"
             variant="flat"
+            onPress={() => setSeccionActual(0)}
           >
             Descartar cambios
           </Button>
