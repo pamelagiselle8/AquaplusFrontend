@@ -34,7 +34,7 @@
   gap: "30px"; }
 
 #Inicio {
-  padding-top: 15vw;
+  padding-top: 14vw;
   padding-bottom: 30vw;
   display: block;
   position: relative; }
@@ -84,15 +84,15 @@
   #Mision-y-vision .width-window {
     width: 100%;
     display: flex;
-    overflow-wrap: normal;
     margin-right: 5%;
     margin-left: 5%;
     margin-bottom: 5%; }
   #Mision-y-vision .div-icono-texto {
     width: 50%;
     display: flex;
-    align-items: center;
-    padding-bottom: 8vw; }
+    align-items: flex-start;
+    padding-top: 2.5vw;
+    padding-right: 2vw; }
   #Mision-y-vision .titulo {
     padding-bottom: 3px; }
   #Mision-y-vision .icono {
@@ -100,8 +100,7 @@
     max-height: 80px;
     width: 9.5vw;
     height: auto;
-    margin-right: 2vw;
-    margin-top: 2vw; }
+    margin-right: 2vw; }
   #Mision-y-vision .div-texto {
     display: flex;
     flex-direction: column;
@@ -109,8 +108,12 @@
     padding-right: 5%; }
   #Mision-y-vision .div-imagen {
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
+    align-items: center;
     width: 40%;
+    height: auto; }
+  #Mision-y-vision .imagen {
+    width: 100%;
     height: auto; }
 
 .text-default {

@@ -10,6 +10,7 @@ import {
   Checkbox,
   Input,
   Link,
+  Spacer,
 } from "@nextui-org/react";
 import Boton from "../atoms/Boton";
 import { MailIcon } from "../icons/MailIcon.jsx";
@@ -52,24 +53,26 @@ export default function LoginModal() {
         <ModalContent>
           {(onClose) => (
             <>
-              <ModalHeader className="text-xl text-primary">
+              <Spacer y={2} />
+              <ModalHeader className="text-lg text-primary">
                 Iniciar sesión
               </ModalHeader>
+              <Spacer y={1} />
               <ModalBody>
                 <Input
-                  color="secondary"
+                  color="primary"
                   className="text-default"
                   autoFocus
                   endContent={
-                    <MailIcon className="text-2xl text-default-400 pointer-events-none flex-shrink-0" />
+                    <MailIcon className="text-xl text-secondary text-default-400 pointer-events-none flex-shrink-0" />
                   }
                   label={<p className="text-default">Correo electrónico</p>}
                   variant="bordered"
                 />
                 <Input
-                  color="secondary"
+                  color="primary"
                   endContent={
-                    <LockIcon className="text-2xl text-default-400 pointer-events-none flex-shrink-0" />
+                    <LockIcon className="text-xl text-secondary text-default-400 pointer-events-none flex-shrink-0" />
                   }
                   label={<p className="text-default">Contraseña</p>}
                   type="password"
@@ -87,6 +90,7 @@ export default function LoginModal() {
                     ¿Olvidaste tu contraseña?
                   </Link>
                 </div>
+                <Spacer y={1} />
               </ModalBody>
               <ModalFooter>
                 <Boton buttonText="Cerrar" onPress={onClose} />
@@ -101,6 +105,7 @@ export default function LoginModal() {
                   Iniciar Sesión
                 </Button>
               </ModalFooter>
+              <Spacer y={1} />
             </>
           )}
         </ModalContent>

@@ -133,6 +133,8 @@ function Inicio({ modoEditar = false }) {
       </section> */}
       <section id="Mision-y-vision">
         <Waypoint
+          bottomOffset={"80%"}
+          // topOffset={"80%"}
           onEnter={() => {
             setSeccionActual(2);
           }}
@@ -162,7 +164,7 @@ function Inicio({ modoEditar = false }) {
               titulo={"Nuestra Visión"}
               contenido={vision}
               icono="../assets/iconoVision.png"
-              imagen="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdHpTBFTQCvLaFmxss_ZgItKwDSIhTgogpi94HsTClowmyCLP0CGiU7TZ5XUsTAo8UgpM&usqp=CAU"
+              imagen="https://admin.municipiospuebla.mx/sites/default/files/profeco-_estos_son_los_mejores_filtros_purificadores_de_agua.jpg"
               modoEditar={modoEditar}
             />
           </MotionDiv>
