@@ -31,11 +31,10 @@ export default function VisionMision({
           ) : (
             <>
               <Textarea
-                fullWidth
                 value={contenido}
                 description="Editar contenido aqui"
                 variant="bordered"
-                className="text-md font-light text-default text-fw"
+                className="text-md font-light text-default text-area"
               ></Textarea>
             </>
           )}

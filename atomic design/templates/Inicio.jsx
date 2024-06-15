@@ -46,41 +46,6 @@ function Inicio({ modoEditar = false }) {
         <BarraNav seccionActual={seccionActual} />
       ) : (
         <BarraEdicion />
-        // <Navbar
-        //   position="absolute"
-        //   shouldHideOnScroll={false}
-        //   height={"6rem"}
-        //   isBordered
-        // >
-        //   <NavbarBrand>
-        //     <div className="barra-edicion">
-        //       <h1 className="font-semibold text-lg">
-        //         Módulo de edición de contenido
-        //       </h1>
-        //       <p className="font-light text-md">
-        //         Vista previa de la página web
-        //       </p>
-        //     </div>
-        //   </NavbarBrand>
-        //   <NavbarContent className="sm:flex gap-4" justify="center">
-        //     <NavbarItem>
-        //       <Button
-        //         as={Link}
-        //         color="primary"
-        //         className="text-white"
-        //         href="/"
-        //         variant="solid"
-        //       >
-        //         Guardar cambios
-        //       </Button>
-        //     </NavbarItem>
-        //     <NavbarItem>
-        //       <Button as={Link} color="primary" href="/" variant="flat">
-        //         Descartar cambios
-        //       </Button>
-        //     </NavbarItem>
-        //   </NavbarContent>
-        // </Navbar>
       )}
       <MotionDiv duracion={1.5} delay={0.25} y={10}>
         <section id="Inicio">
@@ -112,7 +77,6 @@ function Inicio({ modoEditar = false }) {
                   className="boton text-white font-light text-md"
                   variant="solid"
                   color="secondary"
-                  // color="primary"
                   radius="full"
                 >
                   Saber más
@@ -133,7 +97,7 @@ function Inicio({ modoEditar = false }) {
       <section id="Mision-y-vision">
         <Waypoint
           // bottomOffset={"80%"}
-          // topOffset={"80%"}
+          // topOffset={"95%"}
           onEnter={() => {
             setSeccionActual(2);
           }}

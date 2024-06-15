@@ -1,27 +1,18 @@
-#contacto {
-  padding-top: 10%;
-  height: auto;
-}
-
+// Estilos globales
 .width-window {
   width: 100%;
 }
-
-.outer {
-  display: inline-block;
-}
-
 .centered {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
 .input {
   height: 50px;
   width: auto;
 }
 
+// Estilos para navbars
 @mixin navbar-style {
   background-color: rgba(255, 255, 255, 0.3);
   backdrop-filter: blur(50px);
@@ -40,6 +31,7 @@
   max-height: 90px;
 }
 
+// Navbar del módulo de edición
 .navbar-edicion {
   @include navbar-style;
   .text-lg {
@@ -101,6 +93,7 @@
   }
 }
 
+// Navbar de la página principal
 .navbar {
   @include navbar-style;
   a {
@@ -148,7 +141,7 @@
   }
 }
 
-// Estilos hero section
+// Estilos sección de inicio
 #Inicio {
   overflow-x: hidden;
   overflow-y: hidden;
@@ -201,6 +194,7 @@
   }
   @media only screen and (max-width: 900px) {
     padding-bottom: 30vw;
+    padding-top: 35%;
     #banner {
       padding-top: 90px;
       padding-right: 14%;
@@ -230,9 +224,8 @@
   }
 }
 
-// Estilos seccion mision y vision
+// Estilos seccion misión y visión
 #Mision-y-vision {
-  // background-color: rgb(172, 214, 242);
   // Padding arriba y abajo de toda la seccion
   padding-top: 5%;
   padding-bottom: 6%;
@@ -244,21 +237,21 @@
   .width-window {
     width: 100%;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1.25fr 1fr;
     grid-template-areas: "div-icono-texto div-imagen";
-    grid-gap: 3%;
-    padding-top: 5%;
+    padding-top: 25px;
   }
   .titulo {
-    padding-bottom: 3%;
+    padding-bottom: 15px;
   }
   .div-icono-texto {
     grid-area: div-icono-texto;
     // background-color: pink;
     display: flex;
     align-items: flex-start;
-    padding-top: 2.5vw;
-    margin-left: 6%;
+    padding-top: 20px;
+    width: 100%;
+    padding-left: 10%;
   }
   .div-imagen {
     grid-area: div-imagen;
@@ -267,9 +260,9 @@
     justify-content: center;
     align-items: center;
     height: auto;
-    margin-right: 6%;
   }
   .div-texto {
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -284,8 +277,25 @@
   }
   .imagen {
     width: 80%;
+    max-width: 400px;
     height: auto;
   }
+  .text-lg {
+    font-size: x-large;
+  }
+  .text-md {
+    font-size: large;
+  }
+  .text-2xl {
+    font-size: xx-large;
+  }
+
+  // Modulo de edición
+  .text-area {
+    // margin-left: -20px;
+    // width: 100px;
+  }
+
   // Responsiveness
   @media only screen and (max-width: 900px) {
     .width-window {
@@ -294,27 +304,34 @@
       grid-template-rows: max-content 1fr;
       grid-template-areas: "div-icono-texto" "div-imagen";
       margin-top: 0%;
-      margin-top: 4%;
     }
     .titulo {
       padding-bottom: 4%;
     }
     .div-icono-texto {
-      margin-right: 5%;
+      grid-area: div-icono-texto;
+      display: flex;
+      align-items: flex-start;
+      padding: 25px;
+      padding-left: 10%;
+      padding-right: 10%;
+      width: 100%;
     }
     .div-texto {
-      padding-bottom: 3%;
+      padding-bottom: 0%;
+      display: flex;
+      align-items: center;
+      .titulo {
+        align-self: flex-start;
+      }
     }
     .div-imagen {
       display: flex;
       justify-content: center;
-      margin-left: 6%;
+      margin: 0%;
     }
     .imagen {
       max-width: 400px;
-    }
-    .text-fw {
-      width: 100%;
     }
     .text-lg {
       font-size: large;
@@ -326,7 +343,13 @@
       font-size: x-large;
     }
     .text-default {
-      margin-left: -30px;
+      margin-left: 0px;
+    }
+
+    // Modulo de edición
+    .text-area {
+      margin-left: -20px;
+      width: 100%;
     }
   }
 }
