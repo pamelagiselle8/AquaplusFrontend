@@ -1,4 +1,4 @@
-import { Image, Input, Spacer } from "@nextui-org/react";
+import { Image, Input, Spacer, Grid } from "@nextui-org/react";
 
 export default function VisionMision({
   titulo,

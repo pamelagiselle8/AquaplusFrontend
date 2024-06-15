@@ -75,43 +75,43 @@
 
 #Mision-y-vision {
   padding-top: 5%;
-  padding-bottom: 2%; }
+  padding-bottom: 6%; }
   #Mision-y-vision #titulo-seccion {
-    padding-bottom: 5vw;
     display: flex;
     justify-content: center;
     align-items: center; }
   #Mision-y-vision .width-window {
     width: 100%;
-    display: flex;
-    margin-right: 5%;
-    margin-left: 5%;
-    margin-bottom: 5%; }
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "div-icono-texto div-imagen";
+    grid-gap: 3%;
+    margin-top: 5%; }
   #Mision-y-vision .div-icono-texto {
-    width: 50%;
+    grid-area: div-icono-texto;
     display: flex;
     align-items: flex-start;
     padding-top: 2.5vw;
-    padding-right: 2vw; }
+    margin-left: 6%; }
+  #Mision-y-vision .div-imagen {
+    grid-area: div-imagen;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    margin-right: 6%; }
   #Mision-y-vision .titulo {
     padding-bottom: 3px; }
+  #Mision-y-vision .div-texto {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; }
   #Mision-y-vision .icono {
     max-width: 15%;
     max-height: 80px;
     width: 9.5vw;
     height: auto;
     margin-right: 2vw; }
-  #Mision-y-vision .div-texto {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding-right: 5%; }
-  #Mision-y-vision .div-imagen {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 40%;
-    height: auto; }
   #Mision-y-vision .imagen {
     width: 100%;
     height: auto; }

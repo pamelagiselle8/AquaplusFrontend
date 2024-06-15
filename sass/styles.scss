@@ -98,38 +98,50 @@
 
 // Estilos seccion mision y vision
 #Mision-y-vision {
-  // background-color: red;
+  // background-color: rgb(172, 214, 242);
+  // Padding arriba y abajo de toda la seccion
   padding-top: 5%;
-  padding-bottom: 2%;
+  padding-bottom: 6%;
   #titulo-seccion {
-    padding-bottom: 5vw;
     display: flex;
     justify-content: center;
     align-items: center;
   }
   .width-window {
-    // arreglar wrap
     width: 100%;
-    // display: inline-block;
-    // display: grid;
-    display: flex;
-
-    // overflow-wrap: normal;
-    margin-right: 5%;
-    margin-left: 5%;
-    margin-bottom: 5%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "div-icono-texto div-imagen";
+    grid-gap: 3%;
+    // Margen entre mision y vision
+    margin-top: 5%;
   }
   .div-icono-texto {
-    // grid-area: 1 / col4-start / last-line / 6;
-    // background-color: red;
-    width: 50%;
+    grid-area: div-icono-texto;
+    // background-color: pink;
+    // width: 50%;
     display: flex;
     align-items: flex-start;
     padding-top: 2.5vw;
-    padding-right: 2vw;
+    margin-left: 6%;
+  }
+  .div-imagen {
+    grid-area: div-imagen;
+    // background-color: lavender;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // width: 40%;
+    height: auto;
+    margin-right: 6%;
   }
   .titulo {
     padding-bottom: 3px; // arreglar este padding
+  }
+  .div-texto {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
   .icono {
     // min-width: 70px;
@@ -138,20 +150,6 @@
     width: 9.5vw;
     height: auto;
     margin-right: 2vw;
-  }
-  .div-texto {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding-right: 5%;
-  }
-  .div-imagen {
-    // background-color: blue;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 40%;
-    height: auto;
   }
   .imagen {
     width: 100%;
