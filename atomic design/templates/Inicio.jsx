@@ -18,6 +18,7 @@ import Card from "../atoms/Card";
 import MotionDiv from "../atoms/MotionDiv";
 
 import BarraNav from "../molecules/BarraNav";
+import BarraEdicion from "../molecules/BarraEdicion";
 import VisionMision from "../molecules/VisionMision";
 
 import { cargarContenido } from "../../services/contenido";
@@ -44,42 +45,42 @@ function Inicio({ modoEditar = false }) {
       {!modoEditar ? (
         <BarraNav seccionActual={seccionActual} />
       ) : (
-        // <div></div>
-        <Navbar
-          position="absolute"
-          shouldHideOnScroll={false}
-          height={"6rem"}
-          isBordered
-        >
-          <NavbarBrand>
-            <div className="barra-edicion">
-              <h1 className="font-semibold text-lg">
-                Módulo de edición de contenido
-              </h1>
-              <p className="font-light text-md">
-                Vista previa de la página web
-              </p>
-            </div>
-          </NavbarBrand>
-          <NavbarContent className="sm:flex gap-4" justify="center">
-            <NavbarItem>
-              <Button
-                as={Link}
-                color="primary"
-                className="text-white"
-                href="/"
-                variant="solid"
-              >
-                Guardar cambios
-              </Button>
-            </NavbarItem>
-            <NavbarItem>
-              <Button as={Link} color="primary" href="/" variant="flat">
-                Descartar cambios
-              </Button>
-            </NavbarItem>
-          </NavbarContent>
-        </Navbar>
+        <BarraEdicion />
+        // <Navbar
+        //   position="absolute"
+        //   shouldHideOnScroll={false}
+        //   height={"6rem"}
+        //   isBordered
+        // >
+        //   <NavbarBrand>
+        //     <div className="barra-edicion">
+        //       <h1 className="font-semibold text-lg">
+        //         Módulo de edición de contenido
+        //       </h1>
+        //       <p className="font-light text-md">
+        //         Vista previa de la página web
+        //       </p>
+        //     </div>
+        //   </NavbarBrand>
+        //   <NavbarContent className="sm:flex gap-4" justify="center">
+        //     <NavbarItem>
+        //       <Button
+        //         as={Link}
+        //         color="primary"
+        //         className="text-white"
+        //         href="/"
+        //         variant="solid"
+        //       >
+        //         Guardar cambios
+        //       </Button>
+        //     </NavbarItem>
+        //     <NavbarItem>
+        //       <Button as={Link} color="primary" href="/" variant="flat">
+        //         Descartar cambios
+        //       </Button>
+        //     </NavbarItem>
+        //   </NavbarContent>
+        // </Navbar>
       )}
       <MotionDiv duracion={1.5} delay={0.25} y={10}>
         <section id="Inicio">

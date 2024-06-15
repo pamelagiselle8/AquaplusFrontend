@@ -5,21 +5,6 @@
 
 .width-window {
   width: 100%;
-  // Responsiveness
-  @media only screen and (max-width: 900px) {
-    // .text-lg {
-    //   font-size: large;
-    // }
-    // .text-md {
-    //   font-size: medium;
-    // }
-    // .text-2xl {
-    //   font-size: x-large;
-    // }
-    // .text-4xl {
-    //   font-size: xx-large;
-    // }
-  }
 }
 
 .outer {
@@ -37,18 +22,10 @@
   width: auto;
 }
 
-// .barra-edicion {
-//   // overflow-x: hidden;
-//   // overflow-y: hidden;
-//   // h1 {
-//   //   margin-bottom: auto;
-//   // }
-// }
-
-.navbar {
+@mixin navbar-style {
   background-color: rgba(255, 255, 255, 0.3);
   backdrop-filter: blur(50px);
-  position: sticky;
+  position: fixed;
   z-index: 40;
   width: 100%;
   box-shadow: #004472 0px -10px 20px 0px;
@@ -61,7 +38,71 @@
   min-height: 80px;
   height: 8vw;
   max-height: 90px;
+}
 
+.navbar-edicion {
+  @include navbar-style;
+  .text-lg {
+    font-size: x-large;
+  }
+  .text-md {
+    font-size: medium;
+  }
+  a {
+    width: 25%;
+  }
+  ul {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+  .botones-editar {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    :first-child {
+      margin-right: 8px;
+    }
+    .boton {
+      height: 90%;
+      width: 100%;
+    }
+  }
+  @media only screen and (max-width: 900px) {
+    min-height: 150px;
+    height: 150px;
+    max-height: 250px;
+    padding-left: 6%;
+    padding-right: 6%;
+    ul {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .texto {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .botones-editar {
+      // background-color: pink;
+      width: 100%;
+      display: flex;
+      justify-content: space-evenly;
+      margin-bottom: 5px;
+      margin-top: 15px;
+      .boton {
+        height: 40px;
+        width: 50%;
+      }
+    }
+  }
+}
+
+.navbar {
+  @include navbar-style;
   a {
     width: 25%;
   }
@@ -112,7 +153,7 @@
   overflow-x: hidden;
   overflow-y: hidden;
   // background-color: red;
-  padding-top: 15%;
+  padding-top: 20%;
   padding-bottom: 30vw;
   display: block;
   position: relative;
