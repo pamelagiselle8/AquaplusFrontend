@@ -6,11 +6,13 @@ import {
   Link,
   Button,
   Spacer,
+  Image,
 } from "@nextui-org/react";
 import { useEffect, useState } from "react";
 import { Waypoint } from "react-waypoint";
 
 import ContactanosSection from "../organisms/ContactanosSection";
+import ContactanosForm from "../molecules/ContactanosForm";
 
 import TextArea from "../atoms/TextArea";
 import TextField from "../atoms/TextField";
@@ -140,9 +142,13 @@ function Inicio({ modoEditar = false }) {
             setSeccionActual(3);
           }}
         />
-        <div>
-          {/* <ContactanosSection /> */}
-          <img src={FondoContacto} />
+        <div className="fondo-y-contacto">
+          <div className="contacto">
+            <ContactanosForm />
+          </div>
+          <div className="fondo-contacto">
+            <img src={FondoContacto} />
+          </div>
         </div>
       </section>
     </>

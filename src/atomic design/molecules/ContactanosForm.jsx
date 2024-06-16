@@ -1,30 +1,49 @@
 import React from "react";
-import { Card } from "@nextui-org/react";
-import TextField from "../atoms/TextField";
+import {
+  Card,
+  CardBody,
+  CardFooter,
+  CardHeader,
+  Input,
+} from "@nextui-org/react";
+// import TextField from "../atoms/TextField";
 import TextArea from "../atoms/TextArea";
 import Boton from "../atoms/Boton";
+
+import Logo from "../../assets/logo.png";
 
 function ContactCard() {
   const handleNameChange = (value) => console.log("Name:", value);
   const handleMessageChange = (value) => console.log("Message:", value);
 
   return (
-    <Card>
-      <div style={{ padding: "25px" }}>
-        <h1 style={{ marginBottom: "20px", fontSize: "24px", color: "#333" }}>
-          Contáctate con Nosotros
-        </h1>
-        <div style={{ display: "flex", marginBottom: "20px", gap: "10px" }}>
-          <TextField label="Nombre" onValueChange={handleNameChange} />
-          <TextField
+    <Card className="card-contacto">
+      <CardHeader className="text-xl">
+        <img src={Logo} className="logo" />
+        Contáctate con nosotros
+      </CardHeader>
+      <CardBody className="campos-contacto">
+        <div className="nombre-correo">
+          <Input
+            id="input-nombre"
+            variant="bordered"
+            label="Nombre"
+            onValueChange={handleNameChange}
+          />
+          <Input
+            id="input-correo"
+            variant="bordered"
             label="Correo Electronico"
             onValueChange={handleNameChange} // Assuming it's the same handler as for the name
           />
         </div>
-        <TextArea label="Mensaje" onValueChange={handleMessageChange} />
-        <br />
+        <div className="mensaje">
+          <TextArea label="Mensaje" onValueChange={handleMessageChange} />
+        </div>
+      </CardBody>
+      <CardFooter className="footer-contacto">
         <Boton buttonText="Enviar" />
-      </div>
+      </CardFooter>
     </Card>
   );
 }

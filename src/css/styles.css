@@ -279,6 +279,85 @@
       margin-left: -20px;
       width: 100%; } }
 
+#Contactanos .fondo-y-contacto {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative; }
+
+#Contactanos .fondo-contacto {
+  width: 100%; }
+  #Contactanos .fondo-contacto img {
+    z-index: 10;
+    width: 100%; }
+
+#Contactanos .contacto {
+  position: absolute;
+  z-index: 20;
+  width: 60%; }
+
+#Contactanos .logo {
+  width: 30px;
+  margin-left: 10px;
+  margin-right: 10px; }
+
+#Contactanos .text-xl {
+  padding-top: 20px;
+  font-size: x-large; }
+
+#Contactanos .campos-contacto {
+  padding-left: 15px;
+  padding-right: 15px; }
+
+#Contactanos .nombre-correo {
+  display: flex;
+  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: "input-nombre input-correo";
+  gap: 10px;
+  margin-bottom: 10px; }
+  #Contactanos .nombre-correo #input-nombre {
+    grid-area: input-nombre; }
+  #Contactanos .nombre-correo #input-correo {
+    grid-area: input-correo; }
+
+#Contactanos .footer-contacto {
+  display: flex;
+  justify-content: center; }
+  #Contactanos .footer-contacto :only-child {
+    width: 40%;
+    min-width: 150px; }
+
+@media only screen and (max-width: 900px) {
+  #Contactanos .fondo-contacto {
+    position: absolute; }
+  #Contactanos .contacto {
+    position: relative;
+    width: 80%; }
+  #Contactanos .card-contacto {
+    margin-top: 30%; }
+  #Contactanos .logo {
+    width: 20px;
+    margin-right: 5px; }
+  #Contactanos .text-xl {
+    font-size: large; }
+  #Contactanos .nombre-correo {
+    display: flex;
+    justify-content: space-between;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 100%;
+    grid-template-areas: "input-nombre" "input-correo";
+    gap: 10px;
+    margin-bottom: 10px; }
+    #Contactanos .nombre-correo #input-nombre {
+      grid-area: input-nombre; }
+    #Contactanos .nombre-correo #input-correo {
+      grid-area: input-correo; }
+  #Contactanos .footer-contacto :only-child {
+    width: 60%; } }
+
 .text-default {
   color: #505050; }
 
