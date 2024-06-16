@@ -11,9 +11,9 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
     <NextUIProvider>
       <Router>
         <Routes>
-          <Route path="/" element={<Inicio />} />
+          <Route path="/" element={<Inicio modoEditar={true} />} />
+          <Route path="/cms" element={<Inicio />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/cms" element={<Inicio modoEditar={true} />} />
         </Routes>
       </Router>
     </NextUIProvider>
