@@ -13,6 +13,7 @@ import { Waypoint } from "react-waypoint";
 
 import ContactanosSection from "../organisms/ContactanosSection";
 import ContactanosForm from "../molecules/ContactanosForm";
+import RedesSociales from "../molecules/RedesSociales";
 
 import TextArea from "../atoms/TextArea";
 import TextField from "../atoms/TextField";
@@ -99,7 +100,7 @@ function Inicio({ modoEditar = false }) {
       </section> */}
       <section id="Mision-y-vision">
         <Waypoint
-          bottomOffset={"80%"}
+          // bottomOffset={"80%"}
           // topOffset={"95%"}
           onEnter={() => {
             setSeccionActual(2);
@@ -124,7 +125,7 @@ function Inicio({ modoEditar = false }) {
             />
           </MotionDiv>
           <Spacer y={2} />
-          <MotionDiv duracion={1} x={30} delay={1.5}>
+          <MotionDiv duracion={1} x={30} delay={1}>
             <VisionMision
               titulo={"Nuestra Visión"}
               contenido={vision}
@@ -136,21 +137,34 @@ function Inicio({ modoEditar = false }) {
         </div>
       </section>
 
-      <section id="Contactanos">
-        <Waypoint
-          onEnter={() => {
-            setSeccionActual(3);
-          }}
-        />
-        <div className="fondo-y-contacto">
-          <div className="contacto">
-            <ContactanosForm />
+      <MotionDiv duracion={1} y={-30}>
+        <section id="Contactanos">
+          <Waypoint
+            onEnter={() => {
+              setSeccionActual(3);
+            }}
+          />
+          <div className="fondo-y-contacto">
+            <div className="contacto">
+              <ContactanosForm modoEditar={modoEditar} />
+              <RedesSociales />
+            </div>
+            <div className="fondo-contacto">
+              <img src={FondoContacto} />
+            </div>
           </div>
-          <div className="fondo-contacto">
-            <img src={FondoContacto} />
+        </section>
+      </MotionDiv>
+
+      <footer>
+        <div className="footer">
+          <div className="derechos">© 2024 Aquaplus</div>
+          <div className="redes-sociales">
+            {/* <img src={IconoIg} />
+            <img src={IconoFb} /> */}
           </div>
         </div>
-      </section>
+      </footer>
     </>
   );
 }

@@ -295,6 +295,12 @@
   position: absolute;
   z-index: 20;
   width: 60%; }
+  #Contactanos .contacto .redes-sociales {
+    padding-top: 10px;
+    display: flex;
+    justify-content: space-between; }
+    #Contactanos .contacto .redes-sociales .media-card {
+      width: 49%; }
 
 #Contactanos .logo {
   width: 30px;
@@ -329,34 +335,61 @@
     width: 40%;
     min-width: 150px; }
 
-@media only screen and (max-width: 900px) {
-  #Contactanos .fondo-contacto {
-    position: absolute; }
-  #Contactanos .contacto {
-    position: relative;
-    width: 80%; }
-  #Contactanos .card-contacto {
-    margin-top: 30%; }
-  #Contactanos .logo {
-    width: 20px;
-    margin-right: 5px; }
-  #Contactanos .text-xl {
-    font-size: large; }
-  #Contactanos .nombre-correo {
+@media only screen and (max-width: 800px) {
+  #Contactanos {
+    margin-bottom: 50px; }
+    #Contactanos .fondo-contacto {
+      position: absolute; }
+    #Contactanos .contacto {
+      position: relative;
+      width: 80%; }
+      #Contactanos .contacto .redes-sociales {
+        padding-top: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center; }
+        #Contactanos .contacto .redes-sociales .text-md {
+          font-size: medium; }
+        #Contactanos .contacto .redes-sociales .media-card {
+          width: 100%;
+          margin-bottom: 2%; }
+    #Contactanos .card-contacto {
+      margin-top: 30%; }
+    #Contactanos .logo {
+      width: 25px;
+      margin-right: 5px; }
+    #Contactanos .text-xl {
+      font-size: large; }
+    #Contactanos .nombre-correo {
+      display: flex;
+      justify-content: space-between;
+      display: grid;
+      grid-template-rows: 1fr;
+      grid-template-columns: 100%;
+      grid-template-areas: "input-nombre" "input-correo";
+      gap: 10px;
+      margin-bottom: 10px; }
+      #Contactanos .nombre-correo #input-nombre {
+        grid-area: input-nombre; }
+      #Contactanos .nombre-correo #input-correo {
+        grid-area: input-correo; }
+    #Contactanos .footer-contacto :only-child {
+      width: 60%; } }
+
+.footer {
+  width: 100%;
+  height: 30px;
+  padding-left: 30px;
+  padding-right: 20px;
+  font-size: small;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas: "derechos redes-sociales";
+  justify-content: space-between; }
+  .footer .derechos {
+    grid-area: derechos;
     display: flex;
-    justify-content: space-between;
-    display: grid;
-    grid-template-rows: 1fr;
-    grid-template-columns: 100%;
-    grid-template-areas: "input-nombre" "input-correo";
-    gap: 10px;
-    margin-bottom: 10px; }
-    #Contactanos .nombre-correo #input-nombre {
-      grid-area: input-nombre; }
-    #Contactanos .nombre-correo #input-correo {
-      grid-area: input-correo; }
-  #Contactanos .footer-contacto :only-child {
-    width: 60%; } }
+    align-items: center; }
 
 .text-default {
   color: #505050; }
