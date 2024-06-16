@@ -13,7 +13,7 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
         <Routes>
           <Route path="/" element={<Inicio />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/cms" element={<Inicio modoEditar />} />
+          <Route path="/cms" element={<Inicio modoEditar={true} />} />
         </Routes>
       </Router>
     </NextUIProvider>
