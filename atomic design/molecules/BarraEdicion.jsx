@@ -14,6 +14,7 @@ import {
 } from "@nextui-org/react";
 
 export default function BarraEdicion({ setSeccionActual }) {
+  setSeccionActual(0);
   return (
     <nav class="navbar-edicion">
       <ul>
@@ -30,7 +31,6 @@ export default function BarraEdicion({ setSeccionActual }) {
             color="primary"
             href="/"
             variant="flat"
-            onPress={() => setSeccionActual(0)}
           >
             Descartar cambios
           </Button>

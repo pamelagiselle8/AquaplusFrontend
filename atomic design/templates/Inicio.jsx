@@ -96,7 +96,7 @@ function Inicio({ modoEditar = false }) {
       </section> */}
       <section id="Mision-y-vision">
         <Waypoint
-          // bottomOffset={"80%"}
+          bottomOffset={"80%"}
           // topOffset={"95%"}
           onEnter={() => {
             setSeccionActual(2);
@@ -120,7 +120,6 @@ function Inicio({ modoEditar = false }) {
               modoEditar={modoEditar}
             />
           </MotionDiv>
-
           <Spacer y={2} />
           <MotionDiv duracion={1} x={30} delay={1.5}>
             <VisionMision
