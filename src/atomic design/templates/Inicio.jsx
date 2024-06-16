@@ -132,7 +132,12 @@ function Inicio({ modoEditar = false }) {
           </MotionDiv>
           <div className="historia">
             {contenido.sobreNosotros.split("\n\n").map((paragraph, index) => (
-              <MotionDiv duracion={2} delay={index + 2} y={40}>
+              <MotionDiv
+                modoEditar={modoEditar}
+                duracion={2}
+                delay={index + 2}
+                y={40}
+              >
                 <p className="text-md text-default contenido" key={index}>
                   {paragraph}
                 </p>

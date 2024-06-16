@@ -29,7 +29,10 @@ export default function MotionDiv({
       }}
       initial="hidden"
       animate={mainControls}
-      transition={{ duration: modoEditar ? 0.5 : duracion, delay: delay }}
+      transition={{
+        duration: modoEditar ? 0.5 : duracion,
+        delay: modoEditar ? 0 : delay,
+      }}
     >
       {children}
     </motion.div>
