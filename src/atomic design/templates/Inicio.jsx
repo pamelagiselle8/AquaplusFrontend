@@ -35,9 +35,10 @@ import FondoContacto from "../../assets/fondoContacto.png";
 function Inicio({ modoEditar = false }) {
   const [mision, setMision] = useState("");
   const [vision, setVision] = useState("");
+  const [historia, setHistoria] = useState("");
 
   useEffect(() => {
-    cargarContenido({ setMision, setVision });
+    cargarContenido({ setMision, setVision, setHistoria });
     console.log("mision: ", mision);
     console.log("vision: ", vision);
   }, [vision, mision]);
@@ -96,13 +97,28 @@ function Inicio({ modoEditar = false }) {
         </section>
       </MotionDiv>
 
-      {/* <section id="Sobre-nosotros">
+      <section id="Sobre-nosotros">
         <Waypoint
           onEnter={() => {
             setSeccionActual(1);
           }}
         />
-      </section> */}
+        <div>
+          hola
+          <MotionDiv modoEditar={modoEditar} duracion={2}>
+            <h1
+              id="titulo-seccion"
+              className="text-2xl font-medium text-primary"
+            >
+              Sobre nosotros
+            </h1>
+            <div className="historia">
+              <p className="text-lg text-default">hola</p>
+            </div>
+          </MotionDiv>
+        </div>
+      </section>
+
       <section id="Mision-y-vision">
         <Waypoint
           // bottomOffset={"80%"}
@@ -165,10 +181,7 @@ function Inicio({ modoEditar = false }) {
       <footer>
         <div className="footer">
           <div className="derechos">© 2024 Aquaplus</div>
-          <div className="redes-sociales">
-            {/* <img src={IconoIg} />
-            <img src={IconoFb} /> */}
-          </div>
+          <div className="redes-sociales"></div>
         </div>
       </footer>
     </>

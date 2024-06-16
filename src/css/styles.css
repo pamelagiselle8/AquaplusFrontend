@@ -189,10 +189,22 @@
       #Inicio .boton {
         display: none; } }
 
-#Mision-y-vision #titulo-seccion {
+#titulo-seccion {
   display: flex;
   justify-content: center;
   align-items: center; }
+
+#Sobre-nosotros {
+  background-color: pink;
+  padding-bottom: 50px; }
+  #Sobre-nosotros .text-2xl {
+    font-size: xx-large; }
+  #Sobre-nosotros .text-md {
+    font-size: large; }
+  #Sobre-nosotros .historia {
+    background-color: lightblue;
+    padding: 10px;
+    text-align: start; }
 
 #Mision-y-vision .width-window {
   width: 100%;

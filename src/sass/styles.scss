@@ -225,13 +225,32 @@
   }
 }
 
+#titulo-seccion {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// Estilos seccion sobre nosotros
+#Sobre-nosotros {
+  background-color: pink;
+  padding-bottom: 50px;
+
+  .text-2xl {
+    font-size: xx-large;
+  }
+  .text-md {
+    font-size: large;
+  }
+  .historia {
+    background-color: lightblue;
+    padding: 10px;
+    text-align: start;
+  }
+}
+
 // Estilos seccion misión y visión
 #Mision-y-vision {
-  #titulo-seccion {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
   .width-window {
     width: 100%;
     display: grid;
