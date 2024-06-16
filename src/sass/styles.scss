@@ -1,0 +1,529 @@
+// Estilos globales
+.width-window {
+  width: 100%;
+}
+.centered {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.input {
+  height: 50px;
+  width: auto;
+}
+
+// Estilos para navbars
+@mixin navbar-style {
+  background-color: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(50px);
+  position: fixed;
+  z-index: 40;
+  width: 100%;
+  box-shadow: #004472 0px -10px 20px 0px;
+  display: flex;
+  align-items: center;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  padding-left: 4%;
+  padding-right: 4%;
+  min-height: 70px;
+  height: 8vw;
+  max-height: 90px;
+}
+
+// Navbar del módulo de edición
+.navbar-edicion {
+  @include navbar-style;
+  .text-lg {
+    font-size: x-large;
+  }
+  .text-md {
+    font-size: medium;
+  }
+  a {
+    width: 25%;
+  }
+  ul {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+  .botones-editar {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    :first-child {
+      margin-right: 8px;
+    }
+    .boton {
+      height: 90%;
+      width: 100%;
+    }
+  }
+  @media only screen and (max-width: 900px) {
+    min-height: 150px;
+    height: 150px;
+    max-height: 250px;
+    padding-left: 6%;
+    padding-right: 6%;
+    ul {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .texto {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .botones-editar {
+      // background-color: pink;
+      width: 100%;
+      display: flex;
+      justify-content: space-evenly;
+      margin-bottom: 5px;
+      margin-top: 15px;
+      .boton {
+        height: 40px;
+        width: 50%;
+      }
+    }
+  }
+}
+
+// Navbar de la página principal
+.navbar {
+  @include navbar-style;
+  a {
+    width: 25%;
+  }
+  ul {
+    padding-left: 5%;
+    padding-right: 5%;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+  }
+  .boton-colapsable {
+    display: none;
+  }
+  .marca {
+    width: min-content;
+    display: flex;
+    justify-content: flex-start;
+  }
+  #logo {
+    width: 100%;
+    min-width: 16vw;
+    min-width: 150px;
+    padding-left: 5%;
+  }
+  @media only screen and (max-width: 900px) {
+    justify-content: space-between;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    ul {
+      display: none;
+    }
+    #logo {
+      min-width: 140px;
+    }
+    .boton-login {
+      min-height: 30px;
+      // width: 100%;
+      font-size: small;
+    }
+    .boton-colapsable {
+      display: inline-flex;
+    }
+  }
+}
+
+// Estilos sección de inicio
+#Inicio {
+  overflow-x: hidden;
+  overflow-y: hidden;
+  // background-color: red;
+  padding-top: 20%;
+  padding-bottom: 30vw;
+  display: block;
+  position: relative;
+  .pad-left {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-left: 30%;
+    margin-left: 15%;
+  }
+  .text-hero {
+    font-size: 2vw;
+    width: 60%;
+    justify-content: center;
+    text-align: center;
+    padding-left: 20px;
+    line-height: 4.45vw;
+    .boton {
+      width: 30%;
+      height: 4.25vi;
+      margin-top: 3%;
+      z-index: 30;
+    }
+  }
+  .call-to-action {
+    width: 60%;
+  }
+  .grad {
+    position: absolute;
+    width: 75%;
+    z-index: 10;
+  }
+  .img-front {
+    width: 85%;
+    position: absolute;
+    z-index: 20;
+  }
+  #banner {
+    padding-top: 12vw;
+    // padding-top: 200px;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+  }
+  @media only screen and (max-width: 900px) {
+    padding-bottom: 30vw;
+    // padding-top: 35%;
+    padding-top: 25%;
+    #banner {
+      padding-top: 90px;
+      padding-right: 14%;
+      width: 110%;
+      height: auto;
+      position: relative;
+    }
+    .grad {
+      position: absolute;
+      width: 50%;
+      margin-right: 5%;
+      z-index: 10;
+    }
+    .text-hero {
+      font-size: 5vw;
+      width: 50%;
+      margin-left: 3%;
+      margin-top: -10%;
+      line-height: 5.5vw;
+    }
+    .text-4xl {
+      font-size: 6vw;
+    }
+    .boton {
+      display: none;
+    }
+  }
+}
+
+// Estilos seccion misión y visión
+#Mision-y-vision {
+  #titulo-seccion {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .width-window {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1.25fr 1fr;
+    grid-template-areas: "div-icono-texto div-imagen";
+    padding-top: 25px;
+  }
+  .titulo {
+    padding-bottom: 15px;
+  }
+  .div-icono-texto {
+    grid-area: div-icono-texto;
+    // background-color: pink;
+    display: flex;
+    align-items: flex-start;
+    padding-top: 20px;
+    width: 100%;
+    padding-left: 10%;
+  }
+  .div-imagen {
+    grid-area: div-imagen;
+    // background-color: lavender;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+  }
+  .div-texto {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .icono {
+    // min-width: 70px;
+    max-width: 15%;
+    max-height: 80px;
+    width: 9.5vw;
+    height: auto;
+    margin-right: 2vw;
+  }
+  .imagen {
+    width: 80%;
+    max-width: 400px;
+    height: auto;
+  }
+  .text-lg {
+    font-size: x-large;
+  }
+  .text-md {
+    font-size: large;
+  }
+  .text-2xl {
+    font-size: xx-large;
+  }
+
+  // Modulo de edición
+  .text-area {
+    // margin-left: -20px;
+    // width: 100px;
+  }
+
+  // Responsiveness
+  @media only screen and (max-width: 900px) {
+    .width-window {
+      display: grid;
+      grid-template-columns: 100%;
+      grid-template-rows: max-content 1fr;
+      grid-template-areas: "div-icono-texto" "div-imagen";
+      margin-top: 0%;
+    }
+    .titulo {
+      padding-bottom: 4%;
+    }
+    .div-icono-texto {
+      grid-area: div-icono-texto;
+      display: flex;
+      align-items: flex-start;
+      padding: 25px;
+      padding-left: 10%;
+      padding-right: 10%;
+      width: 100%;
+    }
+    .div-texto {
+      padding-bottom: 0%;
+      display: flex;
+      align-items: center;
+      .titulo {
+        align-self: flex-start;
+      }
+    }
+    .div-imagen {
+      display: flex;
+      justify-content: center;
+      margin: 0%;
+    }
+    .imagen {
+      max-width: 400px;
+    }
+    .text-lg {
+      font-size: large;
+    }
+    .text-md {
+      font-size: medium;
+    }
+    .text-2xl {
+      font-size: x-large;
+    }
+    .text-default {
+      margin-left: 0px;
+    }
+
+    // Modulo de edición
+    .text-area {
+      margin-left: -20px;
+      width: 100%;
+    }
+  }
+}
+
+#Contactanos {
+  .fondo-y-contacto {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+  .fondo-contacto {
+    width: 100%;
+    img {
+      z-index: 10;
+      width: 100%;
+    }
+  }
+  .contacto {
+    position: absolute;
+    z-index: 20;
+    width: 60%;
+    .redes-sociales {
+      padding-top: 10px;
+      display: flex;
+      justify-content: space-between;
+      .media-card {
+        width: 49%;
+      }
+    }
+  }
+  .logo {
+    width: 30px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  .text-xl {
+    padding-top: 20px;
+    font-size: x-large;
+  }
+  .campos-contacto {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .nombre-correo {
+    display: flex;
+    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "input-nombre input-correo";
+    gap: 10px;
+    margin-bottom: 10px;
+    #input-nombre {
+      grid-area: input-nombre;
+    }
+    #input-correo {
+      grid-area: input-correo;
+    }
+  }
+  .footer-contacto {
+    display: flex;
+    justify-content: center;
+    :only-child {
+      width: 40%;
+      min-width: 150px;
+    }
+  }
+
+  // Responsiveness
+  @media only screen and (max-width: 800px) {
+    margin-bottom: 50px;
+    .fondo-contacto {
+      position: absolute;
+    }
+    .contacto {
+      position: relative;
+      width: 80%;
+
+      .redes-sociales {
+        padding-top: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .text-md {
+          font-size: medium;
+        }
+        .media-card {
+          width: 100%;
+          margin-bottom: 2%;
+        }
+      }
+    }
+    .card-contacto {
+      margin-top: 30%;
+    }
+    .logo {
+      width: 25px;
+      margin-right: 5px;
+    }
+    .text-xl {
+      font-size: large;
+    }
+    .nombre-correo {
+      display: flex;
+      justify-content: space-between;
+      display: grid;
+      grid-template-rows: 1fr;
+      grid-template-columns: 100%;
+      grid-template-areas: "input-nombre" "input-correo";
+      gap: 10px;
+      margin-bottom: 10px;
+      #input-nombre {
+        grid-area: input-nombre;
+      }
+      #input-correo {
+        grid-area: input-correo;
+      }
+    }
+    .footer-contacto {
+      :only-child {
+        width: 60%;
+      }
+    }
+  }
+}
+
+// Estilos footer
+.footer {
+  // background-color: pink;
+  width: 100%;
+  height: 30px;
+  padding-left: 30px;
+  padding-right: 20px;
+  font-size: small;
+
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas: "derechos redes-sociales";
+  justify-content: space-between;
+
+  .derechos {
+    grid-area: derechos;
+    display: flex;
+    align-items: center;
+  }
+}
+
+// Estilos texto
+.text-default {
+  color: #505050;
+}
+
+.text-xs {
+  font-size: 0.5vw;
+}
+
+.text-sm {
+  font-size: 1vw;
+}
+
+.text-md {
+  font-size: 1.5vw;
+}
+
+.text-lg {
+  font-size: 2vw;
+}
+
+.text-xl {
+  font-size: 2.75vw;
+}
+
+.text-2xl {
+  font-size: 3.5vw;
+}
+
+.text-4xl {
+  font-size: 4vw;
+}

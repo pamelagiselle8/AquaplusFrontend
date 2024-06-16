@@ -1,0 +1,424 @@
+.width-window {
+  width: 100%; }
+
+.centered {
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+.input {
+  height: 50px;
+  width: auto; }
+
+.navbar-edicion {
+  background-color: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(50px);
+  position: fixed;
+  z-index: 40;
+  width: 100%;
+  box-shadow: #004472 0px -10px 20px 0px;
+  display: flex;
+  align-items: center;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  padding-left: 4%;
+  padding-right: 4%;
+  min-height: 70px;
+  height: 8vw;
+  max-height: 90px; }
+  .navbar-edicion .text-lg {
+    font-size: x-large; }
+  .navbar-edicion .text-md {
+    font-size: medium; }
+  .navbar-edicion a {
+    width: 25%; }
+  .navbar-edicion ul {
+    width: 100%;
+    display: flex;
+    justify-content: space-between; }
+  .navbar-edicion .botones-editar {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center; }
+    .navbar-edicion .botones-editar :first-child {
+      margin-right: 8px; }
+    .navbar-edicion .botones-editar .boton {
+      height: 90%;
+      width: 100%; }
+  @media only screen and (max-width: 900px) {
+    .navbar-edicion {
+      min-height: 150px;
+      height: 150px;
+      max-height: 250px;
+      padding-left: 6%;
+      padding-right: 6%; }
+      .navbar-edicion ul {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center; }
+      .navbar-edicion .texto {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start; }
+      .navbar-edicion .botones-editar {
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+        margin-bottom: 5px;
+        margin-top: 15px; }
+        .navbar-edicion .botones-editar .boton {
+          height: 40px;
+          width: 50%; } }
+
+.navbar {
+  background-color: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(50px);
+  position: fixed;
+  z-index: 40;
+  width: 100%;
+  box-shadow: #004472 0px -10px 20px 0px;
+  display: flex;
+  align-items: center;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  padding-left: 4%;
+  padding-right: 4%;
+  min-height: 70px;
+  height: 8vw;
+  max-height: 90px; }
+  .navbar a {
+    width: 25%; }
+  .navbar ul {
+    padding-left: 5%;
+    padding-right: 5%;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly; }
+  .navbar .boton-colapsable {
+    display: none; }
+  .navbar .marca {
+    width: min-content;
+    display: flex;
+    justify-content: flex-start; }
+  .navbar #logo {
+    width: 100%;
+    min-width: 16vw;
+    min-width: 150px;
+    padding-left: 5%; }
+  @media only screen and (max-width: 900px) {
+    .navbar {
+      justify-content: space-between;
+      padding-top: 20px;
+      padding-bottom: 20px; }
+      .navbar ul {
+        display: none; }
+      .navbar #logo {
+        min-width: 140px; }
+      .navbar .boton-login {
+        min-height: 30px;
+        font-size: small; }
+      .navbar .boton-colapsable {
+        display: inline-flex; } }
+
+#Inicio {
+  overflow-x: hidden;
+  overflow-y: hidden;
+  padding-top: 20%;
+  padding-bottom: 30vw;
+  display: block;
+  position: relative; }
+  #Inicio .pad-left {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-left: 30%;
+    margin-left: 15%; }
+  #Inicio .text-hero {
+    font-size: 2vw;
+    width: 60%;
+    justify-content: center;
+    text-align: center;
+    padding-left: 20px;
+    line-height: 4.45vw; }
+    #Inicio .text-hero .boton {
+      width: 30%;
+      height: 4.25vi;
+      margin-top: 3%;
+      z-index: 30; }
+  #Inicio .call-to-action {
+    width: 60%; }
+  #Inicio .grad {
+    position: absolute;
+    width: 75%;
+    z-index: 10; }
+  #Inicio .img-front {
+    width: 85%;
+    position: absolute;
+    z-index: 20; }
+  #Inicio #banner {
+    padding-top: 12vw;
+    width: 100%;
+    height: 100%;
+    position: absolute; }
+  @media only screen and (max-width: 900px) {
+    #Inicio {
+      padding-bottom: 30vw;
+      padding-top: 25%; }
+      #Inicio #banner {
+        padding-top: 90px;
+        padding-right: 14%;
+        width: 110%;
+        height: auto;
+        position: relative; }
+      #Inicio .grad {
+        position: absolute;
+        width: 50%;
+        margin-right: 5%;
+        z-index: 10; }
+      #Inicio .text-hero {
+        font-size: 5vw;
+        width: 50%;
+        margin-left: 3%;
+        margin-top: -10%;
+        line-height: 5.5vw; }
+      #Inicio .text-4xl {
+        font-size: 6vw; }
+      #Inicio .boton {
+        display: none; } }
+
+#Mision-y-vision #titulo-seccion {
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+#Mision-y-vision .width-window {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1.25fr 1fr;
+  grid-template-areas: "div-icono-texto div-imagen";
+  padding-top: 25px; }
+
+#Mision-y-vision .titulo {
+  padding-bottom: 15px; }
+
+#Mision-y-vision .div-icono-texto {
+  grid-area: div-icono-texto;
+  display: flex;
+  align-items: flex-start;
+  padding-top: 20px;
+  width: 100%;
+  padding-left: 10%; }
+
+#Mision-y-vision .div-imagen {
+  grid-area: div-imagen;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto; }
+
+#Mision-y-vision .div-texto {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; }
+
+#Mision-y-vision .icono {
+  max-width: 15%;
+  max-height: 80px;
+  width: 9.5vw;
+  height: auto;
+  margin-right: 2vw; }
+
+#Mision-y-vision .imagen {
+  width: 80%;
+  max-width: 400px;
+  height: auto; }
+
+#Mision-y-vision .text-lg {
+  font-size: x-large; }
+
+#Mision-y-vision .text-md {
+  font-size: large; }
+
+#Mision-y-vision .text-2xl {
+  font-size: xx-large; }
+
+@media only screen and (max-width: 900px) {
+  #Mision-y-vision .width-window {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: max-content 1fr;
+    grid-template-areas: "div-icono-texto" "div-imagen";
+    margin-top: 0%; }
+  #Mision-y-vision .titulo {
+    padding-bottom: 4%; }
+  #Mision-y-vision .div-icono-texto {
+    grid-area: div-icono-texto;
+    display: flex;
+    align-items: flex-start;
+    padding: 25px;
+    padding-left: 10%;
+    padding-right: 10%;
+    width: 100%; }
+  #Mision-y-vision .div-texto {
+    padding-bottom: 0%;
+    display: flex;
+    align-items: center; }
+    #Mision-y-vision .div-texto .titulo {
+      align-self: flex-start; }
+  #Mision-y-vision .div-imagen {
+    display: flex;
+    justify-content: center;
+    margin: 0%; }
+  #Mision-y-vision .imagen {
+    max-width: 400px; }
+  #Mision-y-vision .text-lg {
+    font-size: large; }
+  #Mision-y-vision .text-md {
+    font-size: medium; }
+  #Mision-y-vision .text-2xl {
+    font-size: x-large; }
+  #Mision-y-vision .text-default {
+    margin-left: 0px; }
+  #Mision-y-vision .text-area {
+    margin-left: -20px;
+    width: 100%; } }
+
+#Contactanos .fondo-y-contacto {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative; }
+
+#Contactanos .fondo-contacto {
+  width: 100%; }
+  #Contactanos .fondo-contacto img {
+    z-index: 10;
+    width: 100%; }
+
+#Contactanos .contacto {
+  position: absolute;
+  z-index: 20;
+  width: 60%; }
+  #Contactanos .contacto .redes-sociales {
+    padding-top: 10px;
+    display: flex;
+    justify-content: space-between; }
+    #Contactanos .contacto .redes-sociales .media-card {
+      width: 49%; }
+
+#Contactanos .logo {
+  width: 30px;
+  margin-left: 10px;
+  margin-right: 10px; }
+
+#Contactanos .text-xl {
+  padding-top: 20px;
+  font-size: x-large; }
+
+#Contactanos .campos-contacto {
+  padding-left: 15px;
+  padding-right: 15px; }
+
+#Contactanos .nombre-correo {
+  display: flex;
+  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: "input-nombre input-correo";
+  gap: 10px;
+  margin-bottom: 10px; }
+  #Contactanos .nombre-correo #input-nombre {
+    grid-area: input-nombre; }
+  #Contactanos .nombre-correo #input-correo {
+    grid-area: input-correo; }
+
+#Contactanos .footer-contacto {
+  display: flex;
+  justify-content: center; }
+  #Contactanos .footer-contacto :only-child {
+    width: 40%;
+    min-width: 150px; }
+
+@media only screen and (max-width: 800px) {
+  #Contactanos {
+    margin-bottom: 50px; }
+    #Contactanos .fondo-contacto {
+      position: absolute; }
+    #Contactanos .contacto {
+      position: relative;
+      width: 80%; }
+      #Contactanos .contacto .redes-sociales {
+        padding-top: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center; }
+        #Contactanos .contacto .redes-sociales .text-md {
+          font-size: medium; }
+        #Contactanos .contacto .redes-sociales .media-card {
+          width: 100%;
+          margin-bottom: 2%; }
+    #Contactanos .card-contacto {
+      margin-top: 30%; }
+    #Contactanos .logo {
+      width: 25px;
+      margin-right: 5px; }
+    #Contactanos .text-xl {
+      font-size: large; }
+    #Contactanos .nombre-correo {
+      display: flex;
+      justify-content: space-between;
+      display: grid;
+      grid-template-rows: 1fr;
+      grid-template-columns: 100%;
+      grid-template-areas: "input-nombre" "input-correo";
+      gap: 10px;
+      margin-bottom: 10px; }
+      #Contactanos .nombre-correo #input-nombre {
+        grid-area: input-nombre; }
+      #Contactanos .nombre-correo #input-correo {
+        grid-area: input-correo; }
+    #Contactanos .footer-contacto :only-child {
+      width: 60%; } }
+
+.footer {
+  width: 100%;
+  height: 30px;
+  padding-left: 30px;
+  padding-right: 20px;
+  font-size: small;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas: "derechos redes-sociales";
+  justify-content: space-between; }
+  .footer .derechos {
+    grid-area: derechos;
+    display: flex;
+    align-items: center; }
+
+.text-default {
+  color: #505050; }
+
+.text-xs {
+  font-size: 0.5vw; }
+
+.text-sm {
+  font-size: 1vw; }
+
+.text-md {
+  font-size: 1.5vw; }
+
+.text-lg {
+  font-size: 2vw; }
+
+.text-xl {
+  font-size: 2.75vw; }
+
+.text-2xl {
+  font-size: 3.5vw; }
+
+.text-4xl {
+  font-size: 4vw; }
