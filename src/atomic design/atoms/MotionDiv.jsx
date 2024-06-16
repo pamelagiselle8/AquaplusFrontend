@@ -7,6 +7,7 @@ export default function MotionDiv({
   delay = 0,
   x = 0,
   y = 0,
+  modoEditar = false,
 }) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
@@ -28,7 +29,7 @@ export default function MotionDiv({
       }}
       initial="hidden"
       animate={mainControls}
-      transition={{ duration: duracion, delay: delay }}
+      transition={{ duration: modoEditar ? 0.5 : duracion, delay: delay }}
     >
       {children}
     </motion.div>

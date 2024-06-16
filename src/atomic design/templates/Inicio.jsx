@@ -51,7 +51,7 @@ function Inicio({ modoEditar = false }) {
       ) : (
         <BarraEdicion setSeccionActual={setSeccionActual} />
       )}
-      <MotionDiv duracion={1.5} delay={0.25} y={10}>
+      <MotionDiv modoEditar={modoEditar} duracion={1.5} delay={0.25} y={10}>
         <section id="Inicio">
           <Waypoint
             onEnter={() => {
@@ -68,13 +68,18 @@ function Inicio({ modoEditar = false }) {
               </div>
             </div>
             <div className="text-hero">
-              <MotionDiv duracion={3} delay={1.25} y={50}>
+              <MotionDiv
+                modoEditar={modoEditar}
+                duracion={3}
+                delay={1.25}
+                y={50}
+              >
                 <p className="font-extralight text-primary text-4xl">
                   La esencia de <br /> la{" "}
                   <span className="font-semibold">pureza</span>
                 </p>
               </MotionDiv>
-              <MotionDiv duracion={3} delay={3} y={25}>
+              <MotionDiv modoEditar={modoEditar} duracion={3} delay={3} y={25}>
                 <Button
                   as={Link}
                   href="#Sobre-nosotros"
@@ -107,7 +112,7 @@ function Inicio({ modoEditar = false }) {
           }}
         />
         <div>
-          <MotionDiv duracion={2}>
+          <MotionDiv modoEditar={modoEditar} duracion={2}>
             <h1
               id="titulo-seccion"
               className="text-2xl font-medium text-primary"
@@ -115,7 +120,7 @@ function Inicio({ modoEditar = false }) {
               Misión y visión
             </h1>
           </MotionDiv>
-          <MotionDiv duracion={1} x={-30} delay={1}>
+          <MotionDiv modoEditar={modoEditar} duracion={1} x={-30} delay={1}>
             <VisionMision
               titulo={"Nuestra Misión"}
               contenido={mision}
@@ -125,7 +130,7 @@ function Inicio({ modoEditar = false }) {
             />
           </MotionDiv>
           <Spacer y={2} />
-          <MotionDiv duracion={1} x={30} delay={1}>
+          <MotionDiv modoEditar={modoEditar} duracion={1} x={30} delay={1}>
             <VisionMision
               titulo={"Nuestra Visión"}
               contenido={vision}
@@ -137,9 +142,10 @@ function Inicio({ modoEditar = false }) {
         </div>
       </section>
 
-      <MotionDiv duracion={1} y={-30}>
+      <MotionDiv modoEditar={modoEditar} duracion={1} y={-30}>
         <section id="Contactanos">
           <Waypoint
+            // topOffset={"95%"}
             onEnter={() => {
               setSeccionActual(3);
             }}
@@ -147,7 +153,7 @@ function Inicio({ modoEditar = false }) {
           <div className="fondo-y-contacto">
             <div className="contacto">
               <ContactanosForm modoEditar={modoEditar} />
-              <RedesSociales />
+              <RedesSociales userIg={"AquaplusHN"} userFb={"AquaplusHN"} />
             </div>
             <div className="fondo-contacto">
               <img src={FondoContacto} />

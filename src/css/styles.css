@@ -189,95 +189,103 @@
       #Inicio .boton {
         display: none; } }
 
-#Mision-y-vision {
-  padding-top: 5%;
-  padding-bottom: 6%; }
-  #Mision-y-vision #titulo-seccion {
-    display: flex;
-    justify-content: center;
-    align-items: center; }
+#Mision-y-vision #titulo-seccion {
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+#Mision-y-vision .width-window {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1.25fr 1fr;
+  grid-template-areas: "div-icono-texto div-imagen";
+  padding-top: 25px; }
+
+#Mision-y-vision .titulo {
+  padding-bottom: 15px; }
+
+#Mision-y-vision .div-icono-texto {
+  grid-area: div-icono-texto;
+  display: flex;
+  align-items: flex-start;
+  padding-top: 20px;
+  width: 100%;
+  padding-left: 10%; }
+
+#Mision-y-vision .div-imagen {
+  grid-area: div-imagen;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto; }
+
+#Mision-y-vision .div-texto {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; }
+
+#Mision-y-vision .icono {
+  max-width: 15%;
+  max-height: 80px;
+  width: 9.5vw;
+  height: auto;
+  margin-right: 2vw; }
+
+#Mision-y-vision .imagen {
+  width: 80%;
+  max-width: 400px;
+  height: auto; }
+
+#Mision-y-vision .text-lg {
+  font-size: x-large; }
+
+#Mision-y-vision .text-md {
+  font-size: large; }
+
+#Mision-y-vision .text-2xl {
+  font-size: xx-large; }
+
+@media only screen and (max-width: 900px) {
   #Mision-y-vision .width-window {
-    width: 100%;
     display: grid;
-    grid-template-columns: 1.25fr 1fr;
-    grid-template-areas: "div-icono-texto div-imagen";
-    padding-top: 25px; }
+    grid-template-columns: 100%;
+    grid-template-rows: max-content 1fr;
+    grid-template-areas: "div-icono-texto" "div-imagen";
+    margin-top: 0%; }
   #Mision-y-vision .titulo {
-    padding-bottom: 15px; }
+    padding-bottom: 4%; }
   #Mision-y-vision .div-icono-texto {
     grid-area: div-icono-texto;
     display: flex;
     align-items: flex-start;
-    padding-top: 20px;
-    width: 100%;
-    padding-left: 10%; }
+    padding: 25px;
+    padding-left: 10%;
+    padding-right: 10%;
+    width: 100%; }
+  #Mision-y-vision .div-texto {
+    padding-bottom: 0%;
+    display: flex;
+    align-items: center; }
+    #Mision-y-vision .div-texto .titulo {
+      align-self: flex-start; }
   #Mision-y-vision .div-imagen {
-    grid-area: div-imagen;
     display: flex;
     justify-content: center;
-    align-items: center;
-    height: auto; }
-  #Mision-y-vision .div-texto {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center; }
-  #Mision-y-vision .icono {
-    max-width: 15%;
-    max-height: 80px;
-    width: 9.5vw;
-    height: auto;
-    margin-right: 2vw; }
+    margin: 0%; }
   #Mision-y-vision .imagen {
-    width: 80%;
-    max-width: 400px;
-    height: auto; }
+    max-width: 400px; }
   #Mision-y-vision .text-lg {
-    font-size: x-large; }
-  #Mision-y-vision .text-md {
     font-size: large; }
+  #Mision-y-vision .text-md {
+    font-size: medium; }
   #Mision-y-vision .text-2xl {
-    font-size: xx-large; }
-  @media only screen and (max-width: 900px) {
-    #Mision-y-vision .width-window {
-      display: grid;
-      grid-template-columns: 100%;
-      grid-template-rows: max-content 1fr;
-      grid-template-areas: "div-icono-texto" "div-imagen";
-      margin-top: 0%; }
-    #Mision-y-vision .titulo {
-      padding-bottom: 4%; }
-    #Mision-y-vision .div-icono-texto {
-      grid-area: div-icono-texto;
-      display: flex;
-      align-items: flex-start;
-      padding: 25px;
-      padding-left: 10%;
-      padding-right: 10%;
-      width: 100%; }
-    #Mision-y-vision .div-texto {
-      padding-bottom: 0%;
-      display: flex;
-      align-items: center; }
-      #Mision-y-vision .div-texto .titulo {
-        align-self: flex-start; }
-    #Mision-y-vision .div-imagen {
-      display: flex;
-      justify-content: center;
-      margin: 0%; }
-    #Mision-y-vision .imagen {
-      max-width: 400px; }
-    #Mision-y-vision .text-lg {
-      font-size: large; }
-    #Mision-y-vision .text-md {
-      font-size: medium; }
-    #Mision-y-vision .text-2xl {
-      font-size: x-large; }
-    #Mision-y-vision .text-default {
-      margin-left: 0px; }
-    #Mision-y-vision .text-area {
-      margin-left: -20px;
-      width: 100%; } }
+    font-size: x-large; }
+  #Mision-y-vision .text-default {
+    margin-left: 0px; }
+  #Mision-y-vision .text-area {
+    margin-left: -20px;
+    width: 100%; } }
 
 #Contactanos .fondo-y-contacto {
   display: flex;
