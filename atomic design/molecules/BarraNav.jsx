@@ -15,8 +15,8 @@ import {
 import { Link as RouterLink } from "react-router-dom";
 import LoginModal from "../molecules/LogInModal";
 
-import Logo from "../../src/assets/LogoTextoHD.png";
-import IconoMenu from "../../src/assets/open-menu.png";
+import Logo from "../../assets/LogoTextoHD.png";
+import IconoMenu from "../../assets/open-menu.png";
 
 function colorSeleccion(seccionActual, seccion) {
   return seccionActual === seccion

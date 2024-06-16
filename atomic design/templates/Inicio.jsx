@@ -23,10 +23,10 @@ import VisionMision from "../molecules/VisionMision";
 
 import { cargarContenido } from "../../services/contenido";
 
-import BannerPrincipal from "../../src/assets/banner.png";
-import Gradiente from "../../src/assets/gradiente.png";
-import IconoVision from "../../src/assets/iconoVision.png";
-import IconoMision from "../../src/assets/iconoMision.png";
+import BannerPrincipal from "../../assets/banner.png";
+import Gradiente from "../../assets/gradiente.png";
+import IconoVision from "../../assets/iconoVision.png";
+import IconoMision from "../../assets/iconoMision.png";
 
 function Inicio({ modoEditar = false }) {
   const [mision, setMision] = useState("");
