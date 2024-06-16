@@ -42,12 +42,21 @@ function Inicio({ modoEditar = false }) {
     console.log("mision: ", mision);
     console.log("vision: ", vision);
   }, [vision, mision]);
+  const [isLoggedIn, setIsLoggedIn] = useState(false); // State to check if user is logged in
+
+  useEffect(() => {
+    cargarContenido({ setMision, setVision });
+    const token = localStorage.getItem("authToken");
+    if (token) {
+      setIsLoggedIn(true); // Set isLoggedIn to true if token exists
+    }
+  }, []);
 
   const [seccionActual, setSeccionActual] = useState(0);
 
   return (
     <>
-      {!modoEditar ? (
+      {!modoEditar && !isLoggedIn ? (
         <BarraNav seccionActual={seccionActual} />
       ) : (
         <BarraEdicion setSeccionActual={setSeccionActual} />
@@ -100,7 +109,7 @@ function Inicio({ modoEditar = false }) {
       <section id="Sobre-nosotros">
         <Waypoint
           onEnter={() => {
-            setSeccionActual(1);
+            setSeccionActual(0);
           }}
         />
         <div>
@@ -121,8 +130,6 @@ function Inicio({ modoEditar = false }) {
 
       <section id="Mision-y-vision">
         <Waypoint
-          // bottomOffset={"80%"}
-          // topOffset={"95%"}
           onEnter={() => {
             setSeccionActual(2);
           }}
