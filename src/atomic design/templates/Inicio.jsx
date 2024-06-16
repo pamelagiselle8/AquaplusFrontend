@@ -66,8 +66,10 @@ function Inicio({ modoEditar = false }) {
             <div className="text-hero">
               <MotionDiv duracion={3} delay={1.25} y={50}>
                 <p className="font-extralight text-primary text-4xl">
-                  La esencia de <br /> la{" "}
-                  <span className="font-semibold">pureza</span>
+                  La esencia de
+                </p>
+                <p className="font-extralight text-primary text-4xl">
+                  la <span className="font-semibold">pureza</span>
                 </p>
               </MotionDiv>
               <MotionDiv duracion={3} delay={3} y={25}>
