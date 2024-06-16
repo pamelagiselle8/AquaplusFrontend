@@ -1,24 +1,10 @@
 import axios from "axios";
+const URL = "https://backendaquaplus.onrender.com/";
 
-function cargarContenido({ setMision, setVision }) {
-  cargarMision({ setMision });
-  cargarVision({ setVision });
+async function cargarContenido({ setContenido }) {
+  await axios.get(URL + "getInformacionPagina").then((res) => {
+    setContenido(res.data.arr[0]);
+  });
 }
 
-function cargarMision({ setMision }) {
-  axios
-    .get("https://backendaquaplus.onrender.com/obtenerMision")
-    .then((res) => {
-      setMision(res.data.contenido);
-    });
-}
-
-function cargarVision({ setVision }) {
-  axios
-    .get("https://backendaquaplus.onrender.com/obtenerVision")
-    .then((res) => {
-      setVision(res.data.contenido);
-    });
-}
-
-export { cargarContenido, cargarMision, cargarVision };
+export { cargarContenido };

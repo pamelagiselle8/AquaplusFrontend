@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Modal,
   ModalContent,
@@ -12,27 +12,52 @@ import {
   Link,
   Spacer,
 } from "@nextui-org/react";
-import Boton from "../atoms/Boton";
+import Boton from "../atoms/Boton"; // Assuming you have a custom button component
 import { MailIcon } from "../icons/MailIcon.jsx";
 import { LockIcon } from "../icons/LockIcon.jsx";
+import axios from "axios";
+import ForgotPasswordModal from "./ForgotPasswordModal"; // Import the ForgotPasswordModal component
 
 export default function LoginModal() {
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
-  const [backdrop, setBackdrop] = React.useState("blur");
+  const [backdrop, setBackdrop] = useState("blur");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
 
-  const handleOpen = (backdrop) => {
-    setBackdrop(backdrop);
-    onOpen();
+  const resetFields = () => {
+    setEmail("");
+    setPassword("");
+    setErrorMessage("");
   };
 
-  // Apply CSS to prevent layout shift
+  const handleSubmit = async () => {
+    try {
+      const response = await axios.post("https://backendaquaplus.onrender.com/logIn", { email, password });
+      const { success, user } = response.data;
+      if (success) {
+        console.log("Login successful:", user);
+        window.location.href = "/cms";
+      }
+    } catch (error) {
+      console.error("Error during login:", error.message);
+      setErrorMessage("El Correo o Contraseña que ingresó es incorrecto. Por favor, inténtalo de nuevo.");
+    }
+  };
+
   React.useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = "hidden";
     } else {
       document.body.style.overflow = "unset";
+      resetFields();
     }
   }, [isOpen]);
+
+  const handleOpen = (backdrop) => {
+    setBackdrop(backdrop);
+    onOpen();
+  };
 
   return (
     <>
@@ -49,7 +74,12 @@ export default function LoginModal() {
       <Modal
         backdrop={backdrop}
         isOpen={isOpen}
-        onOpenChange={onOpenChange}
+        onOpenChange={(isOpen) => {
+          onOpenChange(isOpen);
+          if (!isOpen) {
+            resetFields();
+          }
+        }}
         placement="top-center"
       >
         <ModalContent>
@@ -63,32 +93,35 @@ export default function LoginModal() {
                   color="primary"
                   className="text-default"
                   autoFocus
-                  endContent={
-                    <MailIcon className="text-lg text-secondary text-default-400 pointer-events-none flex-shrink-0" />
-                  }
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  endContent={<MailIcon className="text-lg text-secondary text-default-400 pointer-events-none flex-shrink-0" />}
                   label={<p className="text-default">Correo electrónico</p>}
                   variant="bordered"
                 />
                 <Input
                   color="primary"
-                  endContent={
-                    <LockIcon className="text-lg text-secondary text-default-400 pointer-events-none flex-shrink-0" />
-                  }
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  endContent={<LockIcon className="text-lg text-secondary text-default-400 pointer-events-none flex-shrink-0" />}
                   label={<p className="text-default">Contraseña</p>}
                   type="password"
                   variant="bordered"
                 />
-                <div className="flex py-2 px-1 justify-between">
-                  <Checkbox
+                {errorMessage && (
+                  <p style={{ color: "red", fontSize: "0.875rem", marginTop: "0.25rem" }}>
+                    {errorMessage}
+                  </p>
+                )}
+                <div className="flex py-2 px-1 justify-end">
+                  {/* <Checkbox
                     color="secondary"
                     className="text-white"
                     classNames={{ label: "text-small" }}
                   >
                     Recuérdame
-                  </Checkbox>
-                  <Link color="primary" href="#" size="sm">
-                    ¿Olvidaste tu contraseña?
-                  </Link>
+                  </Checkbox> */}
+                  <ForgotPasswordModal isOpen={isOpen} onOpenChange={onOpenChange} />
                 </div>
                 <Spacer y={1} />
               </ModalBody>
@@ -97,10 +130,7 @@ export default function LoginModal() {
                 <Button
                   color="primary"
                   className="text-white"
-                  onPress={() => {
-                    onClose;
-                    window.location.href = "/cms";
-                  }}
+                  onPress={handleSubmit}
                 >
                   Iniciar Sesión
                 </Button>
