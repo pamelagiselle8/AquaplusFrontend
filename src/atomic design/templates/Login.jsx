@@ -1,5 +1,5 @@
-import React from 'react';
-import LogInModal from '../molecules/LogInModal';
+import React from "react";
+import LogInModal from "../molecules/LogInModal";
 
 const Login = () => {
   return (
