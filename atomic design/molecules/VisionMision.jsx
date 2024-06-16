@@ -1,17 +1,47 @@
-import { Image } from "@nextui-org/react";
+import { Image, Input, Spacer, Textarea } from "@nextui-org/react";
+// import TextArea from "../atoms/TextArea";
 
-export default function VisionMision({ titulo, contenido, icono, imagen }) {
+export default function VisionMision({
+  titulo,
+  contenido,
+  icono,
+  imagen,
+  modoEditar = false,
+}) {
+  const MockItem = ({ text }) => {
+    return (
+      <Card css={{ h: "$20", $$cardColor: "$colors$primary" }}>
+        <Card.Body>
+          <Text h6 size={15} color="white" css={{ m: 0 }}>
+            {text}
+          </Text>
+        </Card.Body>
+      </Card>
+    );
+  };
+
   return (
     <div className="width-window ">
-      <div className="icono-texto">
+      <div className="div-icono-texto">
         <img className="icono" src={icono} />
-        <div className="texto">
-          <h1 className="text-xl text-primary titulo">{titulo}</h1>
-          <h1 className="text-lg font-light text-default">{contenido}</h1>
+        <div className="div-texto">
+          <h1 className="text-lg text-primary titulo">{titulo}</h1>
+          {!modoEditar ? (
+            <h1 className="text-md font-light text-default">{contenido}</h1>
+          ) : (
+            <>
+              <Textarea
+                value={contenido}
+                description="Editar contenido aqui"
+                variant="bordered"
+                className="text-md font-light text-default text-area"
+              ></Textarea>
+            </>
+          )}
         </div>
       </div>
-      <div className="imagen">
-        <Image className="" src={imagen} />
+      <div className="div-imagen">
+        <Image removeWrapper className="imagen" src={imagen} />
       </div>
     </div>
   );

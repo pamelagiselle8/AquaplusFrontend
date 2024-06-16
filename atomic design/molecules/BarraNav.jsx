@@ -5,51 +5,111 @@ import {
   NavbarContent,
   NavbarItem,
   Link,
+  Button,
+  Spacer,
+  Dropdown,
+  DropdownTrigger,
+  DropdownMenu,
+  DropdownItem,
 } from "@nextui-org/react";
 import { Link as RouterLink } from "react-router-dom";
-import LoginModal from "../molecules/LogInModal"; // Adjust the path according to your file structure
+import LoginModal from "../molecules/LogInModal";
 
-export default function BarraNav({ seccionActual, modoEditar = false }) {
+import Logo from "../../assets/LogoTextoHD.png";
+import IconoMenu from "../../assets/open-menu.png";
+
+function colorSeleccion(seccionActual, seccion) {
+  return seccionActual === seccion
+    ? "text-secondary font-medium"
+    : "text-foreground font-regular";
+}
+
+export default function BarraNav({ seccionActual }) {
   return (
-    <Navbar className="shadow-small">
-      <NavbarBrand>
+    <nav class="navbar">
+      <div className="marca">
+        <Dropdown>
+          <DropdownTrigger>
+            <Button
+              className="boton-colapsable"
+              isIconOnly
+              variant="flat"
+              color="white"
+              size="sm"
+              startContent={<img src={IconoMenu} />}
+            />
+          </DropdownTrigger>
+          <DropdownMenu
+            variant="light"
+            color="primary"
+            className="text-default"
+            aria-label="Link Actions"
+          >
+            <DropdownItem
+              className={colorSeleccion(seccionActual, 0)}
+              key="Inicio"
+              href="#"
+            >
+              Inicio
+            </DropdownItem>
+            <DropdownItem
+              className={colorSeleccion(seccionActual, 1)}
+              key="Sobre-nosotros"
+              href="#Sobre-nosotros"
+            >
+              Sobre nosotros
+            </DropdownItem>
+            <DropdownItem
+              className={colorSeleccion(seccionActual, 2)}
+              key="Mision-y-vision"
+              href="#Mision-y-vision"
+            >
+              Misión y visión
+            </DropdownItem>
+            <DropdownItem
+              className={colorSeleccion(seccionActual, 3)}
+              key="Contactanos"
+              href="#Contactanos"
+            >
+              Contáctanos
+            </DropdownItem>
+          </DropdownMenu>
+        </Dropdown>
         <Link href="#">
-          <img id="logo" src="../../assets/LogoTextoHD.png" alt="Logo" />
+          <img id="logo" src={Logo} alt="Logo" />
         </Link>
-      </NavbarBrand>
-
-      <NavbarContent className="sm:flex gap-4" justify="center">
-        <NavbarItem>
-          <Link
+      </div>
+      <ul>
+        <li>
+          <a className={colorSeleccion(seccionActual, 0)} href="#">
+            Inicio
+          </a>
+        </li>
+        <li>
+          <a
+            className={colorSeleccion(seccionActual, 1)}
             href="#Sobre-nosotros"
-            color={seccionActual === 1 ? "primary" : "foreground"}
           >
             Sobre nosotros
-          </Link>
-        </NavbarItem>
-        <NavbarItem>
-          <Link
+          </a>
+        </li>
+        <li>
+          <a
+            className={colorSeleccion(seccionActual, 2)}
             href="#Mision-y-vision"
-            color={seccionActual === 2 ? "primary" : "foreground"}
           >
             Misión y visión
-          </Link>
-        </NavbarItem>
-        <NavbarItem>
-          <Link
-            href="#Contactanos"
-            color={seccionActual === 3 ? "primary" : "foreground"}
-          >
+          </a>
+        </li>
+        <li>
+          <a className={colorSeleccion(seccionActual, 3)} href="#Contactanos">
             Contáctanos
-          </Link>
-        </NavbarItem>
-      </NavbarContent>
-
-      <NavbarContent justify="end">
-        <NavbarItem>
-          <LoginModal />
-        </NavbarItem>
-      </NavbarContent>
-    </Navbar>
+          </a>
+        </li>
+      </ul>
+      <div className="boton-login">
+        <LoginModal />
+      </div>
+    </nav>
   );
 }

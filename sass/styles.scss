@@ -1,49 +1,153 @@
-#contacto {
-  padding-top: 10%;
-  height: auto;
-}
-
+// Estilos globales
 .width-window {
   width: 100%;
 }
-
-.outer {
-  display: inline-block;
-}
-
 .centered {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
-#logo {
-  height: 30px;
-  min-width: 142px;
-}
-
 .input {
   height: 50px;
   width: auto;
 }
 
-// .mision-vision {
-//   position: "absolute";
-//   top: "70%";
-//   left: "2%";
-//   right: "2%";
-//   background-color: "rgba(255, 255, 255, 0.4)";
-//   justify-content: "center";
-//   padding: "20px";
-//   border-radius: "25px";
-//   display: "flex";
-//   gap: "30px";
-// }
+// Estilos para navbars
+@mixin navbar-style {
+  background-color: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(50px);
+  position: fixed;
+  z-index: 40;
+  width: 100%;
+  box-shadow: #004472 0px -10px 20px 0px;
+  display: flex;
+  align-items: center;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  padding-left: 4%;
+  padding-right: 4%;
+  min-height: 80px;
+  height: 8vw;
+  max-height: 90px;
+}
 
-// Estilos hero section
-#hero {
-  padding-top: 12vw;
-  padding-bottom: 25vw;
+// Navbar del módulo de edición
+.navbar-edicion {
+  @include navbar-style;
+  .text-lg {
+    font-size: x-large;
+  }
+  .text-md {
+    font-size: medium;
+  }
+  a {
+    width: 25%;
+  }
+  ul {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+  .botones-editar {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    :first-child {
+      margin-right: 8px;
+    }
+    .boton {
+      height: 90%;
+      width: 100%;
+    }
+  }
+  @media only screen and (max-width: 900px) {
+    min-height: 150px;
+    height: 150px;
+    max-height: 250px;
+    padding-left: 6%;
+    padding-right: 6%;
+    ul {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .texto {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .botones-editar {
+      // background-color: pink;
+      width: 100%;
+      display: flex;
+      justify-content: space-evenly;
+      margin-bottom: 5px;
+      margin-top: 15px;
+      .boton {
+        height: 40px;
+        width: 50%;
+      }
+    }
+  }
+}
+
+// Navbar de la página principal
+.navbar {
+  @include navbar-style;
+  a {
+    width: 25%;
+  }
+  ul {
+    padding-left: 5%;
+    padding-right: 5%;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+  }
+  .boton-colapsable {
+    display: none;
+  }
+  .marca {
+    width: min-content;
+    display: flex;
+    justify-content: flex-start;
+  }
+  #logo {
+    width: 100%;
+    min-width: 16vw;
+    min-width: 150px;
+    padding-left: 5%;
+  }
+  @media only screen and (max-width: 900px) {
+    justify-content: space-between;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    ul {
+      display: none;
+    }
+    #logo {
+      min-width: 140px;
+    }
+    .boton-login {
+      min-height: 30px;
+      // width: 100%;
+      font-size: small;
+    }
+    .boton-colapsable {
+      display: inline-flex;
+    }
+  }
+}
+
+// Estilos sección de inicio
+#Inicio {
+  overflow-x: hidden;
+  overflow-y: hidden;
+  // background-color: red;
+  padding-top: 20%;
+  padding-bottom: 30vw;
   display: block;
   position: relative;
   .pad-left {
@@ -83,60 +187,170 @@
   }
   #banner {
     padding-top: 12vw;
+    // padding-top: 200px;
     width: 100%;
     height: 100%;
     position: absolute;
   }
+  @media only screen and (max-width: 900px) {
+    padding-bottom: 30vw;
+    padding-top: 35%;
+    #banner {
+      padding-top: 90px;
+      padding-right: 14%;
+      width: 110%;
+      height: auto;
+      position: relative;
+    }
+    .grad {
+      position: absolute;
+      width: 50%;
+      margin-right: 5%;
+      z-index: 10;
+    }
+    .text-hero {
+      font-size: 5vw;
+      width: 50%;
+      margin-left: 3%;
+      margin-top: -10%;
+      line-height: 5.5vw;
+    }
+    .text-4xl {
+      font-size: 6vw;
+    }
+    .boton {
+      display: none;
+    }
+  }
 }
 
-// Estilos seccion mision y vision
+// Estilos seccion misión y visión
 #Mision-y-vision {
+  // Padding arriba y abajo de toda la seccion
+  padding-top: 5%;
+  padding-bottom: 6%;
   #titulo-seccion {
-    padding-top: 10%;
-    padding-bottom: 5vw;
     display: flex;
     justify-content: center;
     align-items: center;
   }
   .width-window {
     width: 100%;
-    display: flex;
-    overflow-wrap: normal;
-    margin-right: 5%;
-    margin-left: 5%;
-    margin-bottom: 5%;
-  }
-  .icono-texto {
-    // background-color: red;
-    width: 50%;
-    display: flex;
-    align-items: center;
-    padding-bottom: 8vw;
+    display: grid;
+    grid-template-columns: 1.25fr 1fr;
+    grid-template-areas: "div-icono-texto div-imagen";
+    padding-top: 25px;
   }
   .titulo {
-    margin-bottom: 1vw;
+    padding-bottom: 15px;
   }
-  .icono {
-    min-width: 70px;
-    max-width: 15%;
-    max-height: 80px;
-    // width: 9.75vw;
+  .div-icono-texto {
+    grid-area: div-icono-texto;
+    // background-color: pink;
+    display: flex;
+    align-items: flex-start;
+    padding-top: 20px;
+    width: 100%;
+    padding-left: 10%;
+  }
+  .div-imagen {
+    grid-area: div-imagen;
+    // background-color: lavender;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: auto;
-    margin-right: 2vw;
-    margin-top: 5vw;
   }
-  .texto {
+  .div-texto {
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding-right: 5%;
+  }
+  .icono {
+    // min-width: 70px;
+    max-width: 15%;
+    max-height: 80px;
+    width: 9.5vw;
+    height: auto;
+    margin-right: 2vw;
   }
   .imagen {
-    // background-color: blue;
-    display: flex;
-    justify-content: flex-end;
-    width: 40%;
+    width: 80%;
+    max-width: 400px;
     height: auto;
+  }
+  .text-lg {
+    font-size: x-large;
+  }
+  .text-md {
+    font-size: large;
+  }
+  .text-2xl {
+    font-size: xx-large;
+  }
+
+  // Modulo de edición
+  .text-area {
+    // margin-left: -20px;
+    // width: 100px;
+  }
+
+  // Responsiveness
+  @media only screen and (max-width: 900px) {
+    .width-window {
+      display: grid;
+      grid-template-columns: 100%;
+      grid-template-rows: max-content 1fr;
+      grid-template-areas: "div-icono-texto" "div-imagen";
+      margin-top: 0%;
+    }
+    .titulo {
+      padding-bottom: 4%;
+    }
+    .div-icono-texto {
+      grid-area: div-icono-texto;
+      display: flex;
+      align-items: flex-start;
+      padding: 25px;
+      padding-left: 10%;
+      padding-right: 10%;
+      width: 100%;
+    }
+    .div-texto {
+      padding-bottom: 0%;
+      display: flex;
+      align-items: center;
+      .titulo {
+        align-self: flex-start;
+      }
+    }
+    .div-imagen {
+      display: flex;
+      justify-content: center;
+      margin: 0%;
+    }
+    .imagen {
+      max-width: 400px;
+    }
+    .text-lg {
+      font-size: large;
+    }
+    .text-md {
+      font-size: medium;
+    }
+    .text-2xl {
+      font-size: x-large;
+    }
+    .text-default {
+      margin-left: 0px;
+    }
+
+    // Modulo de edición
+    .text-area {
+      margin-left: -20px;
+      width: 100%;
+    }
   }
 }
 
@@ -160,6 +374,7 @@
 .text-lg {
   font-size: 2vw;
 }
+
 .text-xl {
   font-size: 2.75vw;
 }

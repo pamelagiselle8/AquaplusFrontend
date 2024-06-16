@@ -10,6 +10,7 @@ import {
   Checkbox,
   Input,
   Link,
+  Spacer,
 } from "@nextui-org/react";
 import Boton from "../atoms/Boton";
 import { MailIcon } from "../icons/MailIcon.jsx";
@@ -55,10 +56,12 @@ export default function LoginModal() {
   return (
     <>
       <Button
-        className="rounded-large shadow-small"
+        className="rounded-full shadow-small boton-login"
         color="primary"
         variant="flat"
         onPress={() => handleOpen("blur")}
+        fullWidth
+        size="md"
       >
         Iniciar Sesión
       </Button>
@@ -71,9 +74,9 @@ export default function LoginModal() {
         <ModalContent>
           {(onClose) => (
             <>
-              <ModalHeader className="text-xl flex flex-col gap-1">
-                Iniciar sesión
-              </ModalHeader>
+              <Spacer y={2} />
+              <ModalHeader className="text-primary">Iniciar sesión</ModalHeader>
+              <Spacer y={1} />
               <ModalBody>
                 <Input
                   color="primary"
@@ -82,10 +85,7 @@ export default function LoginModal() {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   endContent={
-                    <MailIcon
-                      color="secondary"
-                      className="text-2xl text-default-400 pointer-events-none flex-shrink-0"
-                    />
+                    <MailIcon className="text-lg text-secondary text-default-400 pointer-events-none flex-shrink-0" />
                   }
                   label={<p className="text-default">Correo electrónico</p>}
                   variant="bordered"
@@ -95,10 +95,7 @@ export default function LoginModal() {
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   endContent={
-                    <LockIcon
-                      color="secondary"
-                      className="text-2xl text-default-400 pointer-events-none flex-shrink-0"
-                    />
+                    <LockIcon className="text-lg text-secondary text-default-400 pointer-events-none flex-shrink-0" />
                   }
                   label={<p className="text-default">Contraseña</p>}
                   type="password"
@@ -111,6 +108,7 @@ export default function LoginModal() {
                 )}
                 <div className="flex py-2 px-1 justify-between">
                   <Checkbox
+                    color="secondary"
                     className="text-white"
                     classNames={{ label: "text-small" }}
                   >
@@ -120,13 +118,26 @@ export default function LoginModal() {
                     ¿Olvidaste tu contraseña?
                   </Link>
                 </div>
+                <Spacer y={1} />
               </ModalBody>
               <ModalFooter>
                 <Boton buttonText="Cerrar" onPress={onClose} />
+<<<<<<< HEAD
                 <Button color="primary" onPress={handleSubmit}>
+=======
+                <Button
+                  color="primary"
+                  className="text-white"
+                  onPress={() => {
+                    onClose;
+                    window.location.href = "/cms";
+                  }}
+                >
+>>>>>>> 94114e90706d0c4a9a77f134f7299f244eed81ea
                   Iniciar Sesión
                 </Button>
               </ModalFooter>
+              <Spacer y={1} />
             </>
           )}
         </ModalContent>
