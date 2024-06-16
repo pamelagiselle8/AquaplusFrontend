@@ -233,19 +233,32 @@
 
 // Estilos seccion sobre nosotros
 #Sobre-nosotros {
-  background-color: pink;
+  // background-color: pink;
   padding-bottom: 50px;
-
   .text-2xl {
     font-size: xx-large;
+    padding-bottom: 15px;
   }
   .text-md {
-    font-size: large;
+    font-size: medium;
   }
   .historia {
-    background-color: lightblue;
+    // background-color: lightblue;
     padding: 10px;
+    padding-left: 5%;
+    padding-right: 5%;
     text-align: start;
+  }
+  .contenido {
+    padding-bottom: 15px;
+  }
+  @media only screen and (max-width: 900px) {
+    .text-md {
+      font-size: medium;
+    }
+    .text-2xl {
+      font-size: x-large;
+    }
   }
 }
 

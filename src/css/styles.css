@@ -195,16 +195,24 @@
   align-items: center; }
 
 #Sobre-nosotros {
-  background-color: pink;
   padding-bottom: 50px; }
   #Sobre-nosotros .text-2xl {
-    font-size: xx-large; }
+    font-size: xx-large;
+    padding-bottom: 15px; }
   #Sobre-nosotros .text-md {
-    font-size: large; }
+    font-size: medium; }
   #Sobre-nosotros .historia {
-    background-color: lightblue;
     padding: 10px;
+    padding-left: 5%;
+    padding-right: 5%;
     text-align: start; }
+  #Sobre-nosotros .contenido {
+    padding-bottom: 15px; }
+  @media only screen and (max-width: 900px) {
+    #Sobre-nosotros .text-md {
+      font-size: medium; }
+    #Sobre-nosotros .text-2xl {
+      font-size: x-large; } }
 
 #Mision-y-vision .width-window {
   width: 100%;
