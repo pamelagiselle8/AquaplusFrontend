@@ -1,7 +1,7 @@
 import React from 'react';
 import LogInModal from '../molecules/LogInModal';
 
-const Login: React.FC = () => {
+const Login = () => {
   return (
     <div>
       <LogInModal />

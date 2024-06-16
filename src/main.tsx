@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Inicio from "./atomicDesign/templates/Inicio.jsx";
-import Login from "./atomicDesign/templates/Login.tsx";
+import Login from "./atomicDesign/templates/Login.jsx";
 
 import "./index.css";
 import { NextUIProvider } from "@nextui-org/react";
