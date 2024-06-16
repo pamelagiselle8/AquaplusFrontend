@@ -12,23 +12,24 @@ import {
   Link,
   Spacer,
 } from "@nextui-org/react";
-import Boton from "../atoms/Boton";
+import Boton from "../atoms/Boton"; // Assuming you have a custom button component
 import { MailIcon } from "../icons/MailIcon.jsx";
 import { LockIcon } from "../icons/LockIcon.jsx";
 import axios from "axios";
+import ForgotPasswordModal from "./ForgotPasswordModal"; // Import the ForgotPasswordModal component
 
 export default function LoginModal() {
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
   const [backdrop, setBackdrop] = useState("blur");
-
-  const handleOpen = (backdrop) => {
-    setBackdrop(backdrop);
-    onOpen();
-  };
-
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [errorMessage, setErrorMessage] = useState(""); // State for error message
+  const [errorMessage, setErrorMessage] = useState("");
+
+  const resetFields = () => {
+    setEmail("");
+    setPassword("");
+    setErrorMessage("");
+  };
 
   const handleSubmit = async () => {
     try {
@@ -36,25 +37,27 @@ export default function LoginModal() {
       const { success, user } = response.data;
       if (success) {
         console.log("Login successful:", user);
-        window.location.href = "/cms"; 
-      } else {
-        console.log("Login failed");
-        setErrorMessage("El Correo o Contraseña que ingresó es incorrecto. Por favor, inténtalo de nuevo."); // Set error message
+        window.location.href = "/cms";
       }
     } catch (error) {
       console.error("Error during login:", error.message);
-      setErrorMessage("Ocurrió un error durante el inicio de sesión. Por favor, inténtalo de nuevo."); // Set error message
+      setErrorMessage("El Correo o Contraseña que ingresó es incorrecto. Por favor, inténtalo de nuevo.");
     }
   };
 
-  // Apply CSS to prevent layout shift
   React.useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = "hidden";
     } else {
       document.body.style.overflow = "unset";
+      resetFields();
     }
   }, [isOpen]);
+
+  const handleOpen = (backdrop) => {
+    setBackdrop(backdrop);
+    onOpen();
+  };
 
   return (
     <>
@@ -71,7 +74,12 @@ export default function LoginModal() {
       <Modal
         backdrop={backdrop}
         isOpen={isOpen}
-        onOpenChange={onOpenChange}
+        onOpenChange={(isOpen) => {
+          onOpenChange(isOpen);
+          if (!isOpen) {
+            resetFields();
+          }
+        }}
         placement="top-center"
       >
         <ModalContent>
@@ -87,9 +95,7 @@ export default function LoginModal() {
                   autoFocus
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  endContent={
-                    <MailIcon className="text-lg text-secondary text-default-400 pointer-events-none flex-shrink-0" />
-                  }
+                  endContent={<MailIcon className="text-lg text-secondary text-default-400 pointer-events-none flex-shrink-0" />}
                   label={<p className="text-default">Correo electrónico</p>}
                   variant="bordered"
                 />
@@ -97,9 +103,7 @@ export default function LoginModal() {
                   color="primary"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  endContent={
-                    <LockIcon className="text-lg text-secondary text-default-400 pointer-events-none flex-shrink-0" />
-                  }
+                  endContent={<LockIcon className="text-lg text-secondary text-default-400 pointer-events-none flex-shrink-0" />}
                   label={<p className="text-default">Contraseña</p>}
                   type="password"
                   variant="bordered"
@@ -109,17 +113,15 @@ export default function LoginModal() {
                     {errorMessage}
                   </p>
                 )}
-                <div className="flex py-2 px-1 justify-between">
-                  <Checkbox
+                <div className="flex py-2 px-1 justify-end">
+                  {/* <Checkbox
                     color="secondary"
                     className="text-white"
                     classNames={{ label: "text-small" }}
                   >
                     Recuérdame
-                  </Checkbox>
-                  <Link color="primary" href="#" size="sm">
-                    ¿Olvidaste tu contraseña?
-                  </Link>
+                  </Checkbox> */}
+                  <ForgotPasswordModal isOpen={isOpen} onOpenChange={onOpenChange} />
                 </div>
                 <Spacer y={1} />
               </ModalBody>
