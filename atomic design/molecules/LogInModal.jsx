@@ -37,10 +37,13 @@ export default function LoginModal() {
       if (success) {
         console.log("Login successful:", user);
         window.location.href = "/cms"; 
+      } else {
+        console.log("Login failed");
+        setErrorMessage("El Correo o Contraseña que ingresó es incorrecto. Por favor, inténtalo de nuevo."); // Set error message
       }
     } catch (error) {
       console.error("Error during login:", error.message);
-      setErrorMessage("El Correo o Contraseña que ingresó es incorrecto. Por favor, inténtalo de nuevo."); // Set error message
+      setErrorMessage("Ocurrió un error durante el inicio de sesión. Por favor, inténtalo de nuevo."); // Set error message
     }
   };
 
@@ -122,18 +125,11 @@ export default function LoginModal() {
               </ModalBody>
               <ModalFooter>
                 <Boton buttonText="Cerrar" onPress={onClose} />
-<<<<<<< HEAD
-                <Button color="primary" onPress={handleSubmit}>
-=======
                 <Button
                   color="primary"
                   className="text-white"
-                  onPress={() => {
-                    onClose;
-                    window.location.href = "/cms";
-                  }}
+                  onPress={handleSubmit}
                 >
->>>>>>> 94114e90706d0c4a9a77f134f7299f244eed81ea
                   Iniciar Sesión
                 </Button>
               </ModalFooter>

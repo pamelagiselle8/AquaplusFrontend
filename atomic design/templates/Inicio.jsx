@@ -26,7 +26,7 @@ import { cargarContenido } from "../../services/contenido";
 import BannerPrincipal from "../../assets/banner.png";
 import Gradiente from "../../assets/gradiente.png";
 import IconoVision from "../../assets/iconoVision.png";
-import IconoMision from "../../assets/iconoMision.png";
+import IconoMision from "../../assets/iconomision.png";
 
 function Inicio({ modoEditar = false }) {
   const [mision, setMision] = useState("");
