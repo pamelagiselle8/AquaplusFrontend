@@ -27,8 +27,7 @@ import BannerPrincipal from "../../assets/banner.png";
 import Gradiente from "../../assets/gradiente.png";
 import IconoVision from "../../assets/iconoVision.png";
 import IconoMision from "../../assets/iconoMision.png";
-
-import IconoLoco from "../../assets/loco.png";
+import FondoContacto from "../../assets/fondoContacto.png";
 
 function Inicio({ modoEditar = false }) {
   const [mision, setMision] = useState("");
@@ -117,7 +116,7 @@ function Inicio({ modoEditar = false }) {
             <VisionMision
               titulo={"Nuestra Misión"}
               contenido={mision}
-              icono={IconoLoco}
+              icono={IconoMision}
               imagen="https://img77.uenicdn.com/image/upload/v1581406264/category/shutterstock_256848448.jpg"
               modoEditar={modoEditar}
             />
@@ -127,7 +126,7 @@ function Inicio({ modoEditar = false }) {
             <VisionMision
               titulo={"Nuestra Visión"}
               contenido={vision}
-              icono={IconoLoco}
+              icono={IconoVision}
               imagen="https://admin.municipiospuebla.mx/sites/default/files/profeco-_estos_son_los_mejores_filtros_purificadores_de_agua.jpg"
               modoEditar={modoEditar}
             />
@@ -135,15 +134,17 @@ function Inicio({ modoEditar = false }) {
         </div>
       </section>
 
-      {/* <section id="Contactanos">
+      <section id="Contactanos">
         <Waypoint
           onEnter={() => {
             setSeccionActual(3);
           }}
         />
-        <ContactanosSection />
-        <img src="https://images.unsplash.com/photo-1615529328331-f8917597711f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
-      </section> */}
+        <div>
+          {/* <ContactanosSection /> */}
+          <img src={FondoContacto} />
+        </div>
+      </section>
     </>
   );
 }
