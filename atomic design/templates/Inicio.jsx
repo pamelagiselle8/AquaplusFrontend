@@ -28,6 +28,8 @@ import Gradiente from "../../assets/gradiente.png";
 import IconoVision from "../../assets/iconoVision.png";
 import IconoMision from "../../assets/iconoMision.png";
 
+import IconoLoco from "../../assets/loco.png";
+
 function Inicio({ modoEditar = false }) {
   const [mision, setMision] = useState("");
   const [vision, setVision] = useState("");
@@ -115,7 +117,7 @@ function Inicio({ modoEditar = false }) {
             <VisionMision
               titulo={"Nuestra Misión"}
               contenido={mision}
-              icono={IconoMision}
+              icono={IconoLoco}
               imagen="https://img77.uenicdn.com/image/upload/v1581406264/category/shutterstock_256848448.jpg"
               modoEditar={modoEditar}
             />
@@ -125,7 +127,7 @@ function Inicio({ modoEditar = false }) {
             <VisionMision
               titulo={"Nuestra Visión"}
               contenido={vision}
-              icono={IconoVision}
+              icono={IconoLoco}
               imagen="https://admin.municipiospuebla.mx/sites/default/files/profeco-_estos_son_los_mejores_filtros_purificadores_de_agua.jpg"
               modoEditar={modoEditar}
             />
