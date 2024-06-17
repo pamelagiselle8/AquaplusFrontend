@@ -49,22 +49,33 @@ function Inicio({ modoEditar = false }) {
     usuarioFb: "",
   });
 
-  useEffect(() => {
-    cargarContenido({ setContenido });
-  }, [contenido]);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   useEffect(() => {
-    cargarContenido({ setContenido });
-    const token = localStorage.getItem("authToken");
-    if (token) {
-      setIsLoggedIn(true);
+    // if (modoEditar) {
+    //   const token = localStorage.getItem("authToken"); //ASI NO, USAR COOKIES
+    //   //CHEQUEAR EN LA DB SI EXISTE Y ES VALIDO, SI LO ES ENTONCES SETISLOGGEDIN TRUE
+    //  // esto estaria bien si encriptaramos las cookies / localStorage, sino olvidese
+    //  // que backend nos mande un token encriptado, lo guardamos en localStorage y lo mandamos a backend para que lo desencripte
+    //   if (token) {
+    //     setIsLoggedIn(true);
+    //   }
+    // }
+    setIsLoggedIn(true);
+    if (true) {
+      const fetchData = async () => {
+        const data = await cargarContenido();
+        setContenido(data);
+      };
+      fetchData().catch(console.error);
     }
   }, []);
 
   const [seccionActual, setSeccionActual] = useState(0);
 
-  return (
+  return modoEditar && !isLoggedIn ? (
+    <div>NO TIENE ACCESO A ESTE MÓDULO</div>
+  ) : (
     <>
       {!modoEditar && !isLoggedIn ? (
         <BarraNav seccionActual={seccionActual} />

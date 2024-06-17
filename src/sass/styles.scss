@@ -584,3 +584,22 @@ $primary: #2e7dc9;
 .text-4xl {
   font-size: 4vw;
 }
+
+.misionVisionContainer {
+  border: 2px solid lightgray;
+  border-radius: 10px;
+  padding: 10px;
+  min-height: 150px;
+  resize: none;
+  @media screen and (max-width: 900px) {
+    margin-left: -20px;
+    width: 100%;
+  }
+}
+
+.descripcion {
+  color: rgb(150, 150, 150);
+  padding-top: 6px;
+  font-size: small;
+  align-self: flex-start;
+}

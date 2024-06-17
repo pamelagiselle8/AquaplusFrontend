@@ -1,10 +1,16 @@
 import axios from "axios";
-const URL = "https://backendaquaplus.onrender.com/";
+const API_URL = "https://backendaquaplus.onrender.com/";
 
-async function cargarContenido({ setContenido }) {
-  await axios.get(URL + "getInformacionPagina").then((res) => {
-    setContenido(res.data.arr[0]);
-  });
+async function cargarContenido() {
+  try {
+    let data;
+    await axios.get(API_URL + "getInformacionPagina").then((res) => {
+      data = res.data.arr[0];
+    });
+    return data;
+  } catch (error) {
+    console.error("Error al cargar el contenido", error);
+  }
 }
 
 async function editarContenido({ contenido, setContenido }) {
@@ -18,14 +24,14 @@ async function editarContenido({ contenido, setContenido }) {
 
   try {
     await axios
-      .put(URL + "modificarPaginaInform", data, {
+      .put(API_URL + "modificarPaginaInform", data, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
       })
       .then(() => {
         console.log("Contenido editado exitosamente");
-        cargarContenido({ setContenido });
+        cargarContenido({ actualizarContenido });
       });
   } catch (error) {
     console.error("Error al editar el contenido", error);

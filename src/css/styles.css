@@ -466,3 +466,20 @@
 
 .text-4xl {
   font-size: 4vw; }
+
+.misionVisionContainer {
+  border: 2px solid lightgray;
+  border-radius: 10px;
+  padding: 10px;
+  min-height: 150px;
+  resize: none; }
+  @media screen and (max-width: 900px) {
+    .misionVisionContainer {
+      margin-left: -20px;
+      width: 100%; } }
+
+.descripcion {
+  color: #969696;
+  padding-top: 6px;
+  font-size: small;
+  align-self: flex-start; }

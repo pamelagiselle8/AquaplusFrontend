@@ -12,12 +12,11 @@ export default function VisionMision({
   onValueChange = () => {},
   onImgChange = () => {},
 }) {
-  const [value, setValue] = React.useState(contenido);
+  const [valueMV, setValueMV] = React.useState("");
 
   React.useEffect(() => {
-    // console.log(value);
-    onValueChange(value);
-  }, [value]);
+    setValueMV(contenido);
+  }, [contenido]);
 
   return (
     <div className="width-window ">
@@ -25,17 +24,22 @@ export default function VisionMision({
         <img className="icono" src={icono} />
         <div className="div-texto">
           <h1 className="text-lg text-primary titulo">{titulo}</h1>
-          {!modoEditar ? (
+          {!modoEditar && (
             <h1 className="text-md font-light text-default">{contenido}</h1>
-          ) : (
+          )}
+          {modoEditar && (
             <>
-              <TextArea
-                maxLength={300}
-                isRequired={false}
-                value={value}
-                description={"Editar contenido aquí (" + value.length + "/300)"}
-                onValueChange={setValue}
-              />
+              <textarea
+                className="misionVisionContainer text-default"
+                value={valueMV}
+                onChange={(e) => {
+                  setValueMV(e.target.value);
+                }}
+                placeholder="Ingrese el texto aqui"
+              ></textarea>
+              <span className="descripcion">
+                Editar contenido aquí ({valueMV.length}/300)
+              </span>
             </>
           )}
         </div>
