@@ -34,9 +34,10 @@ export default function VisionMision({
                 value={valueMV}
                 onChange={(e) => {
                   setValueMV(e.target.value);
+                  onValueChange(e.target.value);
                 }}
-                placeholder="Ingrese el texto aqui"
-              ></textarea>
+                placeholder="Editar contenido aquí"
+              />
               <span className="descripcion">
                 Editar contenido aquí ({valueMV.length}/300)
               </span>

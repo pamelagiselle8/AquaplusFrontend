@@ -205,9 +205,16 @@
     padding: 10px;
     padding-left: 5%;
     padding-right: 5%;
-    text-align: start; }
+    text-align: start;
+    display: flex;
+    justify-content: center; }
   #Sobre-nosotros .contenido {
     padding-bottom: 15px; }
+  #Sobre-nosotros .misionVisionContainer {
+    width: 100%; }
+    @media screen and (max-width: 900px) {
+      #Sobre-nosotros .misionVisionContainer {
+        margin-left: 0px; } }
   @media only screen and (max-width: 900px) {
     #Sobre-nosotros .text-md {
       font-size: medium; }
@@ -347,6 +354,11 @@
     justify-content: space-between; }
     #Contactanos .contacto .redes-sociales .media-card {
       width: 49%; }
+      #Contactanos .contacto .redes-sociales .media-card .misionVisionContainer {
+        height: 10px;
+        min-height: 45px;
+        margin-left: 0px;
+        width: 90%; }
 
 #Contactanos .logo {
   width: 30px;

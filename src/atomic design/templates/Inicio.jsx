@@ -1,3 +1,4 @@
+import React from "react";
 import {
   Navbar,
   NavbarBrand,
@@ -50,6 +51,10 @@ function Inicio({ modoEditar = false }) {
   });
 
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [historia, setHistoria] = useState("");
+  React.useEffect(() => {
+    setHistoria(contenido.sobreNosotros);
+  }, [contenido.sobreNosotros]);
 
   useEffect(() => {
     // if (modoEditar) {
@@ -165,12 +170,14 @@ function Inicio({ modoEditar = false }) {
                 </MotionDiv>
               ))
             ) : (
-              <TextArea
-                defaultValue={contenido.sobreNosotros}
-                description={"Editar contenido aquí"}
-                onValueChange={(value) => {
-                  contenido.sobreNosotros = value;
+              <textarea
+                className="misionVisionContainer text-default"
+                value={historia}
+                onChange={(e) => {
+                  setHistoria(e.target.value);
+                  contenido.sobreNosotros = e.target.value;
                 }}
+                placeholder="Editar contenido aquí"
               />
             )}
           </div>

@@ -249,9 +249,17 @@ $primary: #2e7dc9;
     padding-left: 5%;
     padding-right: 5%;
     text-align: start;
+    display: flex;
+    justify-content: center;
   }
   .contenido {
     padding-bottom: 15px;
+  }
+  .misionVisionContainer {
+    width: 100%;
+    @media screen and (max-width: 900px) {
+      margin-left: 0px;
+    }
   }
   @media only screen and (max-width: 900px) {
     .text-md {
@@ -427,9 +435,16 @@ $primary: #2e7dc9;
       justify-content: space-between;
       .media-card {
         width: 49%;
+        .misionVisionContainer {
+          height: 10px;
+          min-height: 45px;
+          margin-left: 0px;
+          width: 90%;
+        }
       }
     }
   }
+
   .logo {
     width: 30px;
     margin-left: 10px;
@@ -458,6 +473,7 @@ $primary: #2e7dc9;
       grid-area: input-correo;
     }
   }
+
   .footer-contacto {
     display: flex;
     justify-content: center;
