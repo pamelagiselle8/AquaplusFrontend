@@ -1,3 +1,4 @@
+import React from "react";
 import {
   Navbar,
   NavbarBrand,
@@ -7,59 +8,87 @@ import {
   Button,
   Spacer,
   Image,
+  Textarea,
 } from "@nextui-org/react";
 import { useEffect, useState } from "react";
 import { Waypoint } from "react-waypoint";
 
-import ContactanosSection from "../organisms/ContactanosSection";
-import ContactanosForm from "../molecules/ContactanosForm";
-import RedesSociales from "../molecules/RedesSociales";
-
+// Atomos
 import TextArea from "../atoms/TextArea";
 import TextField from "../atoms/TextField";
 import Card from "../atoms/Card";
 import MotionDiv from "../atoms/MotionDiv";
 
+// Moleculas
+import ContactanosForm from "../molecules/ContactanosForm";
 import BarraNav from "../molecules/BarraNav";
 import BarraEdicion from "../molecules/BarraEdicion";
 import VisionMision from "../molecules/VisionMision";
+import RedesSociales from "../molecules/RedesSociales";
 
-import { cargarContenido } from "../../services/contenido";
+// Organismos
+import ContactanosSection from "../organisms/ContactanosSection";
 
+// Imagenes
 import BannerPrincipal from "../../assets/banner.png";
 import Gradiente from "../../assets/gradiente.png";
 import IconoVision from "../../assets/iconoVision.png";
 import IconoMision from "../../assets/iconoMision.png";
 import FondoContacto from "../../assets/fondoContacto.png";
 
+// Servicios
+import { cargarContenido } from "../../services/contenido";
+
 function Inicio({ modoEditar = false }) {
-  const [mision, setMision] = useState("");
-  const [vision, setVision] = useState("");
+  const [contenido, setContenido] = useState({
+    sobreNosotros: "",
+    contentMision: "",
+    contentVision: "",
+    imgVision: "",
+    imgMision: "",
+    usuarioIg: "",
+    usuarioFb: "",
+  });
+
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [historia, setHistoria] = useState("");
+  React.useEffect(() => {
+    setHistoria(contenido.sobreNosotros);
+  }, [contenido.sobreNosotros]);
 
   useEffect(() => {
-    cargarContenido({ setMision, setVision, setHistoria });
-    console.log("mision: ", mision);
-    console.log("vision: ", vision);
-  }, [vision, mision]);
-  const [isLoggedIn, setIsLoggedIn] = useState(false); // State to check if user is logged in
-
-  useEffect(() => {
-    cargarContenido({ setMision, setVision });
-    const token = localStorage.getItem("authToken");
-    if (token) {
-      setIsLoggedIn(true); // Set isLoggedIn to true if token exists
+    if (modoEditar) {
+      //   const token = localStorage.getItem("authToken"); //ASI NO, USAR COOKIES
+      //   //CHEQUEAR EN LA DB SI EXISTE Y ES VALIDO, SI LO ES ENTONCES SETISLOGGEDIN TRUE
+      //  // esto estaria bien si encriptaramos las cookies / localStorage, sino olvidese
+      //  // que backend nos mande un token encriptado, lo guardamos en localStorage y lo mandamos a backend para que lo desencripte
+      //   if (token) {
+      setIsLoggedIn(true);
+      //   }
+    }
+    if (true) {
+      const fetchData = async () => {
+        const data = await cargarContenido();
+        setContenido(data);
+      };
+      fetchData().catch(console.error);
     }
   }, []);
 
   const [seccionActual, setSeccionActual] = useState(0);
 
-  return (
+  return modoEditar && !isLoggedIn ? (
+    <div>NO TIENE ACCESO A ESTE MÓDULO</div>
+  ) : (
     <>
       {!modoEditar && !isLoggedIn ? (
         <BarraNav seccionActual={seccionActual} />
       ) : (
-        <BarraEdicion setSeccionActual={setSeccionActual} />
+        <BarraEdicion
+          contenido={contenido}
+          setContenido={setContenido}
+          setSeccionActual={setSeccionActual}
+        />
       )}
       <MotionDiv modoEditar={modoEditar} duracion={1.5} delay={0.25} y={10}>
         <section id="Inicio">
@@ -109,22 +138,51 @@ function Inicio({ modoEditar = false }) {
       <section id="Sobre-nosotros">
         <Waypoint
           onEnter={() => {
-            setSeccionActual(0);
+            setSeccionActual(1);
           }}
         />
         <div>
-          hola
-          <MotionDiv modoEditar={modoEditar} duracion={2}>
+          <MotionDiv modoEditar={modoEditar} duracion={2} y={40}>
             <h1
               id="titulo-seccion"
               className="text-2xl font-medium text-primary"
             >
               Sobre nosotros
             </h1>
-            <div className="historia">
-              <p className="text-lg text-default">hola</p>
-            </div>
           </MotionDiv>
+          <div
+            className="historia"
+            style={modoEditar ? { display: "flex" } : {}}
+          >
+            {!modoEditar ? (
+              contenido.sobreNosotros.split("\n\n").map((paragraph, index) => (
+                <MotionDiv
+                  modoEditar={modoEditar}
+                  duracion={2}
+                  delay={index + 1}
+                  y={40}
+                  key={index}
+                >
+                  <p
+                    className="font-semilight text-md text-default contenido"
+                    key={index}
+                  >
+                    {paragraph}
+                  </p>
+                </MotionDiv>
+              ))
+            ) : (
+              <textarea
+                className="misionVisionContainer text-default"
+                value={historia}
+                onChange={(e) => {
+                  setHistoria(e.target.value);
+                  contenido.sobreNosotros = e.target.value;
+                }}
+                placeholder="Editar contenido aquí"
+              />
+            )}
+          </div>
         </div>
       </section>
 
@@ -146,20 +204,32 @@ function Inicio({ modoEditar = false }) {
           <MotionDiv modoEditar={modoEditar} duracion={1} x={-30} delay={1}>
             <VisionMision
               titulo={"Nuestra Misión"}
-              contenido={mision}
+              contenido={contenido.contentMision}
               icono={IconoMision}
-              imagen="https://img77.uenicdn.com/image/upload/v1581406264/category/shutterstock_256848448.jpg"
+              imagen={contenido.imgMision}
               modoEditar={modoEditar}
+              onValueChange={(value) => {
+                contenido.contentMision = value;
+              }}
+              onImgChange={(img) => {
+                contenido.imgMision = img;
+              }}
             />
           </MotionDiv>
           <Spacer y={2} />
           <MotionDiv modoEditar={modoEditar} duracion={1} x={30} delay={1}>
             <VisionMision
               titulo={"Nuestra Visión"}
-              contenido={vision}
+              contenido={contenido.contentVision}
               icono={IconoVision}
-              imagen="https://admin.municipiospuebla.mx/sites/default/files/profeco-_estos_son_los_mejores_filtros_purificadores_de_agua.jpg"
+              imagen={contenido.imgVision}
               modoEditar={modoEditar}
+              onValueChange={(value) => {
+                contenido.contentVision = value;
+              }}
+              onImgChange={(img) => {
+                contenido.imgVision = img;
+              }}
             />
           </MotionDiv>
         </div>
@@ -176,7 +246,17 @@ function Inicio({ modoEditar = false }) {
           <div className="fondo-y-contacto">
             <div className="contacto">
               <ContactanosForm modoEditar={modoEditar} />
-              <RedesSociales userIg={"AquaplusHN"} userFb={"AquaplusHN"} />
+              <RedesSociales
+                userIg={contenido.usuarioIg}
+                userFb={contenido.usuarioFb}
+                modoEditar={modoEditar}
+                onUserIgChange={(user) => {
+                  contenido.usuarioIg = user;
+                }}
+                onUserFbChange={(user) => {
+                  contenido.usuarioFb = user;
+                }}
+              />
             </div>
             <div className="fondo-contacto">
               <img src={FondoContacto} />
@@ -187,8 +267,7 @@ function Inicio({ modoEditar = false }) {
 
       <footer>
         <div className="footer">
-          <div className="derechos">© 2024 Aquaplus</div>
-          <div className="redes-sociales"></div>
+          <div className="derechos">© 2024 AquaPlus</div>
         </div>
       </footer>
     </>

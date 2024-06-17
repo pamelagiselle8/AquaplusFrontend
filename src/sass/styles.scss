@@ -1,4 +1,6 @@
 // Estilos globales
+$primary: #2e7dc9;
+
 .width-window {
   width: 100%;
 }
@@ -233,19 +235,37 @@
 
 // Estilos seccion sobre nosotros
 #Sobre-nosotros {
-  background-color: pink;
+  // background-color: pink;
   padding-bottom: 50px;
-
   .text-2xl {
     font-size: xx-large;
+    padding-bottom: 15px;
   }
   .text-md {
-    font-size: large;
+    font-size: medium;
   }
   .historia {
-    background-color: lightblue;
     padding: 10px;
+    padding-left: 5%;
+    padding-right: 5%;
     text-align: start;
+  }
+  .contenido {
+    padding-bottom: 15px;
+  }
+  .misionVisionContainer {
+    width: 100%;
+    @media screen and (max-width: 900px) {
+      margin-left: 0px;
+    }
+  }
+  @media only screen and (max-width: 900px) {
+    .text-md {
+      font-size: medium;
+    }
+    .text-2xl {
+      font-size: x-large;
+    }
   }
 }
 
@@ -257,6 +277,24 @@
     grid-template-columns: 1.25fr 1fr;
     grid-template-areas: "div-icono-texto div-imagen";
     padding-top: 25px;
+  }
+  #drop-area {
+    padding: 5%;
+    text-align: center;
+    border-radius: 10px;
+    border: 2px dashed $primary;
+    background-color: lighten($color: $primary, $amount: 42);
+    color: $primary;
+    cursor: pointer;
+  }
+  .image-preview {
+    max-width: 245px;
+    max-height: 150px;
+    min-height: 150px;
+    min-width: 245px;
+  }
+  .text-xs {
+    font-size: 12px;
   }
   .titulo {
     padding-bottom: 15px;
@@ -306,13 +344,6 @@
   .text-2xl {
     font-size: xx-large;
   }
-
-  // Modulo de edición
-  .text-area {
-    // margin-left: -20px;
-    // width: 100px;
-  }
-
   // Responsiveness
   @media only screen and (max-width: 900px) {
     .width-window {
@@ -395,9 +426,16 @@
       justify-content: space-between;
       .media-card {
         width: 49%;
+        .misionVisionContainer {
+          height: 10px;
+          min-height: 45px;
+          margin-left: 0px;
+          width: 90%;
+        }
       }
     }
   }
+
   .logo {
     width: 30px;
     margin-left: 10px;
@@ -426,6 +464,7 @@
       grid-area: input-correo;
     }
   }
+
   .footer-contacto {
     display: flex;
     justify-content: center;
@@ -434,7 +473,9 @@
       min-width: 150px;
     }
   }
-
+  .input {
+    margin-bottom: 20px;
+  }
   // Responsiveness
   @media only screen and (max-width: 800px) {
     margin-bottom: 50px;
@@ -456,6 +497,10 @@
         .media-card {
           width: 100%;
           margin-bottom: 2%;
+          .input {
+            width: 250px;
+            margin-bottom: 20px;
+          }
         }
       }
     }
@@ -545,4 +590,23 @@
 
 .text-4xl {
   font-size: 4vw;
+}
+
+.misionVisionContainer {
+  border: 2px solid lightgray;
+  border-radius: 10px;
+  padding: 10px;
+  min-height: 150px;
+  resize: none;
+  @media screen and (max-width: 900px) {
+    margin-left: -20px;
+    width: 100%;
+  }
+}
+
+.descripcion {
+  color: rgb(150, 150, 150);
+  padding-top: 6px;
+  font-size: small;
+  align-self: flex-start;
 }

@@ -1,24 +1,41 @@
 import axios from "axios";
+const API_URL = "https://backendaquaplus.onrender.com/";
 
-function cargarContenido({ setMision, setVision }) {
-  cargarMision({ setMision });
-  cargarVision({ setVision });
-}
-
-function cargarMision({ setMision }) {
-  axios
-    .get("https://backendaquaplus.onrender.com/obtenerMision")
-    .then((res) => {
-      setMision(res.data.contenido);
+async function cargarContenido() {
+  try {
+    let data;
+    await axios.get(API_URL + "getInformacionPagina").then((res) => {
+      data = res.data.arr[0];
     });
+    return data;
+  } catch (error) {
+    console.error("Error al cargar el contenido", error);
+  }
 }
 
-function cargarVision({ setVision }) {
-  axios
-    .get("https://backendaquaplus.onrender.com/obtenerVision")
-    .then((res) => {
-      setVision(res.data.contenido);
-    });
+async function editarContenido({ contenido, setContenido }) {
+  const data = new contenido();
+  console.log("contenido editar: ", contenido);
+  Object.keys(contenido).forEach((key) => {
+    if (contenido[key]) {
+      data.append(key, contenido[key]);
+    }
+  });
+
+  try {
+    await axios
+      .put(API_URL + "modificarPaginaInform", data, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      })
+      .then(() => {
+        console.log("Contenido editado exitosamente");
+        cargarContenido({ actualizarContenido });
+      });
+  } catch (error) {
+    console.error("Error al editar el contenido", error);
+  }
 }
 
-export { cargarContenido, cargarMision, cargarVision };
+export { cargarContenido };

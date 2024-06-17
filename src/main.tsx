@@ -12,7 +12,7 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
       <Router>
         <Routes>
           <Route path="/" element={<Inicio />} />
-          <Route path="/cms" element={<Inicio modoEditar={true} />} />
+          <Route path="/cms" element={<Inicio modoEditar={true}/>} />
           <Route path="/login" element={<Login />} />
         </Routes>
       </Router>
