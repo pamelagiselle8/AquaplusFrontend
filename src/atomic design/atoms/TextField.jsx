@@ -2,12 +2,12 @@ import React from "react";
 import { Input } from "@nextui-org/react";
 
 export default function TextField({
-  label,
   onValueChange = () => {},
+  label,
   defaultValue = "",
   type = "text",
-  readOnly = false,
-  required = true,
+  description = "",
+  maxLength = undefined,
 }) {
   const [value, setValue] = React.useState(defaultValue);
 
@@ -16,19 +16,18 @@ export default function TextField({
   }, [value, onValueChange]);
 
   return (
-    <div className="w-full flex flex-col gap-4">
+    <div className="w-full flex flex-col gap-4 input">
       <Input
-        key="primary"
         color="default"
         size={"md"}
         variant="bordered"
-        readOnly={readOnly}
-        isRequired
-        required={true}
         type={type}
         value={value}
         label={label}
+        description={description}
         onValueChange={setValue}
+        maxLength={maxLength}
+        fullWidth
       />
     </div>
   );

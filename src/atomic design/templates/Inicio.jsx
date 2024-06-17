@@ -1,3 +1,4 @@
+import React from "react";
 import {
   Navbar,
   NavbarBrand,
@@ -7,6 +8,7 @@ import {
   Button,
   Spacer,
   Image,
+  Textarea,
 } from "@nextui-org/react";
 import { useEffect, useState } from "react";
 import { Waypoint } from "react-waypoint";
@@ -48,27 +50,45 @@ function Inicio({ modoEditar = false }) {
     usuarioFb: "",
   });
 
-  useEffect(() => {
-    cargarContenido({ setContenido });
-  }, [contenido]);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [historia, setHistoria] = useState("");
+  React.useEffect(() => {
+    setHistoria(contenido.sobreNosotros);
+  }, [contenido.sobreNosotros]);
 
   useEffect(() => {
-    cargarContenido({ setContenido });
-    const token = localStorage.getItem("authToken");
-    if (token) {
+    if (modoEditar) {
+      //   const token = localStorage.getItem("authToken"); //ASI NO, USAR COOKIES
+      //   //CHEQUEAR EN LA DB SI EXISTE Y ES VALIDO, SI LO ES ENTONCES SETISLOGGEDIN TRUE
+      //  // esto estaria bien si encriptaramos las cookies / localStorage, sino olvidese
+      //  // que backend nos mande un token encriptado, lo guardamos en localStorage y lo mandamos a backend para que lo desencripte
+      //   if (token) {
       setIsLoggedIn(true);
+      //   }
+    }
+    if (true) {
+      const fetchData = async () => {
+        const data = await cargarContenido();
+        setContenido(data);
+      };
+      fetchData().catch(console.error);
     }
   }, []);
 
   const [seccionActual, setSeccionActual] = useState(0);
 
-  return (
+  return modoEditar && !isLoggedIn ? (
+    <div>NO TIENE ACCESO A ESTE MÓDULO</div>
+  ) : (
     <>
       {!modoEditar && !isLoggedIn ? (
         <BarraNav seccionActual={seccionActual} />
       ) : (
-        <BarraEdicion setSeccionActual={setSeccionActual} />
+        <BarraEdicion
+          contenido={contenido}
+          setContenido={setContenido}
+          setSeccionActual={setSeccionActual}
+        />
       )}
       <MotionDiv modoEditar={modoEditar} duracion={1.5} delay={0.25} y={10}>
         <section id="Inicio">
@@ -130,19 +150,38 @@ function Inicio({ modoEditar = false }) {
               Sobre nosotros
             </h1>
           </MotionDiv>
-          <div className="historia">
-            {contenido.sobreNosotros.split("\n\n").map((paragraph, index) => (
-              <MotionDiv
-                modoEditar={modoEditar}
-                duracion={2}
-                delay={index + 2}
-                y={40}
-              >
-                <p className="text-md text-default contenido" key={index}>
-                  {paragraph}
-                </p>
-              </MotionDiv>
-            ))}
+          <div
+            className="historia"
+            style={modoEditar ? { display: "flex" } : {}}
+          >
+            {!modoEditar ? (
+              contenido.sobreNosotros.split("\n\n").map((paragraph, index) => (
+                <MotionDiv
+                  modoEditar={modoEditar}
+                  duracion={2}
+                  delay={index + 1}
+                  y={40}
+                  key={index}
+                >
+                  <p
+                    className="font-semilight text-md text-default contenido"
+                    key={index}
+                  >
+                    {paragraph}
+                  </p>
+                </MotionDiv>
+              ))
+            ) : (
+              <textarea
+                className="misionVisionContainer text-default"
+                value={historia}
+                onChange={(e) => {
+                  setHistoria(e.target.value);
+                  contenido.sobreNosotros = e.target.value;
+                }}
+                placeholder="Editar contenido aquí"
+              />
+            )}
           </div>
         </div>
       </section>
@@ -169,6 +208,12 @@ function Inicio({ modoEditar = false }) {
               icono={IconoMision}
               imagen={contenido.imgMision}
               modoEditar={modoEditar}
+              onValueChange={(value) => {
+                contenido.contentMision = value;
+              }}
+              onImgChange={(img) => {
+                contenido.imgMision = img;
+              }}
             />
           </MotionDiv>
           <Spacer y={2} />
@@ -179,6 +224,12 @@ function Inicio({ modoEditar = false }) {
               icono={IconoVision}
               imagen={contenido.imgVision}
               modoEditar={modoEditar}
+              onValueChange={(value) => {
+                contenido.contentVision = value;
+              }}
+              onImgChange={(img) => {
+                contenido.imgVision = img;
+              }}
             />
           </MotionDiv>
         </div>
@@ -198,6 +249,13 @@ function Inicio({ modoEditar = false }) {
               <RedesSociales
                 userIg={contenido.usuarioIg}
                 userFb={contenido.usuarioFb}
+                modoEditar={modoEditar}
+                onUserIgChange={(user) => {
+                  contenido.usuarioIg = user;
+                }}
+                onUserFbChange={(user) => {
+                  contenido.usuarioFb = user;
+                }}
               />
             </div>
             <div className="fondo-contacto">
@@ -209,8 +267,7 @@ function Inicio({ modoEditar = false }) {
 
       <footer>
         <div className="footer">
-          <div className="derechos">© 2024 Aquaplus</div>
-          <div className="redes-sociales"></div>
+          <div className="derechos">© 2024 AquaPlus</div>
         </div>
       </footer>
     </>

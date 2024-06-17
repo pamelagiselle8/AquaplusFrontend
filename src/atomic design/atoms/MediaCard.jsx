@@ -28,7 +28,7 @@ export default function MediaCard({
           width={40}
         />
         <div className="flex flex-col">
-          <p className="text-md">{Title}</p>
+          <p className="text-medium">{Title}</p>
           <p className="text-small text-default-500">{User}</p>
         </div>
       </CardHeader>
