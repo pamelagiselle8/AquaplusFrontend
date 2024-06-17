@@ -33,7 +33,10 @@ export default function LoginModal() {
 
   const handleSubmit = async () => {
     try {
-      const response = await axios.post("https://backendaquaplus.onrender.com/logIn", { email, password });
+      const response = await axios.post(
+        "https://backendaquaplus.onrender.com/logIn",
+        { email, password }
+      );
       const { success, user } = response.data;
       if (success) {
         console.log("Login successful:", user);
@@ -41,7 +44,9 @@ export default function LoginModal() {
       }
     } catch (error) {
       console.error("Error during login:", error.message);
-      setErrorMessage("El Correo o Contraseña que ingresó es incorrecto. Por favor, inténtalo de nuevo.");
+      setErrorMessage(
+        "El correo o contraseña que ingresó es incorrecto. Por favor, inténtelo de nuevo."
+      );
     }
   };
 
@@ -95,7 +100,9 @@ export default function LoginModal() {
                   autoFocus
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  endContent={<MailIcon className="text-lg text-secondary text-default-400 pointer-events-none flex-shrink-0" />}
+                  endContent={
+                    <MailIcon className="text-lg text-secondary text-default-400 pointer-events-none flex-shrink-0" />
+                  }
                   label={<p className="text-default">Correo electrónico</p>}
                   variant="bordered"
                 />
@@ -103,25 +110,29 @@ export default function LoginModal() {
                   color="primary"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  endContent={<LockIcon className="text-lg text-secondary text-default-400 pointer-events-none flex-shrink-0" />}
+                  endContent={
+                    <LockIcon className="text-lg text-secondary text-default-400 pointer-events-none flex-shrink-0" />
+                  }
                   label={<p className="text-default">Contraseña</p>}
                   type="password"
                   variant="bordered"
                 />
                 {errorMessage && (
-                  <p style={{ color: "red", fontSize: "0.875rem", marginTop: "0.25rem" }}>
+                  <p
+                    style={{
+                      color: "red",
+                      fontSize: "0.875rem",
+                      marginTop: "0.25rem",
+                    }}
+                  >
                     {errorMessage}
                   </p>
                 )}
-                <div className="flex py-2 px-1 justify-end">
-                  {/* <Checkbox
-                    color="secondary"
-                    className="text-white"
-                    classNames={{ label: "text-small" }}
-                  >
-                    Recuérdame
-                  </Checkbox> */}
-                  <ForgotPasswordModal isOpen={isOpen} onOpenChange={onOpenChange} />
+                <div className="flex justify-start">
+                  <ForgotPasswordModal
+                    isOpen={isOpen}
+                    onOpenChange={onOpenChange}
+                  />
                 </div>
                 <Spacer y={1} />
               </ModalBody>

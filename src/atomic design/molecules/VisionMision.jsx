@@ -15,7 +15,8 @@ export default function VisionMision({
   const [value, setValue] = React.useState(contenido);
 
   React.useEffect(() => {
-    console.log(value);
+    // console.log(value);
+    onValueChange(value);
   }, [value]);
 
   return (
@@ -33,9 +34,6 @@ export default function VisionMision({
                 isRequired={false}
                 value={value}
                 description={"Editar contenido aquí (" + value.length + "/300)"}
-                // onChange={(e) => {
-                //   setValue(e.target.value);
-                // }}
                 onValueChange={setValue}
               />
             </>

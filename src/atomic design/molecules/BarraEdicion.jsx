@@ -12,8 +12,13 @@ import {
   DropdownMenu,
   DropdownItem,
 } from "@nextui-org/react";
+import { cargarContenido } from "../../services/contenido";
 
-export default function BarraEdicion({ setSeccionActual }) {
+export default function BarraEdicion({
+  contenido,
+  setContenido,
+  setSeccionActual,
+}) {
   setSeccionActual(0);
   return (
     <nav class="navbar-edicion">
@@ -31,6 +36,7 @@ export default function BarraEdicion({ setSeccionActual }) {
             color="primary"
             href="/"
             variant="flat"
+            onPress={cargarContenido(setContenido)}
           >
             Descartar cambios
           </Button>
@@ -38,8 +44,11 @@ export default function BarraEdicion({ setSeccionActual }) {
             className="boton text-white"
             as={Link}
             color="primary"
-            href="/"
+            // href="/"
             variant="solid"
+            onPress={() => {
+              console.log("contenido ", contenido);
+            }}
           >
             Guardar cambios
           </Button>
