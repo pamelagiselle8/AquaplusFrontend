@@ -7,6 +7,7 @@ import {
   Button,
   Spacer,
   Image,
+  Textarea,
 } from "@nextui-org/react";
 import { useEffect, useState } from "react";
 import { Waypoint } from "react-waypoint";
@@ -131,18 +132,32 @@ function Inicio({ modoEditar = false }) {
             </h1>
           </MotionDiv>
           <div className="historia">
-            {contenido.sobreNosotros.split("\n\n").map((paragraph, index) => (
-              <MotionDiv
-                modoEditar={modoEditar}
-                duracion={2}
-                delay={index + 2}
-                y={40}
-              >
-                <p className="text-md text-default contenido" key={index}>
-                  {paragraph}
-                </p>
-              </MotionDiv>
-            ))}
+            {!modoEditar ? (
+              contenido.sobreNosotros.split("\n\n").map((paragraph, index) => (
+                <MotionDiv
+                  modoEditar={modoEditar}
+                  duracion={2}
+                  delay={index + 1}
+                  y={40}
+                  key={index}
+                >
+                  <p
+                    className="font-semilight text-md text-default contenido"
+                    key={index}
+                  >
+                    {paragraph}
+                  </p>
+                </MotionDiv>
+              ))
+            ) : (
+              <TextArea
+                defaultValue={contenido.sobreNosotros}
+                description={"Editar contenido aquí"}
+                onValueChange={(value) => {
+                  contenido.sobreNosotros = value;
+                }}
+              />
+            )}
           </div>
         </div>
       </section>
@@ -169,6 +184,9 @@ function Inicio({ modoEditar = false }) {
               icono={IconoMision}
               imagen={contenido.imgMision}
               modoEditar={modoEditar}
+              onValueChange={(value) => {
+                contenido.contentMision = value;
+              }}
             />
           </MotionDiv>
           <Spacer y={2} />
@@ -179,6 +197,9 @@ function Inicio({ modoEditar = false }) {
               icono={IconoVision}
               imagen={contenido.imgVision}
               modoEditar={modoEditar}
+              onValueChange={(value) => {
+                contenido.contentVision = value;
+              }}
             />
           </MotionDiv>
         </div>
@@ -209,7 +230,7 @@ function Inicio({ modoEditar = false }) {
 
       <footer>
         <div className="footer">
-          <div className="derechos">© 2024 Aquaplus</div>
+          <div className="derechos">© 2024 AquaPlus</div>
           <div className="redes-sociales"></div>
         </div>
       </footer>

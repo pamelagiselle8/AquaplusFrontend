@@ -8,13 +8,13 @@ export default function VisionMision({
   icono,
   imagen,
   modoEditar = false,
-  // onValueChange = () => {},
+  onValueChange = () => {},
 }) {
   const [value, setValue] = React.useState(contenido);
 
-  // React.useEffect(() => {
-  //   onValueChange(value);
-  // }, [value, onValueChange]);
+  React.useEffect(() => {
+    console.log(value);
+  }, [value]);
 
   return (
     <div className="width-window ">
@@ -26,13 +26,15 @@ export default function VisionMision({
             <h1 className="text-md font-light text-default">{contenido}</h1>
           ) : (
             <>
-              <Textarea
+              <TextArea
                 maxLength={300}
                 isRequired={false}
                 value={value}
-                variant="bordered"
                 description={"Editar contenido aquí (" + value.length + "/300)"}
-                onChange={(e) => {setValue(e.target.value)}}
+                // onChange={(e) => {
+                //   setValue(e.target.value);
+                // }}
+                onValueChange={setValue}
               />
             </>
           )}
