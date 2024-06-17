@@ -13,23 +13,11 @@ function DragDrop({ titulo, actualizarImagen, defaultImg }) {
 
   const [chipText, setChipText] = useState("Imagen actual");
   const [infoText, setInfoText] = useState(
-    // "Seleccione o suelte la imagen aquí"
-    <p>
-      <u>Seleccione</u> o suelte la imagen aquí
-    </p>
+    "Seleccione o suelte la imagen aquí"
+    // <p>
+    /* <u>Seleccione</u> o suelte la imagen aquí */
+    // </p>
   );
-  // const [label, setLabel] = useState(
-  //   <>
-  //     <Image className="image-preview" isZoomed src={file} />
-  //     <Spacer y={4} />
-  //     <Chip variant="flat" color="primary" startContent={<GalleryIcon />}>
-  //       Imagen actual
-  //     </Chip>
-  //     <p className="font-light text-xs">
-  //       <u>Seleccione</u> o suelte la imagen aquí
-  //     </p>
-  //   </>
-  // );
 
   const handleChange = (file) => {
     console.log(file);
@@ -42,18 +30,6 @@ function DragDrop({ titulo, actualizarImagen, defaultImg }) {
       file.name.length > 20 ? file.name.substring(0, 20) + "..." : file.name
     );
     setInfoText("Imagen seleccionada");
-    // setLabel(
-    //   <div>
-    //     <Image className="image-preview" isZoomed src={img.src} />
-    //     <Spacer y={4} />
-    //     <Chip variant="flat" color="primary" startContent={<GalleryIcon />}>
-    //       {file.name.length > 20
-    //         ? file.name.substring(0, 20) + "..."
-    //         : file.name}
-    //     </Chip>
-    //     <p className="font-light text-xs">Imagen seleccionada</p>
-    //   </div>
-    // );
   };
 
   return (
@@ -75,7 +51,6 @@ function DragDrop({ titulo, actualizarImagen, defaultImg }) {
       children={
         <div id="drop-area">
           {
-            // label
             <>
               <Image className="image-preview" isZoomed src={archivo} />
               <Spacer y={4} />
@@ -84,13 +59,9 @@ function DragDrop({ titulo, actualizarImagen, defaultImg }) {
                 color="primary"
                 startContent={<GalleryIcon />}
               >
-                {/* Imagen actual */}
                 {chipText}
               </Chip>
-              <p className="font-light text-xs">
-                {infoText}
-                {/* <u>Seleccione</u> o suelte la imagen aquí */}
-              </p>
+              <p className="font-light text-xs">{infoText}</p>
             </>
           }
         </div>

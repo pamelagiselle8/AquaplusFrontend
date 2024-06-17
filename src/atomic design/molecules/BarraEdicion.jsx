@@ -12,7 +12,7 @@ import {
   DropdownMenu,
   DropdownItem,
 } from "@nextui-org/react";
-import { cargarContenido } from "../../services/contenido";
+import { cargarContenido, editarContenido } from "../../services/contenido";
 
 export default function BarraEdicion({
   contenido,
@@ -21,7 +21,7 @@ export default function BarraEdicion({
 }) {
   setSeccionActual(0);
   return (
-    <nav class="navbar-edicion">
+    <nav className="navbar-edicion">
       <ul>
         <div className="texto">
           <h1 className="font-semibold text-lg">
@@ -36,7 +36,13 @@ export default function BarraEdicion({
             color="primary"
             href="/"
             variant="flat"
-            onPress={cargarContenido(setContenido)}
+            onPress={() => {
+              console.log("contenido ", contenido);
+              const fetchData = async () => {
+                const data = await cargarContenido();
+                setContenido(data);
+              };
+            }}
           >
             Descartar cambios
           </Button>
@@ -48,6 +54,11 @@ export default function BarraEdicion({
             variant="solid"
             onPress={() => {
               console.log("contenido ", contenido);
+              editarContenido({ contenido });
+              const fetchData = async () => {
+                const data = await cargarContenido();
+                setContenido(data);
+              };
             }}
           >
             Guardar cambios
