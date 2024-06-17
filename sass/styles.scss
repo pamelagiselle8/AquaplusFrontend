@@ -1,0 +1,43 @@
+.width-window {
+  width: auto;
+}
+
+.centered {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#logo {
+  height: 30px;
+}
+
+#hero {
+  padding-top: 25%;
+}
+
+#contacto {
+  padding-top: 10%;
+  height: auto;
+}
+
+.pad-left {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-left: 30%;
+  margin-left: 15%;
+}
+
+.grad {
+  position: absolute;
+  width: 75%;
+  z-index: 10;
+}
+
+.img-front {
+  width: 85%;
+  position: absolute;
+  z-index: 20;
+}

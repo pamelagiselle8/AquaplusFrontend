@@ -26,7 +26,7 @@ function colorSeleccion(seccionActual, seccion) {
 
 export default function BarraNav({ seccionActual }) {
   return (
-    <nav class="navbar">
+    <nav className="navbar">
       <div className="marca">
         <Dropdown>
           <DropdownTrigger>

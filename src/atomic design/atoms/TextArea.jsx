@@ -2,16 +2,16 @@ import React from "react";
 import { Textarea } from "@nextui-org/react";
 
 export default function TextArea({
-  onValueChange = () => {},
   label,
   description,
   defaultValue = "",
+  onValueChange = () => {},
 }) {
   const [value, setValue] = React.useState(defaultValue);
 
   React.useEffect(() => {
     onValueChange(value);
-  }, [value, onValueChange]);
+  }, [value]);
 
   return (
     <Textarea
@@ -21,7 +21,7 @@ export default function TextArea({
       label={label}
       description={description}
       onValueChange={setValue}
-      defaultValue={defaultValue ? defaultValue : ""}
+      defaultValue={value}
     />
   );
 }

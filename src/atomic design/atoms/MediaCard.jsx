@@ -16,6 +16,7 @@ export default function MediaCard({
   Text,
   HyperlinkText,
   MediaLink,
+  modoEditar = false,
 }) {
   return (
     <Card fullWidth>
@@ -28,13 +29,13 @@ export default function MediaCard({
           width={40}
         />
         <div className="flex flex-col">
-          <p className="text-md">{Title}</p>
-          <p className="text-small text-default-500">{User}</p>
+          <p className="text-medium">{Title}</p>
+          {modoEditar && <p className="text-small text-default-500">{User}</p>}
         </div>
       </CardHeader>
       <Divider />
       <CardFooter>
-        <Link isExternal showAnchorIcon href={MediaLink}>
+        <Link isExternal showAnchorIcon href={User}>
           {HyperlinkText}
         </Link>
       </CardFooter>

@@ -1,6 +1,7 @@
 import React from "react";
 import { Image, Input, Spacer, Textarea } from "@nextui-org/react";
 import TextArea from "../atoms/TextArea";
+import DragDrop from "../atoms/DragnDrop";
 
 export default function VisionMision({
   titulo,
@@ -8,13 +9,14 @@ export default function VisionMision({
   icono,
   imagen,
   modoEditar = false,
-  // onValueChange = () => {},
+  onValueChange = () => {},
+  onImgChange = () => {},
 }) {
-  const [value, setValue] = React.useState(contenido);
+  const [valueMV, setValueMV] = React.useState("");
 
-  // React.useEffect(() => {
-  //   onValueChange(value);
-  // }, [value, onValueChange]);
+  React.useEffect(() => {
+    setValueMV(contenido);
+  }, [contenido]);
 
   return (
     <div className="width-window ">
@@ -22,24 +24,37 @@ export default function VisionMision({
         <img className="icono" src={icono} />
         <div className="div-texto">
           <h1 className="text-lg text-primary titulo">{titulo}</h1>
-          {!modoEditar ? (
+          {!modoEditar && (
             <h1 className="text-md font-light text-default">{contenido}</h1>
-          ) : (
+          )}
+          {modoEditar && (
             <>
-              <Textarea
-                maxLength={300}
-                isRequired={false}
-                value={value}
-                variant="bordered"
-                description={"Editar contenido aquí (" + value.length + "/300)"}
-                onChange={(e) => {setValue(e.target.value)}}
+              <textarea
+                className="misionVisionContainer text-default"
+                value={valueMV}
+                onChange={(e) => {
+                  setValueMV(e.target.value);
+                  onValueChange(e.target.value);
+                }}
+                placeholder="Editar contenido aquí"
               />
+              <span className="descripcion">
+                Editar contenido aquí ({valueMV.length}/300)
+              </span>
             </>
           )}
         </div>
       </div>
       <div className="div-imagen">
-        <Image removeWrapper className="imagen" src={imagen} />
+        {!modoEditar ? (
+          <Image removeWrapper className="imagen" src={imagen} />
+        ) : (
+          <DragDrop
+            titulo={"Cambiar imagen"}
+            actualizarImagen={onImgChange}
+            defaultImg={imagen}
+          />
+        )}
       </div>
     </div>
   );
