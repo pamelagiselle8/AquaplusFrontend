@@ -42,24 +42,20 @@ export default function BarraEdicion({
                 const data = await cargarContenido();
                 setContenido(data);
               };
+              window.location.replace("/");
             }}
           >
             Descartar cambios
           </Button>
           <Button
             className="boton text-white"
-            as={Link}
             color="primary"
-            // href="/"
             variant="solid"
             onPress={() => {
               console.log("contenido ", contenido);
-              editarContenido({ contenido });
-              const fetchData = async () => {
-                const data = await cargarContenido();
-                setContenido(data);
-              };
+              editarContenido({ contenido, setContenido });
             }}
+            
           >
             Guardar cambios
           </Button>

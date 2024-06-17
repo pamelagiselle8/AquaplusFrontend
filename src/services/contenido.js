@@ -13,7 +13,7 @@ async function cargarContenido() {
   }
 }
 
-async function editarContenido({ contenido }) {
+async function editarContenido({ contenido, setContenido }) {
   console.log("contenido editar: ", contenido);
   const data = {
     sobreNosotros: "",
@@ -26,7 +26,6 @@ async function editarContenido({ contenido }) {
   };
   Object.keys(contenido).forEach((key) => {
     if (contenido[key]) {
-      // data.append(key, contenido[key]);
       data[key] = contenido[key];
     }
   });
@@ -39,8 +38,12 @@ async function editarContenido({ contenido }) {
         },
       })
       .then(() => {
+        const fetchData = async () => {
+          const data = await cargarContenido();
+          setContenido(data);
+        };
+        window.location.replace("/");
         console.log("Contenido editado exitosamente");
-        // cargarContenido({ actualizarContenido });
       });
   } catch (error) {
     console.error("Error al editar el contenido", error);

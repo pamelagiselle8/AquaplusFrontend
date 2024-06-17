@@ -29,6 +29,7 @@ export default function RedesSociales({
       <div className="redes-sociales">
         <div className="media-card">
           <MediaCard
+            modoEditar={modoEditar}
             ImageSource={IconoIg}
             Title="Nuestro Instagram"
             User={
@@ -51,6 +52,7 @@ export default function RedesSociales({
         </div>
         <div className="media-card">
           <MediaCard
+            modoEditar={modoEditar}
             ImageSource={IconoFb}
             Title="Nuestro Facebook"
             User={
@@ -75,25 +77,25 @@ export default function RedesSociales({
   }
   return (
     <div className="redes-sociales">
-      {userIg && (
+      {userIg !== "" && (
         <div className="media-card">
           <MediaCard
             ImageSource={IconoIg}
             Title="Nuestro Instagram"
             User={userIg}
             HyperlinkText="Ir a Instagram"
-            MediaLink={"https://www.instagram.com/" + userIg + "/"}
+            // MediaLink={"https://www.instagram.com/" + userIg + "/"}
           />
         </div>
       )}
-      {userFb && (
+      {userFb !== "" && (
         <div className="media-card">
           <MediaCard
             ImageSource={IconoFb}
             Title="Nuestro Facebook"
             User={userFb}
             HyperlinkText="Ir a Facebook"
-            MediaLink="https://github.com/nextui-org/nextui"
+            // MediaLink="https://github.com/nextui-org/nextui"
           />
         </div>
       )}
