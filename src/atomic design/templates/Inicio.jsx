@@ -57,16 +57,15 @@ function Inicio({ modoEditar = false }) {
   }, [contenido.sobreNosotros]);
 
   useEffect(() => {
-    // if (modoEditar) {
-    //   const token = localStorage.getItem("authToken"); //ASI NO, USAR COOKIES
-    //   //CHEQUEAR EN LA DB SI EXISTE Y ES VALIDO, SI LO ES ENTONCES SETISLOGGEDIN TRUE
-    //  // esto estaria bien si encriptaramos las cookies / localStorage, sino olvidese
-    //  // que backend nos mande un token encriptado, lo guardamos en localStorage y lo mandamos a backend para que lo desencripte
-    //   if (token) {
-    //     setIsLoggedIn(true);
-    //   }
-    // }
-    setIsLoggedIn(true);
+    if (modoEditar) {
+      //   const token = localStorage.getItem("authToken"); //ASI NO, USAR COOKIES
+      //   //CHEQUEAR EN LA DB SI EXISTE Y ES VALIDO, SI LO ES ENTONCES SETISLOGGEDIN TRUE
+      //  // esto estaria bien si encriptaramos las cookies / localStorage, sino olvidese
+      //  // que backend nos mande un token encriptado, lo guardamos en localStorage y lo mandamos a backend para que lo desencripte
+      //   if (token) {
+      setIsLoggedIn(true);
+      //   }
+    }
     if (true) {
       const fetchData = async () => {
         const data = await cargarContenido();
@@ -151,7 +150,10 @@ function Inicio({ modoEditar = false }) {
               Sobre nosotros
             </h1>
           </MotionDiv>
-          <div className="historia">
+          <div
+            className="historia"
+            style={modoEditar ? { display: "flex" } : {}}
+          >
             {!modoEditar ? (
               contenido.sobreNosotros.split("\n\n").map((paragraph, index) => (
                 <MotionDiv

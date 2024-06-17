@@ -249,8 +249,6 @@ $primary: #2e7dc9;
     padding-left: 5%;
     padding-right: 5%;
     text-align: start;
-    display: flex;
-    justify-content: center;
   }
   .contenido {
     padding-bottom: 15px;
@@ -346,13 +344,6 @@ $primary: #2e7dc9;
   .text-2xl {
     font-size: xx-large;
   }
-
-  // Modulo de edición
-  .text-area {
-    // margin-left: -20px;
-    // width: 100px;
-  }
-
   // Responsiveness
   @media only screen and (max-width: 900px) {
     .width-window {
