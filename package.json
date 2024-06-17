@@ -8,11 +8,7 @@
     "build": "tsc && vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-<<<<<<< HEAD
-    "compile:sass": "node-sass sass/styles.scss css/styles.css -w"
-=======
     "compile:sass": "node-sass src/sass/styles.scss src/css/styles.css -w"
->>>>>>> f9ec488c6e008b05d12761db216056191eacec12
   },
   "dependencies": {
     "@nextui-org/react": "^2.3.6",
