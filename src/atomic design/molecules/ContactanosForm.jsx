@@ -30,11 +30,14 @@ function ContactCard({ modoEditar }) {
     setErrorMessage("");
 
     try {
-      const response = await axios.post("https://backendaquaplus.onrender.com/enviarCorreo", {
-        nombre,
-        email,
-        mensaje,
-      });
+      const response = await axios.post(
+        "https://backendaquaplus.onrender.com/enviarCorreo",
+        {
+          nombre,
+          email,
+          mensaje,
+        }
+      );
 
       if (response.status === 200) {
         setSuccessMessage("Correo enviado exitosamente.");
@@ -92,14 +95,16 @@ function ContactCard({ modoEditar }) {
               type="submit"
               variant="flat"
               color="primary"
-              isDisabled={modoEditar || isSubmitting}
+              isDisabled={
+                modoEditar || isSubmitting || !nombre || !email || !mensaje
+              }
               label="Enviar"
             >
               Enviar
             </Button>
           </CardFooter>
         </form>
-        {successMessage && <p style={{ color: "green"}}>{successMessage}</p>}
+        {successMessage && <p style={{ color: "green" }}>{successMessage}</p>}
         {errorMessage && <p style={{ color: "red" }}>{errorMessage}</p>}
       </CardBody>
     </Card>
