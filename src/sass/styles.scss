@@ -1,4 +1,6 @@
 // Estilos globales
+$primary: #2e7dc9;
+
 .width-window {
   width: 100%;
 }
@@ -270,6 +272,24 @@
     grid-template-areas: "div-icono-texto div-imagen";
     padding-top: 25px;
   }
+  #drop-area {
+    padding: 5%;
+    text-align: center;
+    border-radius: 10px;
+    border: 2px dashed $primary;
+    background-color: lighten($color: $primary, $amount: 42);
+    color: $primary;
+    cursor: pointer;
+  }
+  .image-preview {
+    max-width: 245px;
+    max-height: 150px;
+    min-height: 150px;
+    min-width: 245px;
+  }
+  .text-xs {
+    font-size: 12px;
+  }
   .titulo {
     padding-bottom: 15px;
   }
@@ -446,7 +466,9 @@
       min-width: 150px;
     }
   }
-
+  .input {
+    margin-bottom: 20px;
+  }
   // Responsiveness
   @media only screen and (max-width: 800px) {
     margin-bottom: 50px;
@@ -468,6 +490,10 @@
         .media-card {
           width: 100%;
           margin-bottom: 2%;
+          .input {
+            width: 250px;
+            margin-bottom: 20px;
+          }
         }
       }
     }

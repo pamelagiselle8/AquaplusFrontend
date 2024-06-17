@@ -221,6 +221,24 @@
   grid-template-areas: "div-icono-texto div-imagen";
   padding-top: 25px; }
 
+#Mision-y-vision #drop-area {
+  padding: 5%;
+  text-align: center;
+  border-radius: 10px;
+  border: 2px dashed #2e7dc9;
+  background-color: #d7e7f6;
+  color: #2e7dc9;
+  cursor: pointer; }
+
+#Mision-y-vision .image-preview {
+  max-width: 245px;
+  max-height: 150px;
+  min-height: 150px;
+  min-width: 245px; }
+
+#Mision-y-vision .text-xs {
+  font-size: 12px; }
+
 #Mision-y-vision .titulo {
   padding-bottom: 15px; }
 
@@ -363,6 +381,9 @@
     width: 40%;
     min-width: 150px; }
 
+#Contactanos .input {
+  margin-bottom: 20px; }
+
 @media only screen and (max-width: 800px) {
   #Contactanos {
     margin-bottom: 50px; }
@@ -381,6 +402,9 @@
         #Contactanos .contacto .redes-sociales .media-card {
           width: 100%;
           margin-bottom: 2%; }
+          #Contactanos .contacto .redes-sociales .media-card .input {
+            width: 250px;
+            margin-bottom: 20px; }
     #Contactanos .card-contacto {
       margin-top: 30%; }
     #Contactanos .logo {

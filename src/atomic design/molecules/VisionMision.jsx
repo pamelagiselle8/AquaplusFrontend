@@ -1,6 +1,7 @@
 import React from "react";
 import { Image, Input, Spacer, Textarea } from "@nextui-org/react";
 import TextArea from "../atoms/TextArea";
+import DragDrop from "../atoms/DragnDrop";
 
 export default function VisionMision({
   titulo,
@@ -9,6 +10,7 @@ export default function VisionMision({
   imagen,
   modoEditar = false,
   onValueChange = () => {},
+  onImgChange = () => {},
 }) {
   const [value, setValue] = React.useState(contenido);
 
@@ -41,7 +43,15 @@ export default function VisionMision({
         </div>
       </div>
       <div className="div-imagen">
-        <Image removeWrapper className="imagen" src={imagen} />
+        {!modoEditar ? (
+          <Image removeWrapper className="imagen" src={imagen} />
+        ) : (
+          <DragDrop
+            titulo={"Cambiar imagen"}
+            actualizarImagen={onImgChange}
+            defaultImg={imagen}
+          />
+        )}
       </div>
     </div>
   );

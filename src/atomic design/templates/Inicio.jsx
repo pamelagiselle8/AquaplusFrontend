@@ -187,6 +187,9 @@ function Inicio({ modoEditar = false }) {
               onValueChange={(value) => {
                 contenido.contentMision = value;
               }}
+              onImgChange={(img) => {
+                contenido.imgMision = img;
+              }}
             />
           </MotionDiv>
           <Spacer y={2} />
@@ -199,6 +202,9 @@ function Inicio({ modoEditar = false }) {
               modoEditar={modoEditar}
               onValueChange={(value) => {
                 contenido.contentVision = value;
+              }}
+              onImgChange={(img) => {
+                contenido.imgVision = img;
               }}
             />
           </MotionDiv>
@@ -219,6 +225,13 @@ function Inicio({ modoEditar = false }) {
               <RedesSociales
                 userIg={contenido.usuarioIg}
                 userFb={contenido.usuarioFb}
+                modoEditar={modoEditar}
+                onUserIgChange={(user) => {
+                  contenido.usuarioIg = user;
+                }}
+                onUserFbChange={(user) => {
+                  contenido.usuarioFb = user;
+                }}
               />
             </div>
             <div className="fondo-contacto">
@@ -231,7 +244,6 @@ function Inicio({ modoEditar = false }) {
       <footer>
         <div className="footer">
           <div className="derechos">© 2024 AquaPlus</div>
-          <div className="redes-sociales"></div>
         </div>
       </footer>
     </>
