@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   Navbar,
   NavbarBrand,
@@ -18,13 +18,13 @@ import LoginModal from "../molecules/LogInModal";
 import Logo from "../../assets/LogoTextoHD.png";
 import IconoMenu from "../../assets/open-menu.png";
 
-function colorSeleccion(seccionActual, seccion) {
-  return seccionActual === seccion
-    ? "text-secondary font-medium"
-    : "text-foreground font-regular";
-}
-
 export default function BarraNav({ seccionActual }) {
+  function colorSeleccion(seccion) {
+    return seccionActual === seccion
+      ? "text-secondary font-medium"
+      : "text-foreground font-regular";
+  }
+
   return (
     <nav className="navbar">
       <div className="marca">
@@ -46,28 +46,29 @@ export default function BarraNav({ seccionActual }) {
             aria-label="Link Actions"
           >
             <DropdownItem
-              className={colorSeleccion(seccionActual, 0)}
+              className={colorSeleccion("Inicio")}
               key="Inicio"
               href="#"
             >
               Inicio
             </DropdownItem>
             <DropdownItem
-              className={colorSeleccion(seccionActual, 1)}
+              className={colorSeleccion("Sobre-nosotros")}
               key="Sobre-nosotros"
               href="#Sobre-nosotros"
             >
               Sobre nosotros
             </DropdownItem>
             <DropdownItem
-              className={colorSeleccion(seccionActual, 2)}
+              className={colorSeleccion("Mision-y-vision")}
               key="Mision-y-vision"
               href="#Mision-y-vision"
             >
               Misión y visión
             </DropdownItem>
             <DropdownItem
-              className={colorSeleccion(seccionActual, 3)}
+              as={Link}
+              className={colorSeleccion("Contactanos")}
               key="Contactanos"
               href="#Contactanos"
             >
@@ -81,13 +82,13 @@ export default function BarraNav({ seccionActual }) {
       </div>
       <ul>
         <li>
-          <a className={colorSeleccion(seccionActual, 0)} href="#">
+          <a className={colorSeleccion("Inicio")} href="#">
             Inicio
           </a>
         </li>
         <li>
           <a
-            className={colorSeleccion(seccionActual, 1)}
+            className={colorSeleccion("Sobre-nosotros")}
             href="#Sobre-nosotros"
           >
             Sobre nosotros
@@ -95,14 +96,14 @@ export default function BarraNav({ seccionActual }) {
         </li>
         <li>
           <a
-            className={colorSeleccion(seccionActual, 2)}
+            className={colorSeleccion("Mision-y-vision")}
             href="#Mision-y-vision"
           >
             Misión y visión
           </a>
         </li>
         <li>
-          <a className={colorSeleccion(seccionActual, 3)} href="#Contactanos">
+          <a className={colorSeleccion("Contactanos")} href="#Contactanos">
             Contáctanos
           </a>
         </li>
