@@ -10,7 +10,7 @@ import {
   Image,
   Textarea,
 } from "@nextui-org/react";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { Waypoint } from "react-waypoint";
 
 // Atomos
@@ -77,12 +77,46 @@ function Inicio({ modoEditar = false }) {
 
   const [seccionActual, setSeccionActual] = useState(0);
 
+  const [activeSection, setActiveSection] = useState(" Inicio ");
+  const sections = useRef([]);
+
+  const handleScroll = () => {
+    const pageYOffset = window.pageYOffset;
+    let newActiveSection = null;
+
+    sections.current.forEach((section) => {
+      const sectionOffsetTop =
+        section.id !== "Inicio"
+          ? section.offsetTop - section.offsetTop * 0.2
+          : 0;
+      const sectionHeight = section.offsetHeight;
+
+      if (
+        pageYOffset >= sectionOffsetTop &&
+        pageYOffset < sectionOffsetTop + sectionHeight
+      ) {
+        newActiveSection = section.id;
+      }
+    });
+
+    setActiveSection(newActiveSection);
+  };
+
+  useEffect(() => {
+    sections.current = document.querySelectorAll("section");
+    window.addEventListener("scroll", handleScroll);
+    // console.log(sections.current[0].id);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return modoEditar && !isLoggedIn ? (
     <div>NO TIENE ACCESO A ESTE MÓDULO</div>
   ) : (
     <>
       {!modoEditar && !isLoggedIn ? (
-        <BarraNav seccionActual={seccionActual} />
+        <BarraNav seccionActual={activeSection} />
       ) : (
         <BarraEdicion
           contenido={contenido}
@@ -90,17 +124,27 @@ function Inicio({ modoEditar = false }) {
           setSeccionActual={setSeccionActual}
         />
       )}
+      {/* <Waypoint
+        onEnter={() => {
+          setSeccionActual(0);
+        }}
+      /> */}
+      {/* <Waypoint
+        onEnter={() => {
+          setSeccionActual(0);
+        }}
+      ></Waypoint> */}
       <MotionDiv modoEditar={modoEditar} duracion={1.5} delay={0.25} y={10}>
         <section id="Inicio">
-          <Waypoint
-            onEnter={() => {
-              setSeccionActual(0);
-            }}
-          />
           <div className="width-window">
             <div id="banner">
               <div className="pad-left">
                 <img className="grad" src={Gradiente} />
+                <Waypoint
+                  onLeave={() => {
+                    setSeccionActual(1);
+                  }}
+                />
               </div>
               <div className="centered">
                 <img className="img-front" src={BannerPrincipal} />
@@ -136,11 +180,6 @@ function Inicio({ modoEditar = false }) {
       </MotionDiv>
 
       <section id="Sobre-nosotros">
-        <Waypoint
-          onEnter={() => {
-            setSeccionActual(1);
-          }}
-        />
         <div>
           <MotionDiv modoEditar={modoEditar} duracion={2} y={40}>
             <h1
@@ -187,11 +226,6 @@ function Inicio({ modoEditar = false }) {
       </section>
 
       <section id="Mision-y-vision">
-        <Waypoint
-          onEnter={() => {
-            setSeccionActual(2);
-          }}
-        />
         <div>
           <MotionDiv modoEditar={modoEditar} duracion={2}>
             <h1
@@ -201,6 +235,11 @@ function Inicio({ modoEditar = false }) {
               Misión y visión
             </h1>
           </MotionDiv>
+          <Waypoint
+            onEnter={() => {
+              setSeccionActual(2);
+            }}
+          />
           <MotionDiv modoEditar={modoEditar} duracion={1} x={-30} delay={1}>
             <VisionMision
               titulo={"Nuestra Misión"}
@@ -234,15 +273,14 @@ function Inicio({ modoEditar = false }) {
           </MotionDiv>
         </div>
       </section>
-
+      <Waypoint
+        // topOffset={"95%"}
+        onEnter={() => {
+          setSeccionActual(3);
+        }}
+      />
       <MotionDiv modoEditar={modoEditar} duracion={1} y={-30}>
         <section id="Contactanos">
-          <Waypoint
-            // topOffset={"95%"}
-            onEnter={() => {
-              setSeccionActual(3);
-            }}
-          />
           <div className="fondo-y-contacto">
             <div className="contacto">
               <ContactanosForm modoEditar={modoEditar} />
