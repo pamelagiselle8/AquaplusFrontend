@@ -81,7 +81,7 @@ export default function RedesSociales({
   }
   return (
     <div className="redes-sociales">
-      {userIg !== "" && (
+      {userIg && userIg.length > 0 && userIg.trim().length > 0 && (
         <div className="media-card">
           <MediaCard
             ImageSource={IconoIg}
@@ -92,7 +92,7 @@ export default function RedesSociales({
           />
         </div>
       )}
-      {userFb !== "" && (
+      {userFb && userFb.length > 0 && userFb.trim().length > 0 && (
         <div className="media-card">
           <MediaCard
             ImageSource={IconoFb}
