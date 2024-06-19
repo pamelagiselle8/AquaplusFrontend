@@ -71,6 +71,34 @@
         .navbar-edicion .botones-editar .boton {
           height: 40px;
           width: 50%; } }
+  @media only screen and (max-width: 900px) and (max-width: 600px) {
+    .navbar-edicion {
+      min-height: 180px;
+      padding-top: 20px; }
+      .navbar-edicion .texto {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start; }
+        .navbar-edicion .texto .text-lg {
+          font-size: large; }
+        .navbar-edicion .texto .text-md {
+          font-size: small; }
+      .navbar-edicion .botones-editar {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        padding-bottom: 10px;
+        padding-top: 10px;
+        margin-bottom: 0px;
+        margin-top: 0px; }
+        .navbar-edicion .botones-editar :first-child {
+          margin-bottom: 6px;
+          margin-right: 0px; }
+        .navbar-edicion .botones-editar .boton {
+          height: 45px;
+          width: 100%; } }
 
 .navbar {
   background-color: rgba(255, 255, 255, 0.3);
@@ -141,13 +169,16 @@
     width: 60%;
     justify-content: center;
     text-align: center;
-    padding-left: 20px;
+    margin-left: 1%;
     line-height: 4.45vw; }
-    #Inicio .text-hero .boton {
-      width: 30%;
-      height: 4.25vi;
-      margin-top: 3%;
-      z-index: 30; }
+    #Inicio .text-hero .logo {
+      position: relative;
+      padding-top: 3%;
+      margin-left: 22%;
+      width: 65%;
+      height: auto; }
+    #Inicio .text-hero .text-lg {
+      padding-left: 6%; }
   #Inicio .call-to-action {
     width: 60%; }
   #Inicio .grad {
@@ -182,12 +213,18 @@
         font-size: 5vw;
         width: 50%;
         margin-left: 3%;
-        margin-top: -10%;
+        margin-top: -12%;
+        padding-top: -10%;
         line-height: 5.5vw; }
-      #Inicio .text-4xl {
-        font-size: 6vw; }
-      #Inicio .boton {
-        display: none; } }
+        #Inicio .text-hero .logo {
+          margin-left: 10%;
+          width: 85%;
+          height: auto;
+          padding-bottom: 0px;
+          margin-bottom: 0px; }
+        #Inicio .text-hero .text-lg {
+          padding-left: 0%;
+          margin-top: -6px; } }
 
 #titulo-seccion {
   display: flex;
@@ -205,7 +242,9 @@
     padding: 10px;
     padding-left: 5%;
     padding-right: 5%;
-    text-align: start; }
+    text-align: start;
+    display: flex;
+    flex-direction: column; }
   #Sobre-nosotros .contenido {
     padding-bottom: 15px; }
   #Sobre-nosotros .misionVisionContainer {
@@ -352,6 +391,10 @@
     justify-content: space-between; }
     #Contactanos .contacto .redes-sociales .media-card {
       width: 49%; }
+      #Contactanos .contacto .redes-sociales .media-card .card-red-social {
+        width: 250px;
+        display: flex;
+        flex-direction: column; }
       #Contactanos .contacto .redes-sociales .media-card .misionVisionContainer {
         height: 10px;
         min-height: 45px;
@@ -412,6 +455,8 @@
         #Contactanos .contacto .redes-sociales .media-card {
           width: 100%;
           margin-bottom: 2%; }
+          #Contactanos .contacto .redes-sociales .media-card .card-red-social {
+            width: 100%; }
           #Contactanos .contacto .redes-sociales .media-card .input {
             width: 250px;
             margin-bottom: 20px; }
@@ -493,3 +538,6 @@
   padding-top: 6px;
   font-size: small;
   align-self: flex-start; }
+
+.error {
+  color: #e60000; }

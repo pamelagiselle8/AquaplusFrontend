@@ -92,6 +92,40 @@ $primary: #2e7dc9;
         width: 50%;
       }
     }
+    @media only screen and (max-width: 600px) {
+      min-height: 180px;
+      padding-top: 20px;
+      .texto {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        .text-lg {
+          font-size: large;
+        }
+        .text-md {
+          font-size: small;
+        }
+      }
+      .botones-editar {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        padding-bottom: 10px;
+        padding-top: 10px;
+        margin-bottom: 0px;
+        margin-top: 0px;
+        :first-child {
+          margin-bottom: 6px;
+          margin-right: 0px;
+        }
+        .boton {
+          height: 45px;
+          width: 100%;
+        }
+      }
+    }
   }
 }
 
@@ -161,17 +195,22 @@ $primary: #2e7dc9;
     margin-left: 15%;
   }
   .text-hero {
+    // background-color: pink;
     font-size: 2vw;
     width: 60%;
     justify-content: center;
     text-align: center;
-    padding-left: 20px;
+    margin-left: 1%;
     line-height: 4.45vw;
-    .boton {
-      width: 30%;
-      height: 4.25vi;
-      margin-top: 3%;
-      z-index: 30;
+    .logo {
+      position: relative;
+      padding-top: 3%;
+      margin-left: 22%;
+      width: 65%;
+      height: auto;
+    }
+    .text-lg {
+      padding-left: 6%;
     }
   }
   .call-to-action {
@@ -215,14 +254,20 @@ $primary: #2e7dc9;
       font-size: 5vw;
       width: 50%;
       margin-left: 3%;
-      margin-top: -10%;
+      margin-top: -12%;
+      padding-top: -10%;
       line-height: 5.5vw;
-    }
-    .text-4xl {
-      font-size: 6vw;
-    }
-    .boton {
-      display: none;
+      .logo {
+        margin-left: 10%;
+        width: 85%;
+        height: auto;
+        padding-bottom: 0px;
+        margin-bottom: 0px;
+      }
+      .text-lg {
+        padding-left: 0%;
+        margin-top: -6px;
+      }
     }
   }
 }
@@ -249,6 +294,8 @@ $primary: #2e7dc9;
     padding-left: 5%;
     padding-right: 5%;
     text-align: start;
+    display: flex;
+    flex-direction: column;
   }
   .contenido {
     padding-bottom: 15px;
@@ -426,6 +473,11 @@ $primary: #2e7dc9;
       justify-content: space-between;
       .media-card {
         width: 49%;
+        .card-red-social {
+          width: 250px;
+          display: flex;
+          flex-direction: column;
+        }
         .misionVisionContainer {
           height: 10px;
           min-height: 45px;
@@ -497,6 +549,9 @@ $primary: #2e7dc9;
         .media-card {
           width: 100%;
           margin-bottom: 2%;
+          .card-red-social {
+            width: 100%;
+          }
           .input {
             width: 250px;
             margin-bottom: 20px;
@@ -609,4 +664,8 @@ $primary: #2e7dc9;
   padding-top: 6px;
   font-size: small;
   align-self: flex-start;
+}
+
+.error {
+  color: rgb(230, 0, 0);
 }

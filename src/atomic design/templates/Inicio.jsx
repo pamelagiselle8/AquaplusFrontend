@@ -34,6 +34,7 @@ import Gradiente from "../../assets/gradiente.png";
 import IconoVision from "../../assets/iconoVision.png";
 import IconoMision from "../../assets/iconoMision.png";
 import FondoContacto from "../../assets/fondoContacto.png";
+import LogoTexto from "../../assets/LogoTextoHD.png";
 
 // Servicios
 import { cargarContenido } from "../../services/contenido";
@@ -54,6 +55,10 @@ function Inicio({ modoEditar = false }) {
   React.useEffect(() => {
     setHistoria(contenido.sobreNosotros);
   }, [contenido.sobreNosotros]);
+
+  const [campoMisionValido, setCampoMisionValido] = useState(true);
+  const [campoVisionValido, setCampoVisionValido] = useState(true);
+  const [campoHistoriaValido, setCampoHistoriaValido] = useState(true);
 
   useEffect(() => {
     if (modoEditar) {
@@ -118,12 +123,15 @@ function Inicio({ modoEditar = false }) {
         <BarraEdicion
           contenido={contenido}
           setContenido={setContenido}
-          setSeccionActual={setSeccionActual}
+          setSeccionActual={setActiveSection}
+          misionValida={campoMisionValido}
+          visionValida={campoVisionValido}
+          historiaValida={campoHistoriaValido}
         />
       )}
-      <MotionDiv modoEditar={modoEditar} duracion={1.5} delay={0.25} y={10}>
-        <section id="Inicio">
-          <div className="width-window">
+      <section id="Inicio">
+        <div className="width-window">
+          <MotionDiv modoEditar={modoEditar} duracion={1.5} delay={0.25}>
             <div id="banner">
               <div className="pad-left">
                 <img className="grad" src={Gradiente} />
@@ -132,34 +140,25 @@ function Inicio({ modoEditar = false }) {
                 <img className="img-front" src={BannerPrincipal} />
               </div>
             </div>
-            <div className="text-hero">
-              <MotionDiv
-                modoEditar={modoEditar}
-                duracion={3}
-                delay={1.25}
-                y={50}
-              >
-                <p className="font-extralight text-primary text-4xl">
-                  La esencia de <br /> la{" "}
-                  <span className="font-semibold">pureza</span>
-                </p>
-              </MotionDiv>
-              <MotionDiv modoEditar={modoEditar} duracion={3} delay={3} y={25}>
-                <Button
-                  as={Link}
-                  href="#Sobre-nosotros"
-                  className="boton text-white font-light text-md"
-                  variant="solid"
-                  color="secondary"
-                  radius="full"
-                >
-                  Saber más
-                </Button>
-              </MotionDiv>
-            </div>
+          </MotionDiv>
+          <div className="text-hero">
+            <MotionDiv modoEditar={modoEditar} duracion={2.5} delay={0.25}>
+              <Image removeWrapper className="logo" src={LogoTexto} />
+            </MotionDiv>
+
+            <MotionDiv
+              modoEditar={modoEditar}
+              duracion={3.25}
+              delay={2}
+              x={-45}
+            >
+              <p className="font-medium-italic text-primary text-lg">
+                Por su salud
+              </p>
+            </MotionDiv>
           </div>
-        </section>
-      </MotionDiv>
+        </div>
+      </section>
 
       <section id="Sobre-nosotros">
         <div>
@@ -199,9 +198,22 @@ function Inicio({ modoEditar = false }) {
                 onChange={(e) => {
                   setHistoria(e.target.value);
                   contenido.sobreNosotros = e.target.value;
+                  setCampoHistoriaValido(
+                    e.target.value.length > 0 &&
+                      e.target.value.trim().length > 0
+                  );
                 }}
                 placeholder="Editar contenido aquí"
               />
+            )}
+            {!modoEditar ? (
+              ""
+            ) : campoHistoriaValido ? (
+              <p className="descripcion">Editar contenido aquí</p>
+            ) : (
+              <span className="descripcion error font-medium">
+                Este campo no puede estar vacío
+              </span>
             )}
           </div>
         </div>
@@ -230,6 +242,8 @@ function Inicio({ modoEditar = false }) {
               onImgChange={(img) => {
                 contenido.imgMision = img;
               }}
+              setCampoValido={setCampoMisionValido}
+              campoValido={campoMisionValido}
             />
           </MotionDiv>
           <Spacer y={2} />
@@ -246,6 +260,8 @@ function Inicio({ modoEditar = false }) {
               onImgChange={(img) => {
                 contenido.imgVision = img;
               }}
+              setCampoValido={setCampoVisionValido}
+              campoValido={campoVisionValido}
             />
           </MotionDiv>
         </div>

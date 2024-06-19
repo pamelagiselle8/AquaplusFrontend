@@ -52,6 +52,11 @@ function ContactCard({ modoEditar }) {
     }
   };
 
+  function validarCorreo(correo) {
+    const regex = /^[A-Za-z0-9.]+@[A-Za-z0-9.]{2,}\.[A-Za-z]{2,}$/;
+    return regex.test(correo);
+  }
+
   return (
     <Card className="card-contacto">
       <CardHeader className="text-xl">
@@ -96,7 +101,12 @@ function ContactCard({ modoEditar }) {
               variant="flat"
               color="primary"
               isDisabled={
-                modoEditar || isSubmitting || !nombre || !email || !mensaje
+                modoEditar ||
+                isSubmitting ||
+                !nombre ||
+                !email ||
+                !mensaje ||
+                !validarCorreo(email)
               }
               label="Enviar"
             >
@@ -104,6 +114,9 @@ function ContactCard({ modoEditar }) {
             </Button>
           </CardFooter>
         </form>
+        {email && !validarCorreo(email) && (
+          <p style={{ color: "red" }}>Por favor ingrese un correo válido.</p>
+        )}
         {successMessage && <p style={{ color: "green" }}>{successMessage}</p>}
         {errorMessage && <p style={{ color: "red" }}>{errorMessage}</p>}
       </CardBody>
