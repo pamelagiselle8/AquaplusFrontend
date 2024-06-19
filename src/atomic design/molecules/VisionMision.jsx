@@ -11,6 +11,8 @@ export default function VisionMision({
   modoEditar = false,
   onValueChange = () => {},
   onImgChange = () => {},
+  campoValido = true,
+  setCampoValido = () => {},
 }) {
   const [valueMV, setValueMV] = React.useState("");
 
@@ -35,12 +37,22 @@ export default function VisionMision({
                 onChange={(e) => {
                   setValueMV(e.target.value);
                   onValueChange(e.target.value);
+                  setCampoValido(
+                    e.target.value.length > 0 &&
+                      e.target.value.trim().length > 0
+                  );
                 }}
                 placeholder="Editar contenido aquí"
               />
-              <span className="descripcion">
-                Editar contenido aquí ({valueMV.length}/300)
-              </span>
+              {campoValido ? (
+                <span className="descripcion">
+                  Editar contenido aquí ({valueMV.length}/300)
+                </span>
+              ) : (
+                <span className="descripcion error font-medium">
+                  Este campo no puede estar vacío
+                </span>
+              )}
             </>
           )}
         </div>

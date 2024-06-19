@@ -294,6 +294,8 @@ $primary: #2e7dc9;
     padding-left: 5%;
     padding-right: 5%;
     text-align: start;
+    display: flex;
+    flex-direction: column;
   }
   .contenido {
     padding-bottom: 15px;
@@ -471,6 +473,11 @@ $primary: #2e7dc9;
       justify-content: space-between;
       .media-card {
         width: 49%;
+        .card-red-social {
+          width: 250px;
+          display: flex;
+          flex-direction: column;
+        }
         .misionVisionContainer {
           height: 10px;
           min-height: 45px;
@@ -542,6 +549,9 @@ $primary: #2e7dc9;
         .media-card {
           width: 100%;
           margin-bottom: 2%;
+          .card-red-social {
+            width: 100%;
+          }
           .input {
             width: 250px;
             margin-bottom: 20px;
@@ -654,4 +664,8 @@ $primary: #2e7dc9;
   padding-top: 6px;
   font-size: small;
   align-self: flex-start;
+}
+
+.error {
+  color: rgb(230, 0, 0);
 }

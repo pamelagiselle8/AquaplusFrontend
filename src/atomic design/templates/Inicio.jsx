@@ -56,6 +56,10 @@ function Inicio({ modoEditar = false }) {
     setHistoria(contenido.sobreNosotros);
   }, [contenido.sobreNosotros]);
 
+  const [campoMisionValido, setCampoMisionValido] = useState(true);
+  const [campoVisionValido, setCampoVisionValido] = useState(true);
+  const [campoHistoriaValido, setCampoHistoriaValido] = useState(true);
+
   useEffect(() => {
     if (modoEditar) {
       //   const token = localStorage.getItem("authToken"); //ASI NO, USAR COOKIES
@@ -120,6 +124,9 @@ function Inicio({ modoEditar = false }) {
           contenido={contenido}
           setContenido={setContenido}
           setSeccionActual={setActiveSection}
+          misionValida={campoMisionValido}
+          visionValida={campoVisionValido}
+          historiaValida={campoHistoriaValido}
         />
       )}
       <section id="Inicio">
@@ -135,12 +142,7 @@ function Inicio({ modoEditar = false }) {
             </div>
           </MotionDiv>
           <div className="text-hero">
-            <MotionDiv
-              modoEditar={modoEditar}
-              duracion={2.5}
-              delay={0.25}
-              // y={50}
-            >
+            <MotionDiv modoEditar={modoEditar} duracion={2.5} delay={0.25}>
               <Image removeWrapper className="logo" src={LogoTexto} />
             </MotionDiv>
 
@@ -196,9 +198,22 @@ function Inicio({ modoEditar = false }) {
                 onChange={(e) => {
                   setHistoria(e.target.value);
                   contenido.sobreNosotros = e.target.value;
+                  setCampoHistoriaValido(
+                    e.target.value.length > 0 &&
+                      e.target.value.trim().length > 0
+                  );
                 }}
                 placeholder="Editar contenido aquí"
               />
+            )}
+            {!modoEditar ? (
+              ""
+            ) : campoHistoriaValido ? (
+              <p className="descripcion">Editar contenido aquí</p>
+            ) : (
+              <span className="descripcion error font-medium">
+                Este campo no puede estar vacío
+              </span>
             )}
           </div>
         </div>
@@ -227,6 +242,8 @@ function Inicio({ modoEditar = false }) {
               onImgChange={(img) => {
                 contenido.imgMision = img;
               }}
+              setCampoValido={setCampoMisionValido}
+              campoValido={campoMisionValido}
             />
           </MotionDiv>
           <Spacer y={2} />
@@ -243,6 +260,8 @@ function Inicio({ modoEditar = false }) {
               onImgChange={(img) => {
                 contenido.imgVision = img;
               }}
+              setCampoValido={setCampoVisionValido}
+              campoValido={campoVisionValido}
             />
           </MotionDiv>
         </div>

@@ -33,7 +33,7 @@ export default function RedesSociales({
             ImageSource={IconoIg}
             Title="Nuestro Instagram"
             User={
-              <>
+              <div className="card-red-social">
                 <textarea
                   className="misionVisionContainer text-default"
                   value={userIG}
@@ -44,8 +44,10 @@ export default function RedesSociales({
                   }}
                   placeholder="URL del perfil de Instagram"
                 />
-                <span className="descripcion">Editar URL aquí</span>
-              </>
+                <span className="descripcion">
+                  Editar URL aquí (campo opcional)
+                </span>
+              </div>
             }
             HyperlinkText="Ir a Instagram"
           />
@@ -56,7 +58,7 @@ export default function RedesSociales({
             ImageSource={IconoFb}
             Title="Nuestro Facebook"
             User={
-              <>
+              <div className="card-red-social">
                 <textarea
                   className="misionVisionContainer text-default"
                   value={userFB}
@@ -66,8 +68,10 @@ export default function RedesSociales({
                   }}
                   placeholder="URL del perfil de Facebook"
                 />
-                <span className="descripcion">Editar URL aquí</span>
-              </>
+                <span className="descripcion">
+                  Editar URL aquí (campo opcional)
+                </span>
+              </div>
             }
             HyperlinkText="Ir a Facebook"
           />

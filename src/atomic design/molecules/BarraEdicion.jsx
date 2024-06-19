@@ -18,6 +18,9 @@ export default function BarraEdicion({
   contenido,
   setContenido,
   setSeccionActual,
+  visionValida,
+  misionValida,
+  historiaValida,
 }) {
   setSeccionActual(0);
   return (
@@ -51,11 +54,10 @@ export default function BarraEdicion({
             className="boton text-white"
             color="primary"
             variant="solid"
+            isDisabled={!historiaValida || !visionValida || !misionValida}
             onPress={() => {
-              console.log("contenido ", contenido);
               editarContenido({ contenido, setContenido });
             }}
-            
           >
             Guardar cambios
           </Button>
