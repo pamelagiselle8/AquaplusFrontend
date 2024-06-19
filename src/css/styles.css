@@ -71,6 +71,34 @@
         .navbar-edicion .botones-editar .boton {
           height: 40px;
           width: 50%; } }
+  @media only screen and (max-width: 900px) and (max-width: 600px) {
+    .navbar-edicion {
+      min-height: 180px;
+      padding-top: 20px; }
+      .navbar-edicion .texto {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start; }
+        .navbar-edicion .texto .text-lg {
+          font-size: large; }
+        .navbar-edicion .texto .text-md {
+          font-size: small; }
+      .navbar-edicion .botones-editar {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        padding-bottom: 10px;
+        padding-top: 10px;
+        margin-bottom: 0px;
+        margin-top: 0px; }
+        .navbar-edicion .botones-editar :first-child {
+          margin-bottom: 6px;
+          margin-right: 0px; }
+        .navbar-edicion .botones-editar .boton {
+          height: 45px;
+          width: 100%; } }
 
 .navbar {
   background-color: rgba(255, 255, 255, 0.3);

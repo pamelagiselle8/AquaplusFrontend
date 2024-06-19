@@ -118,7 +118,7 @@ function Inicio({ modoEditar = false }) {
         <BarraEdicion
           contenido={contenido}
           setContenido={setContenido}
-          setSeccionActual={setSeccionActual}
+          setSeccionActual={setActiveSection}
         />
       )}
       <MotionDiv modoEditar={modoEditar} duracion={1.5} delay={0.25} y={10}>

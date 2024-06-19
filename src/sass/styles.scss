@@ -92,6 +92,40 @@ $primary: #2e7dc9;
         width: 50%;
       }
     }
+    @media only screen and (max-width: 600px) {
+      min-height: 180px;
+      padding-top: 20px;
+      .texto {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        .text-lg {
+          font-size: large;
+        }
+        .text-md {
+          font-size: small;
+        }
+      }
+      .botones-editar {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        padding-bottom: 10px;
+        padding-top: 10px;
+        margin-bottom: 0px;
+        margin-top: 0px;
+        :first-child {
+          margin-bottom: 6px;
+          margin-right: 0px;
+        }
+        .boton {
+          height: 45px;
+          width: 100%;
+        }
+      }
+    }
   }
 }
 
