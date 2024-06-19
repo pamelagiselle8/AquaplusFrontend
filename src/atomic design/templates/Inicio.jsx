@@ -34,6 +34,7 @@ import Gradiente from "../../assets/gradiente.png";
 import IconoVision from "../../assets/iconoVision.png";
 import IconoMision from "../../assets/iconoMision.png";
 import FondoContacto from "../../assets/fondoContacto.png";
+import LogoTexto from "../../assets/LogoTextoHD.png";
 
 // Servicios
 import { cargarContenido } from "../../services/contenido";
@@ -139,22 +140,10 @@ function Inicio({ modoEditar = false }) {
                 delay={1.25}
                 y={50}
               >
-                <p className="font-extralight text-primary text-4xl">
-                  La esencia de <br /> la{" "}
-                  <span className="font-semibold">pureza</span>
+                <Image removeWrapper className="logo" src={LogoTexto} />
+                <p className="font-medium-italic text-primary text-lg">
+                  Por su salud
                 </p>
-              </MotionDiv>
-              <MotionDiv modoEditar={modoEditar} duracion={3} delay={3} y={25}>
-                <Button
-                  as={Link}
-                  href="#Sobre-nosotros"
-                  className="boton text-white font-light text-md"
-                  variant="solid"
-                  color="secondary"
-                  radius="full"
-                >
-                  Saber más
-                </Button>
               </MotionDiv>
             </div>
           </div>

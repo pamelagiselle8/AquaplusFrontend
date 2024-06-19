@@ -195,17 +195,22 @@ $primary: #2e7dc9;
     margin-left: 15%;
   }
   .text-hero {
+    // background-color: pink;
     font-size: 2vw;
     width: 60%;
     justify-content: center;
     text-align: center;
-    padding-left: 20px;
+    margin-left: 1%;
     line-height: 4.45vw;
-    .boton {
-      width: 30%;
-      height: 4.25vi;
-      margin-top: 3%;
-      z-index: 30;
+    .logo {
+      position: relative;
+      padding-top: 3%;
+      margin-left: 22%;
+      width: 65%;
+      height: auto;
+    }
+    .text-lg {
+      padding-left: 6%;
     }
   }
   .call-to-action {
@@ -249,15 +254,28 @@ $primary: #2e7dc9;
       font-size: 5vw;
       width: 50%;
       margin-left: 3%;
-      margin-top: -10%;
+      margin-top: -12%;
+      padding-top: -10%;
       line-height: 5.5vw;
+      .logo {
+        margin-left: 10%;
+        width: 85%;
+        height: auto;
+        padding-bottom: 0px;
+        margin-bottom: 0px;
+      }
+      .text-lg {
+        // background-color: pink;
+        padding-left: 0%;
+        margin-top: -6px;
+      }
     }
-    .text-4xl {
-      font-size: 6vw;
-    }
-    .boton {
-      display: none;
-    }
+    // .text-4xl {
+    //   font-size: 6vw;
+    // }
+    // .boton {
+    //   display: none;
+    // }
   }
 }
 

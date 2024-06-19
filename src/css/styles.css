@@ -169,13 +169,16 @@
     width: 60%;
     justify-content: center;
     text-align: center;
-    padding-left: 20px;
+    margin-left: 1%;
     line-height: 4.45vw; }
-    #Inicio .text-hero .boton {
-      width: 30%;
-      height: 4.25vi;
-      margin-top: 3%;
-      z-index: 30; }
+    #Inicio .text-hero .logo {
+      position: relative;
+      padding-top: 3%;
+      margin-left: 22%;
+      width: 65%;
+      height: auto; }
+    #Inicio .text-hero .text-lg {
+      padding-left: 6%; }
   #Inicio .call-to-action {
     width: 60%; }
   #Inicio .grad {
@@ -210,12 +213,18 @@
         font-size: 5vw;
         width: 50%;
         margin-left: 3%;
-        margin-top: -10%;
+        margin-top: -12%;
+        padding-top: -10%;
         line-height: 5.5vw; }
-      #Inicio .text-4xl {
-        font-size: 6vw; }
-      #Inicio .boton {
-        display: none; } }
+        #Inicio .text-hero .logo {
+          margin-left: 10%;
+          width: 85%;
+          height: auto;
+          padding-bottom: 0px;
+          margin-bottom: 0px; }
+        #Inicio .text-hero .text-lg {
+          padding-left: 0%;
+          margin-top: -6px; } }
 
 #titulo-seccion {
   display: flex;
