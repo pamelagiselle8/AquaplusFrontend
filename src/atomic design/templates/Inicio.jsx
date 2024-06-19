@@ -122,9 +122,9 @@ function Inicio({ modoEditar = false }) {
           setSeccionActual={setActiveSection}
         />
       )}
-      <MotionDiv modoEditar={modoEditar} duracion={1.5} delay={0.25} y={10}>
-        <section id="Inicio">
-          <div className="width-window">
+      <section id="Inicio">
+        <div className="width-window">
+          <MotionDiv modoEditar={modoEditar} duracion={1.5} delay={0.25}>
             <div id="banner">
               <div className="pad-left">
                 <img className="grad" src={Gradiente} />
@@ -133,22 +133,30 @@ function Inicio({ modoEditar = false }) {
                 <img className="img-front" src={BannerPrincipal} />
               </div>
             </div>
-            <div className="text-hero">
-              <MotionDiv
-                modoEditar={modoEditar}
-                duracion={3}
-                delay={1.25}
-                y={50}
-              >
-                <Image removeWrapper className="logo" src={LogoTexto} />
-                <p className="font-medium-italic text-primary text-lg">
-                  Por su salud
-                </p>
-              </MotionDiv>
-            </div>
+          </MotionDiv>
+          <div className="text-hero">
+            <MotionDiv
+              modoEditar={modoEditar}
+              duracion={2.5}
+              delay={0.25}
+              // y={50}
+            >
+              <Image removeWrapper className="logo" src={LogoTexto} />
+            </MotionDiv>
+
+            <MotionDiv
+              modoEditar={modoEditar}
+              duracion={3.25}
+              delay={2}
+              x={-45}
+            >
+              <p className="font-medium-italic text-primary text-lg">
+                Por su salud
+              </p>
+            </MotionDiv>
           </div>
-        </section>
-      </MotionDiv>
+        </div>
+      </section>
 
       <section id="Sobre-nosotros">
         <div>
