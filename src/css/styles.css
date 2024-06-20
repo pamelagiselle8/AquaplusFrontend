@@ -437,7 +437,7 @@
 #Contactanos .input {
   margin-bottom: 20px; }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 1080px) {
   #Contactanos {
     margin-bottom: 50px; }
     #Contactanos .fondo-contacto {
